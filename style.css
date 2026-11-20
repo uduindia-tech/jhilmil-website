@@ -10,14 +10,14 @@ a{color:var(--ac)}.wrap{max-width:1500px;margin:0 auto;padding:16px 22px 28px}.w
 .b.pri{background:var(--pri);color:var(--btx);border-color:transparent;font-weight:700}
 .ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}.grp{display:flex;gap:4px;background:var(--btn);padding:4px;border-radius:12px;align-items:center}
 .grp button,.grp select{font:inherit;font-size:15px;border:0;border-radius:9px;padding:6px 12px;background:transparent;color:var(--tx);cursor:pointer}.grp button[aria-pressed=true],.grp select.on{background:var(--pri);color:var(--btx);font-weight:700}.grp select option{color:#000}
-.stage{display:grid;grid-template-columns:290px minmax(0,1fr) 310px;gap:20px;align-items:start;margin-top:10px}
+.stage{display:grid;grid-template-columns:clamp(200px,22vw,320px) minmax(0,1fr) clamp(215px,23vw,340px);gap:clamp(12px,1.6vw,22px);align-items:start;margin-top:10px}
 .panel{background:var(--panel);border:1px solid var(--bd);border-radius:20px;padding:16px}.panel h2{margin:0;font-size:21px;color:var(--ac)}.panel .ps{margin:2px 0 12px;color:var(--sub);font-size:14px}
 .ed{display:block;width:100%;text-align:start;font:inherit;background:var(--btn);border:1px solid var(--bd);color:var(--tx);border-radius:14px;padding:10px 12px;margin-bottom:9px;cursor:pointer;position:relative}
 .ed b{display:block;font-size:16px;padding-inline-end:46px}.ed small{color:var(--sub);font-size:13px;line-height:1.3;display:block}.ed:hover{filter:brightness(1.1)}
 .sb{position:absolute;top:8px;inset-inline-end:10px;font-size:11px;background:var(--ac);color:var(--btx);border-radius:8px;padding:1px 7px;font-weight:700}
 .mid{text-align:center;min-width:0}.hero{padding:6px 0 4px}.hero h1{font-size:clamp(44px,7vw,84px);margin:6px 0 0;font-weight:800;line-height:1.05}
 .tag{font-size:clamp(20px,2.4vw,28px);font-weight:600;color:var(--sub);margin:10px 0 4px}.sub{color:var(--sub);font-size:clamp(16px,1.7vw,19px);line-height:1.55;margin:0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:26px 0 18px;text-align:start}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin:26px 0 18px;text-align:start}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px}.card h3{margin:0 0 6px;color:var(--ac)}.card p{margin:0;color:var(--bt);line-height:1.5}
 .card.up{cursor:pointer}.card.up:hover{filter:brightness(1.06)}.card .hint{display:block;margin-top:10px;font-size:14px;color:var(--ac);font-weight:600}
 #upmsg{min-height:24px;color:var(--ok);font-weight:600;margin:0 0 8px}
@@ -32,5 +32,13 @@ dialog h2{margin:0 0 10px;color:var(--ac)}dialog label{display:flex;gap:8px;alig
 .gbtn{width:100%;padding:11px;font-size:17px}
 #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--pri);color:var(--btx);padding:10px 18px;border-radius:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:9;max-width:92%}#toast.on{opacity:1}
 footer{margin-top:30px;color:var(--ft);font-size:15px;text-align:center}.doc h1{font-size:38px}.doc h2{color:var(--ac);margin-top:28px}.doc p,.doc li{color:var(--bt);line-height:1.6;font-size:17px}.note{background:rgba(247,185,62,.16);border:1px solid var(--ac);border-radius:12px;padding:12px 16px}
-@media(max-width:1020px){.stage{grid-template-columns:1fr}.mid{order:-1}}
+@media(max-width:959px){.stage{grid-template-columns:1fr 1fr}.mid{order:-1;grid-column:1/-1}}
+@media(max-width:599px){.stage{grid-template-columns:1fr}.wrap{padding:12px 12px 24px}.brand{font-size:24px}.panel{padding:13px}}
+@media(max-width:599px){.cards{grid-template-columns:1fr}}
+@media(max-width:1099px){.pl .nm{font-size:14px}.ed b{font-size:15px}.pm{width:30px;height:30px}}
+@media(min-width:1920px){html{zoom:1.2}}
+@media(min-width:2400px){html{zoom:1.5}}
+@media(min-width:3200px){html{zoom:2}}
+@media(max-width:380px){.ctl{gap:6px}.grp button,.grp select{padding:5px 8px;font-size:14px}.b{padding:5px 10px}}
+html{-webkit-text-size-adjust:100%}.panel,.card,.ed,.pl{overflow-wrap:break-word}img,svg{max-width:100%}
 [hidden]{display:none!important}
