@@ -66,8 +66,9 @@ document.querySelectorAll('.pl').forEach(function(r){var n=r.dataset.pl;
 var SOON={e4:1,e5:1,e6:1,e8:1},tip=$('tip'),tipFor=null,tipT=0;
 function showTip(id,anchor){var f=T(id+'f').split(';').filter(Boolean);
  tip.innerHTML='<b>'+esc(T(id+'t'))+'</b>'+(SOON[id]?'<div class="sn">'+esc(T('sh_soon'))+'</div>':'')+f.map(function(x){var p=x.split('|');return '<div><em>'+esc(p[0])+'</em>'+(p[1]?' – '+esc(p[1]):'')+'</div>'}).join('');
- tip.hidden=false;var r=anchor.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight,vw=document.documentElement.clientWidth,vh=window.innerHeight;
- var x=Math.min(Math.max(8,r.left+r.width/2-tw/2),vw-tw-8),y=r.top-th-8;if(y<8)y=Math.min(r.bottom+8,vh-th-8);
+ var box=anchor.closest?(anchor.closest('[data-ed]')||anchor):anchor,r=box.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;
+ tip.style.width=Math.min(Math.max(r.width,210),vw-16)+'px';tip.hidden=false;var tw=tip.offsetWidth,th=tip.offsetHeight;
+ var x=Math.min(Math.max(8,r.left),vw-tw-8),y=r.top;if(y+th>vh-8)y=vh-th-8;if(y<8)y=8;
  tip.style.left=x+'px';tip.style.top=y+'px';tipFor=anchor;tipT=Date.now()}
 function hideTip(){tip.hidden=true;tipFor=null}
 var lastPT='mouse';document.addEventListener('pointerdown',function(e){lastPT=e.pointerType||'mouse'},true);document.addEventListener('keydown',function(){lastPT='key'},true);
