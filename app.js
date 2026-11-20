@@ -30,6 +30,7 @@ function applyLang(){var code=cur();if(sel)sel.value=code;
  if(isHome&&typeof renderAll==='function')renderAll()}
 document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.addEventListener('click',function(){mode=b.dataset.langBtn;set('jm_langmode',mode);applyLang()})});
 if(sel)sel.addEventListener('change',function(){my=sel.value;mode='manual';set('jm_my',my);set('jm_langmode','manual');applyLang()});
+try{applyLang()}catch(e){}
 /* toast */
 var tt;function toast(m){var t=$('toast');if(!t)return;t.textContent=m;t.className='on';clearTimeout(tt);tt=setTimeout(function(){t.className=''},2600)}
 /* Back / Forward: always work like the browser arrows; hidden when nothing to go to */
@@ -41,6 +42,7 @@ function navState(){var cb=true,cf=true;
  if(isHome){nv.hidden=!(cb||cf)} }
 if(bk){bk.addEventListener('click',function(){history.back()});fw.addEventListener('click',function(){history.forward()});navState();
  window.addEventListener('pageshow',navState);if(window.navigation&&navigation.addEventListener)navigation.addEventListener('currententrychange',navState)}
+var gr=$('gear');if(gr)gr.addEventListener('click',function(){var c=document.querySelector('.ctl'),o=c.classList.toggle('open');gr.setAttribute('aria-expanded',o)});
 /* keep typed data so Back/Forward never loses it */
 document.querySelectorAll('[data-keep]').forEach(function(e){var k='jm_k_'+e.dataset.keep,v=sget(k);
  if(v!==null){if(e.type==='checkbox')e.checked=v==='1';else e.value=v}
@@ -61,7 +63,31 @@ function rbtn(){$('rb').disabled=!($('ru').value.trim()&&$('rn').value.trim())}
 document.querySelectorAll('.pl').forEach(function(r){var n=r.dataset.pl;
  r.querySelector('.pa').addEventListener('click',function(){conn[n]=1;saveC();renderAll();toast(n+': '+T('t_conn'))});
  r.querySelector('.pr').addEventListener('click',function(){delete conn[n];saveC();renderAll();toast(n+': '+T('t_disc'))})});
-document.querySelectorAll('[data-ed]').forEach(function(b){b.addEventListener('click',function(){toast(T('t_demo'))})});
+/* editing tiles: tap = demo, long press / right click / i = all functions */
+var SOON={e4:1,e5:1,e6:1,e8:1};
+function openSheet(id){$('sht').textContent=T(id+'t');$('shd').textContent=T(id+'d');
+ var f=T(id+'f').split(';').filter(Boolean),h=SOON[id]?'<li class="sn">'+esc(T('sh_soon'))+'</li>':'';
+ h+=f.map(function(x){var p=x.split('|');return '<li><b>'+esc(p[0])+'</b><span>'+esc(p[1]||'')+'</span></li>'}).join('');
+ $('shl').innerHTML=h;var s=$('sh');if(s.showModal)s.showModal();else s.setAttribute('open','')}
+$('shc').addEventListener('click',function(){var s=$('sh');s.close?s.close():s.removeAttribute('open')});
+document.querySelectorAll('[data-ed]').forEach(function(b){var id=b.dataset.ed,t,fired=false;
+ b.addEventListener('pointerdown',function(){fired=false;clearTimeout(t);t=setTimeout(function(){fired=true;openSheet(id)},450)});
+ ['pointerup','pointerleave','pointercancel'].forEach(function(ev){b.addEventListener(ev,function(){clearTimeout(t)})});
+ b.addEventListener('contextmenu',function(e){e.preventDefault();clearTimeout(t);fired=true;openSheet(id)});
+ b.addEventListener('click',function(e){if(fired){e.preventDefault();fired=false;return}toast(SOON[id]?T('sh_soon'):T('t_demo'))})});
+document.querySelectorAll('[data-inf]').forEach(function(b){b.addEventListener('click',function(){openSheet(b.dataset.inf)})});
+/* three views on small screens: Editing / Home / Platforms (browser Back works between them) */
+var stage=document.querySelector('.stage'),tabs=$('tabs');
+function vh(){var h=location.hash.replace('#','');return h==='edit'||h==='plat'?h:'home'}
+function setView(v,push){if(stage.dataset.view===v&&!push)return;stage.dataset.view=v;
+ tabs.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.view===v)});
+ if(push){if(v==='home')history.pushState(null,'',location.pathname+location.search);else location.hash=v}
+ if(push)window.scrollTo(0,0);navState()}
+tabs.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){if(stage.dataset.view!==b.dataset.view)setView(b.dataset.view,true)})});
+window.addEventListener('hashchange',function(){setView(vh(),false)});window.addEventListener('popstate',function(){setView(vh(),false)});
+function go(v){if(matchMedia('(max-width:959px)').matches){setView(v,true)}else{var p=document.querySelector('[data-v='+v+']');p.classList.remove('flash');void p.offsetWidth;p.classList.add('flash')}}
+document.querySelectorAll('[data-go]').forEach(function(c){c.addEventListener('click',function(){go(c.dataset.go)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(c.dataset.go)}})});
+setView(vh(),false);stage.dataset.view=vh();tabs.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.view===stage.dataset.view)});
 $('rb').addEventListener('click',function(){var u=$('ru').value.trim(),n=$('rn').value.trim();
  if(!/^(https?:\/\/)?[^\s\/]+\.[^\s]{2,}$/i.test(u)){$('re').textContent=T('req_bad');return}
  $('re').textContent='';reqs.push({u:u,n:n});set('jm_reqs',JSON.stringify(reqs));$('ru').value='';$('rn').value='';sset('jm_k_ru','');sset('jm_k_rn','');renderAll();toast(T('t_req'))});
