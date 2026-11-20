@@ -1,0 +1,11 @@
+*{box-sizing:border-box}
+:root{--bg:radial-gradient(circle at 22% 10%,#2A1B8F 0%,#150C5E 46%,#090530 100%);--tx:#fff;--sub:#C9C3F5;--ac:#F7B93E;--card:rgba(255,255,255,.07);--bd:rgba(201,195,245,.25);--bt:#E6E2FF;--ft:#9A93DC;--btn:rgba(255,255,255,.1)}
+:root[data-theme=light]{--bg:linear-gradient(180deg,#F6F3FF 0%,#E9E3FF 100%);--tx:#1A0F5C;--sub:#4A3FA0;--ac:#B26A00;--card:#fff;--bd:rgba(90,63,208,.25);--bt:#2B2170;--ft:#5F58A8;--btn:rgba(90,63,208,.1)}
+body{margin:0;font-family:'Baloo 2','Nirmala UI','Noto Sans',system-ui,sans-serif;color:var(--tx);background:var(--bg);min-height:100vh}
+a{color:var(--ac)}.wrap{max-width:860px;margin:0 auto;padding:22px 20px}
+nav{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}nav b{font-size:26px;font-weight:800}nav b span,.g{color:var(--ac)}
+.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}.grp{display:flex;gap:4px;background:var(--btn);padding:4px;border-radius:12px;align-items:center}
+.grp button,.grp select{font:inherit;font-size:15px;border:0;border-radius:9px;padding:6px 12px;background:transparent;color:var(--tx);cursor:pointer}.grp button[aria-pressed=true],.grp select.on{background:var(--ac);color:#1A0F5C;font-weight:700}.grp select option{color:#000}
+.hero{text-align:center;padding:30px 0 10px}.hero h1{font-size:clamp(40px,9vw,84px);margin:10px 0 0;font-weight:800;line-height:1.05}.tag{font-size:26px;font-weight:600;color:var(--sub);margin:12px 0 4px}.sub{color:var(--sub);font-size:19px;line-height:1.5}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:30px 0}.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:20px}.card h3{margin:0 0 6px;color:var(--ac)}.card p{margin:0;color:var(--bt);line-height:1.5}
+footer{margin-top:36px;color:var(--ft);font-size:15px;text-align:center}.doc h1{font-size:38px}.doc h2{color:var(--ac);margin-top:28px}.doc p,.doc li{color:var(--bt);line-height:1.6;font-size:17px}.note{background:rgba(247,185,62,.14);border:1px solid var(--ac);border-radius:12px;padding:12px 16px}
