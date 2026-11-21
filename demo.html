@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#150C5E">
+<title>Jhilmil · demo (नमूना)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0B0638;font-family:'Hind',system-ui,sans-serif;color:#F3F0FF;-webkit-tap-highlight-color:transparent}
+button,input{font-family:inherit}
+.phone{max-width:430px;height:100%;height:100dvh;margin:0 auto;background:#150C5E;display:flex;flex-direction:column;position:relative;overflow:hidden}
+@media(min-width:600px){body{display:flex;align-items:center}.phone{height:min(900px,96vh);border-radius:36px;box-shadow:0 20px 60px rgba(0,0,0,.5)}}
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px}
+.logo{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px}.logo span{color:#F7B93E}
+.chip{min-height:40px;padding:0 12px;border-radius:12px;border:1px solid #4B3FA8;background:#22177A;color:#F3F0FF;font-size:14px;cursor:pointer}
+.tabs{display:flex;gap:6px;padding:0 16px 6px}
+.tabs button{flex:1;min-height:40px;border-radius:12px;border:1px solid #4B3FA8;background:transparent;color:#C9C2F5;font-size:14px;cursor:pointer}
+.tabs button.on{background:#3B2FA0;color:#fff;border-color:#F7B93E}
+.body{flex:1;min-height:0;overflow-y:auto;padding:6px 16px 170px}
+h1{margin:4px 0 12px;font-family:'Baloo 2',sans-serif;font-size:24px}
+h2{margin:0;font-size:16px;font-weight:600}
+.drop{width:100%;min-height:150px;border-radius:20px;border:2px dashed #6C5FD6;background:#1D1270;color:#F3F0FF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;position:relative}
+.drop b{font-size:17px}.drop small{font-size:13px;color:#C9C2F5}
+.row{display:flex;justify-content:space-between;align-items:center;margin:16px 0 8px}
+.ghost{min-height:44px;padding:0 12px;border-radius:22px;border:1px solid #F7B93E;background:transparent;color:#F7B93E;font-size:14px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.plat{min-height:50px;border-radius:14px;border:1px solid #4B3FA8;background:#1D1270;color:#F3F0FF;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:space-between;padding:0 12px;cursor:pointer}
+.plat.on{background:#3B2FA0;border-color:#F7B93E}.plat small{font-size:12.5px;color:#C9C2F5}.plat.on small{color:#F7B93E}
+.send{width:100%;min-height:56px;margin-top:16px;border:0;border-radius:16px;background:#F7B93E;color:#150C5E;font-family:'Baloo 2',sans-serif;font-size:21px;font-weight:800;cursor:pointer}
+.send.off{background:#8C7A4A}
+.note{margin:10px 0 0;font-size:13px;color:#C9C2F5;text-align:center}
+.tool{min-height:66px;border-radius:14px;border:1px solid #4B3FA8;background:#22177A;color:#F3F0FF;text-align:left;padding:10px 12px;cursor:pointer}
+.tool b{display:block;font-size:16px}.tool small{font-size:12.5px;color:#C9C2F5}
+.prev{height:180px;border-radius:16px;background:#0E0848;border:1px solid #3B2FA0;display:flex;align-items:center;justify-content:center;color:#C9C2F5;font-size:14px;position:relative}
+.st{border-radius:14px;background:#22177A;border:1px solid #4B3FA8;padding:12px;margin-bottom:8px}
+.st .l{display:flex;justify-content:space-between;font-size:16px;font-weight:600}
+.ok{color:#3DDC97}.wait{color:#F7B93E}.fail{color:#FF8A8A}
+.retry{margin-top:8px;min-height:44px;padding:0 16px;border-radius:12px;border:0;background:#F7B93E;color:#150C5E;font-weight:700;cursor:pointer}
+.done{margin-top:12px;padding:12px;border-radius:14px;background:#1E5A47;color:#E6FFF4;font-size:15px;text-align:center}
+.dock{position:absolute;left:0;right:0;bottom:0;padding-bottom:env(safe-area-inset-bottom)}
+.talk{margin:0 12px 8px;padding:8px 12px;border-radius:14px;background:#0E0848;border:1px solid #3B2FA0;display:flex;align-items:center;gap:8px;font-size:14px;min-height:44px}
+.talk span{flex:1}
+.ic{min-width:44px;min-height:44px;border-radius:10px;border:1px solid #4B3FA8;background:#150C5E;color:#F3F0FF;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ic.on{background:#3B2FA0}
+nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;padding:0 8px 10px}
+.nb{min-height:54px;margin:0 6px;border-radius:14px;border:0;background:transparent;color:#F3F0FF;font-size:15px;font-weight:600;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.nb.cur{background:#3B2FA0}
+.dots{display:flex;gap:4px}.dots i{width:8px;height:8px;border-radius:50%;background:#3B2FA0}
+.big{width:78px;height:78px;margin:-32px auto 0;border-radius:50%;border:4px solid #150C5E;background:#F7B93E;color:#150C5E;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center}
+.big svg.ring{position:absolute;left:-4px;top:-4px;transform:rotate(-90deg)}
+.card{position:absolute;left:50%;top:40%;margin-left:-42px;width:84px;height:54px;border-radius:10px;background:#F7B93E;color:#150C5E;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.star{position:absolute;width:10px;height:10px;pointer-events:none;background:#F7B93E;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.foot{font-size:11px;color:#9E95E0;text-align:center;margin-top:16px}
+.badge{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:20px;background:#3B2FA0;border:1px solid #F7B93E;color:#F7B93E;font-size:13px;font-weight:700}
+.fun .pop{animation:pop .25s ease}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(.92)}100%{transform:scale(1)}}
+.fun .fly{animation:fly .9s ease-in forwards}
+@keyframes fly{0%{transform:translate(0,0) scale(1);opacity:1}60%{transform:translate(0,-300px) scale(.6) rotate(-8deg)}100%{transform:translate(0,-420px) scale(.2);opacity:0}}
+.fun .spark{animation:spark .9s ease-out 2}
+@keyframes spark{0%{box-shadow:0 0 0 0 rgba(247,185,62,.9)}100%{box-shadow:0 0 0 14px rgba(247,185,62,0)}}
+.fun .pulse{animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.fun .fall{animation:fall 1s ease-out forwards}
+@keyframes fall{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(200deg)}}
+@media (prefers-reduced-motion: reduce){.fun .fly,.fun .spark,.fun .pulse,.fun .fall,.fun .pop{animation:none}}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="phone fun" id="ph">
+  <div class="top">
+    <div class="logo">Jhil<span>मिल</span></div>
+    <button class="chip" id="fun">मज़ा: चालू</button>
+  </div>
+  <div class="tabs" role="tablist" aria-label="screen">
+    <button id="t-new" class="on">नया video</button>
+    <button id="t-wed">💍 शादी</button>
+  </div>
+
+  <div class="body" id="body">
+    <!-- नया -->
+    <section id="s-new">
+      <h1>नया video</h1>
+      <button class="drop" id="drop">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F7B93E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 20h16"/></svg>
+        <b id="dropT">Video यहाँ डालिए</b><small id="dropS">छूकर अपने फ़ोन से video चुनिए · data बचाने वाला upload</small>
+      </button>
+      <input type="file" id="file" accept="video/*" class="hide">
+      <div class="row"><h2>कहाँ भेजना है</h2><button class="ghost" id="last">पिछली बार जैसा</button></div>
+      <div class="grid" id="plats"></div>
+      <button class="send off" id="send">सब पर भेजिए</button>
+      <p class="note">इस video पर आपका ≈ <b id="save">—</b> data बचेगा · 7 दिन बाद यहाँ से अपने-आप मिटेगा</p>
+    </section>
+    <!-- सजाइए -->
+    <section id="s-edit" class="hide">
+      <h1>सजाइए</h1>
+      <div class="prev" id="prev">[video का preview]</div>
+      <div class="grid" style="margin-top:12px">
+        <button class="tool" data-t="काटिए"><b>काटिए</b><small>शुरू-अंत, बीच का टुकड़ा</small></button>
+        <button class="tool" data-t="सही आकार"><b>सही आकार</b><small>9:16 · 16:9 · 1:1 अपने-आप</small></button>
+        <button class="tool" data-t="Captions"><b>Captions</b><small>हिंदी में अपने-आप, छूकर सुधारिए</small></button>
+        <button class="tool" data-t="Thumbnail"><b>Thumbnail</b><small>6 अच्छे frame + एक लाइन</small></button>
+      </div>
+      <button class="ghost" id="onecap" style="width:100%;margin-top:10px;border-radius:14px;border-style:dashed">एक caption → सबमें (AI · जल्द)</button>
+    </section>
+    <!-- Status -->
+    <section id="s-status" class="hide">
+      <h1>Status</h1>
+      <div id="stList"><p class="note">अभी कुछ भेजा नहीं है।</p></div>
+      <button class="ghost" id="copy" style="width:100%;margin-top:4px;border-radius:14px">सबकी link एक साथ copy</button>
+      <div id="doneBox" class="done hide">सब जगह पहुँच गया! आपका <b id="save2"></b> data बचा।<br><span class="badge hide" id="badge">पहली उड़ान ✦</span></div>
+    </section>
+    <!-- शादी -->
+    <section id="s-wed" class="hide">
+      <h1>शादी / समारोह <small style="font-size:12px;background:#F7B93E;color:#150C5E;border-radius:8px;padding:2px 8px;vertical-align:middle">Professional</small></h1>
+      <div style="font-size:14px;color:#C9C2F5">राहुल–प्रिया · फेरे · 3 कैमरे</div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:#C9C2F5;margin-top:10px"><span>Trial की जगह</span><span>3.2 GB / 5 GB</span></div>
+      <div style="height:8px;border-radius:4px;background:#2A1F86;margin-top:4px"><div style="width:64%;height:8px;border-radius:4px;background:#F7B93E"></div></div>
+      <div class="prev" style="margin-top:12px" id="wprev">[footage का preview]<span id="stuTag" style="position:absolute;right:10px;bottom:8px;font-size:12px;font-weight:700;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:6px"></span></div>
+      <h2 style="margin:14px 0 6px">Timeline · कट के सुझाव</h2>
+      <div id="tl" style="height:46px;border-radius:10px;background:#2A1F86;position:relative;overflow:hidden"></div>
+      <div style="display:flex;gap:12px;font-size:12px;color:#C9C2F5;margin-top:6px;flex-wrap:wrap"><span>▮ <span style="color:#8FB3FF">दृश्य बदला</span></span><span>▮ <span style="color:#F7B93E">धुँधला/अँधेरा</span></span><span>▮ <span style="color:#FF9A4D">ढोल-ताली वाले पल</span></span></div>
+      <div id="sugs" style="margin-top:12px"></div>
+      <button class="ghost" id="dropBad" style="width:100%;border-radius:14px">सारे बेकार (पीले) हिस्से हटाइए</button>
+      <div style="margin-top:14px;padding:12px;border-radius:14px;background:#1D1270;border:1px solid #3B2FA0">
+        <label for="stu" style="font-size:15px;font-weight:600">अपने स्टूडियो का नाम video पर</label>
+        <input id="stu" value="शर्मा स्टूडियो, पटना" style="margin-top:8px;width:100%;min-height:44px;border-radius:10px;border:1px solid #4B3FA8;background:#150C5E;color:#F3F0FF;padding:0 12px;font-size:15px">
+        <div style="font-size:12.5px;color:#C9C2F5;margin-top:6px">ग्राहक को भेजे video के कोने में आपका नाम, हमारा नहीं।</div>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:14px">
+        <button class="send mk" style="margin:0;font-size:16px;min-height:52px">Highlight</button>
+        <button class="ghost mk" style="border-radius:14px">Teaser</button>
+        <button class="ghost mk" style="border-radius:14px">Reels</button>
+      </div>
+    </section>
+    <p class="foot">यह <b>नमूना (demo)</b> है: असली upload या post नहीं होता, आपका video फ़ोन से बाहर नहीं जाता।</p>
+  </div>
+
+  <div class="dock">
+    <div class="talk"><span id="talk">नमस्ते! बीच का सुनहरा बटन छूइए और अपने फ़ोन से कोई भी video चुनिए।</span>
+      <button class="ic" id="voice" aria-label="आवाज़ में सुनिए"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div>
+    <nav aria-label="मुख्य">
+      <button class="nb" id="n-edit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/></svg>सजाइए</button>
+      <div><button class="big" id="n-new" aria-label="नया video">
+        <svg class="ring" width="78" height="78" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="5"/><circle id="ring" cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="219.9" stroke-dashoffset="219.9"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
+      </button></div>
+      <button class="nb" id="n-status"><span class="dots" aria-hidden="true"><i id="dG"></i><i id="dY"></i><i id="dR"></i></span>Status</button>
+    </nav>
+  </div>
+</div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var S={screen:'new',pct:0,up:false,ready:false,fun:true,voice:false,on:{YouTube:true,Instagram:true,Facebook:true,Telegram:false},st:{},sizeMB:0,firstFlight:false};
+try{var l=JSON.parse(localStorage.getItem('jm_demo_last')||'null');if(l)S.last=l;}catch(e){}
+var ph=$('ph'),ctx=null;
+function sound(kind){ if(!S.fun) return; try{ ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+  var o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime; o.connect(g); g.connect(ctx.destination);
+  if(kind==='whoosh'){o.type='sine';o.frequency.setValueAtTime(220,t);o.frequency.exponentialRampToValueAtTime(880,t+.45);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.05);g.gain.exponentialRampToValueAtTime(.0001,t+.5);o.start(t);o.stop(t+.52);}
+  else if(kind==='ding'){o.type='triangle';o.frequency.setValueAtTime(880,t);o.frequency.setValueAtTime(1320,t+.09);g.gain.setValueAtTime(.15,t);g.gain.exponentialRampToValueAtTime(.0001,t+.35);o.start(t);o.stop(t+.36);}
+  else {o.type='sine';o.frequency.setValueAtTime(600,t);g.gain.setValueAtTime(.06,t);g.gain.exponentialRampToValueAtTime(.0001,t+.06);o.start(t);o.stop(t+.07);}
+ }catch(e){} }
+function buzz(ms){ if(S.fun){ try{navigator.vibrate&&navigator.vibrate(ms);}catch(e){} } }
+function say(t){ $('talk').textContent=t; if(S.voice){ try{ var u=new SpeechSynthesisUtterance(t); u.lang='hi-IN'; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} } }
+function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
+document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
+function show(sc){ S.screen=sc; ['new','edit','status','wed'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
+  $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
+  $('t-new').classList.toggle('on',sc!=='wed'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; }
+function plats(){ var h=''; Object.keys(S.on).forEach(function(n){ var on=S.on[n]; h+='<button class="plat'+(on?' on':'')+'" data-p="'+n+'" aria-pressed="'+on+'"><span>'+n+'</span><small>'+(on?'चुना':'छूकर चुनिए')+'</small></button>'; }); $('plats').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('.plat'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-p'); S.on[n]=!S.on[n]; plats(); }; }); }
+function ring(){ $('ring').setAttribute('stroke-dashoffset',(219.9*(1-S.pct/100)).toFixed(1)); }
+function startUpload(f){
+  S.up=true; S.ready=false; S.pct=0; S.sizeMB=f?Math.round(f.size/1048576):620; show('new');
+  $('dropT').textContent=(f?f.name.slice(0,28):'नमूना video')+' · चढ़ रहा है 0%'; $('dropS').textContent='net टूटे तो वहीं से फिर शुरू होगा';
+  if(f){ try{ var url=URL.createObjectURL(f); $('prev').innerHTML='<video src="'+url+'" muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:16px"></video>'; }catch(e){} }
+  var iv=setInterval(function(){ S.pct=Math.min(100,S.pct+4); ring(); $('dropT').textContent=(f?f.name.slice(0,22):'नमूना video')+' · '+S.pct+'%';
+    if(S.pct%20===0&&S.pct<100) say('Video चढ़ रहा है… '+S.pct+'%');
+    if(S.pct>=100){ clearInterval(iv); S.up=false; S.ready=true; $('dropT').textContent='Video तैयार ✓'; $('dropS').textContent='छूकर दूसरा video चुन सकते हैं';
+      $('send').classList.remove('off'); var save=Math.max(40,Math.round(S.sizeMB*0.55)); $('save').textContent=save>=1024?(save/1024).toFixed(1)+' GB':save+' MB';
+      $('n-edit').classList.add('spark'); setTimeout(function(){$('n-edit').classList.remove('spark');},2000); sound('ding'); buzz(30);
+      say('Video तैयार! अब सजाइए, या सीधे "सब पर भेजिए"।'); } },80);
+}
+$('drop').onclick=function(){ if(S.up) return; $('file').click(); };
+$('file').onchange=function(){ var f=this.files&&this.files[0]; if(f) startUpload(f); this.value=''; };
+$('n-new').onclick=function(){ if(S.screen!=='new'){ show('new'); return; } if(!S.up) $('file').click(); };
+$('n-edit').onclick=function(){ show('edit'); };
+$('n-status').onclick=function(){ show('status'); if(!Object.keys(S.st).length) say('अभी कुछ भेजा नहीं है।'); };
+$('t-new').onclick=function(){ show('new'); }; $('t-wed').onclick=function(){ show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
+$('last').onclick=function(){ S.on=S.last||{YouTube:true,Instagram:true,Facebook:false,Telegram:true}; plats(); say('पिछली बार जैसा: '+Object.keys(S.on).filter(function(k){return S.on[k];}).join(', ')+' चुन लिए।'); };
+$('fun').onclick=function(){ S.fun=!S.fun; ph.classList.toggle('fun',S.fun); this.textContent='मज़ा: '+(S.fun?'चालू':'बंद'); };
+$('voice').onclick=function(){ S.voice=!S.voice; this.classList.toggle('on',S.voice); say(S.voice?'आवाज़ चालू। अब हर बात बोलकर भी बताऊँगी।':'आवाज़ बंद।'); };
+[].forEach.call(document.querySelectorAll('.tool'),function(b){ b.onclick=function(){ say(b.getAttribute('data-t')+': असली app में यहाँ उसका औज़ार खुलेगा।'); }; });
+$('onecap').onclick=function(){ say('एक caption लिखिए, हर platform के हिसाब से अपने-आप बनेगा — यह AI वाला काम जल्द आएगा।'); };
+function stars(){ if(!S.fun) return; var r=ph.getBoundingClientRect(); for(var i=0;i<26;i++){ var s=document.createElement('div'); s.className='star fall';
+  s.style.left=(r.width/2)+'px'; s.style.top=(r.height*0.45)+'px'; s.style.setProperty('--dx',(Math.random()*320-160)+'px'); s.style.setProperty('--dy',(Math.random()*-360+60)+'px');
+  s.style.background=i%3?'#F7B93E':'#FFFFFF'; ph.appendChild(s); setTimeout((function(x){return function(){x.remove();};})(s),1100); } }
+function renderStatus(){ var c={ok:'ok',wait:'wait',fail:'fail'},lb={ok:'पहुँच गया',wait:'कतार में…',fail:'रुका'},h='',g=0,y=0,r=0;
+  Object.keys(S.st).forEach(function(n){ var v=S.st[n]; if(v==='ok')g++; else if(v==='wait')y++; else r++;
+    h+='<div class="st"><div class="l"><span>'+n+'</span><span class="'+c[v]+'">'+lb[v]+'</span></div>'+(v==='fail'?'<div style="font-size:13px;color:#FFB4B4;margin-top:4px">वजह: Page की अनुमति ख़त्म हो गई</div><button class="retry" data-r="'+n+'">फिर कोशिश</button>':'')+'</div>'; });
+  $('stList').innerHTML=h||'<p class="note">अभी कुछ भेजा नहीं है।</p>';
+  [].forEach.call(document.querySelectorAll('.retry'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-r'); S.st[n]='wait'; renderStatus(); say(n+': फिर कोशिश हो रही है…'); setTimeout(function(){ S.st[n]='ok'; renderStatus(); sound('ding'); buzz(25); say(n+' पर पहुँच गया।'); check(); },1300); }; });
+  $('dG').style.background=g?'#3DDC97':''; $('dY').style.background=y?'#F7B93E':''; $('dR').style.background=r?'#FF8A8A':'';
+  $('n-status').classList.toggle('pulse',r>0); }
+function check(){ var k=Object.keys(S.st); if(k.length&&k.every(function(n){return S.st[n]==='ok';})){
+  $('save2').textContent=$('save').textContent; $('doneBox').classList.remove('hide');
+  if(!S.firstFlight){ S.firstFlight=true; $('badge').classList.remove('hide'); }
+  $('n-status').classList.add('spark'); setTimeout(function(){$('n-status').classList.remove('spark');},2000);
+  stars(); buzz([60,40,90]); sound('ding'); say('सब जगह पहुँच गया! आपका '+$('save').textContent+' data बचा। ✨'); } }
+$('send').onclick=function(){
+  if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए।'); return; }
+  var names=Object.keys(S.on).filter(function(k){return S.on[k];}); if(!names.length){ say('कम से कम एक जगह चुनिए।'); return; }
+  try{ localStorage.setItem('jm_demo_last',JSON.stringify(S.on)); }catch(e){} S.last=JSON.parse(JSON.stringify(S.on));
+  if(S.fun){ var c=document.createElement('div'); c.className='card fly'; c.textContent='video'; $('drop').appendChild(c); setTimeout(function(){c.remove();},950); }
+  sound('whoosh'); buzz(40); say('उड़ान शुरू! '+names.length+' जगह भेज रहे हैं…');
+  S.st={}; names.forEach(function(n){S.st[n]='wait';}); $('doneBox').classList.add('hide'); renderStatus();
+  setTimeout(function(){ show('status'); },950);
+  names.forEach(function(n,i){ setTimeout(function(){ S.st[n]=(n==='Facebook')?'fail':'ok'; renderStatus();
+    if(n==='Facebook'){ buzz([30,60,30]); say('Facebook रुका: Page की अनुमति ख़त्म। "फिर कोशिश" दबाइए।'); } else { sound('tick'); buzz(20); say(n+' पर पहुँच गया।'); } check(); },1400+i*900); });
+};
+$('copy').onclick=function(){ var t=Object.keys(S.st).filter(function(n){return S.st[n]==='ok';}).map(function(n){return n+': [link]';}).join('\n');
+  if(!t){ say('अभी कोई link नहीं है।'); return; } try{ navigator.clipboard.writeText(t); }catch(e){} say('सबकी link copy हो गई — WhatsApp में चिपकाइए।'); };
+/* शादी */
+var items=[{id:'a',k:'scene',t:'दृश्य बदला: मंडप में प्रवेश',tm:'00:04:12'},{id:'b',k:'bad',t:'धुँधला हिस्सा (कैमरा 2)',tm:'00:09:30–00:10:05'},{id:'c',k:'dhol',t:'ढोल-ताली: वरमाला',tm:'00:18:40'},{id:'d',k:'bad',t:'अँधेरा हिस्सा (कैमरा 3)',tm:'00:22:10–00:23:00'},{id:'e',k:'dhol',t:'ढोल-ताली: पहला फेरा',tm:'00:31:05'},{id:'f',k:'scene',t:'दृश्य बदला: सिंदूर',tm:'00:44:50'}];
+var col={scene:'#8FB3FF',bad:'#F7B93E',dhol:'#FF9A4D'},ch={};
+var marks=[['8%','3px','scene'],['20%','4%','bad','b'],['39%','5px','dhol'],['47%','5%','bad','d'],['64%','5px','dhol'],['70%','3px','scene'],['93%','3px','scene']];
+function wed(){ $('tl').innerHTML=marks.map(function(m){ var op=(m[3]&&ch[m[3]]==='drop')?.2:.9; var dh=m[2]==='dhol'; return '<div style="position:absolute;left:'+m[0]+';width:'+m[1]+';top:'+(dh?'6px':'0')+';height:'+(dh?'34px':'46px')+';background:'+col[m[2]]+';opacity:'+op+';border-radius:3px"></div>'; }).join('');
+  $('sugs').innerHTML=items.map(function(it){ var c=ch[it.id]; var st=c==='keep'?'रखा':(c==='drop'?'हटाया':(it.k==='bad'?'सुझाव: हटाइए':'सुझाव: रखिए'));
+    return '<div class="st" style="display:flex;align-items:center;gap:10px;border-color:'+(c==='keep'?'#3DDC97':c==='drop'?'#FF8A8A':'#4B3FA8')+'"><span style="width:10px;height:38px;border-radius:3px;background:'+col[it.k]+'"></span><div style="flex:1"><div style="font-size:15px;font-weight:600">'+it.t+'</div><div style="font-size:12.5px;color:#C9C2F5">'+it.tm+' · '+st+'</div></div>'+
+    '<button class="ic" data-k="'+it.id+'" aria-label="रखिए" style="border-color:#3DDC97;'+(c==='keep'?'background:#1E5A47':'')+'">✓</button><button class="ic" data-d="'+it.id+'" aria-label="हटाइए" style="border-color:#FF8A8A;'+(c==='drop'?'background:#6B2330':'')+'">✕</button></div>'; }).join('');
+  [].forEach.call(document.querySelectorAll('[data-k]'),function(b){ b.onclick=function(){ ch[b.getAttribute('data-k')]='keep'; wed(); say('रखा।'); }; });
+  [].forEach.call(document.querySelectorAll('[data-d]'),function(b){ b.onclick=function(){ ch[b.getAttribute('data-d')]='drop'; wed(); say('हटाया — ✓ दबाकर वापस ला सकते हैं।'); }; });
+  $('stuTag').textContent=$('stu').value; $('stuTag').style.display=$('stu').value?'':'none'; }
+$('dropBad').onclick=function(){ ch.b='drop'; ch.d='drop'; wed(); buzz(30); say('दोनों पीले (बेकार) हिस्से हटा दिए। पसंद न आए तो ✓ दबाकर वापस लाइए।'); };
+$('stu').oninput=wed;
+[].forEach.call(document.querySelectorAll('.mk'),function(b){ b.onclick=function(){ sound('whoosh'); say(b.textContent+' बन रहा है… (नमूना)। गाना आप अपना जोड़ेंगे; publish से पहले copyright वाली चेतावनी आएगी।'); }; });
+plats(); renderStatus(); wed(); ring();
+})();
+</script>
+</body>
+</html>
