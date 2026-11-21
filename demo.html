@@ -35,7 +35,7 @@ h2{margin:0;font-size:16px;font-weight:600}
 .send.off{background:#8C7A4A}
 .note{margin:10px 0 0;font-size:13px;color:#C9C2F5;text-align:center}
 .tool{min-height:66px;border-radius:14px;border:1px solid #4B3FA8;background:#22177A;color:#F3F0FF;text-align:left;padding:10px 12px;cursor:pointer}
-.tool b{display:block;font-size:16px}.tool small{font-size:12.5px;color:#C9C2F5}
+.tool b{display:block;font-size:16px}.tool.used{border-color:#3DDC97;background:#1E3F5A}.tool.used b:after{content:" ✓";color:#3DDC97}.tool small{font-size:12.5px;color:#C9C2F5}
 .prev{height:180px;border-radius:16px;background:#0E0848;border:1px solid #3B2FA0;display:flex;align-items:center;justify-content:center;color:#C9C2F5;font-size:14px;position:relative}
 .st{border-radius:14px;background:#22177A;border:1px solid #4B3FA8;padding:12px;margin-bottom:8px}
 .st .l{display:flex;justify-content:space-between;font-size:16px;font-weight:600}
@@ -139,6 +139,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
       <div class="row"><h2>कहाँ भेजना है</h2><button class="ghost" id="last">पिछली बार जैसा</button></div>
       <div class="grid" id="plats"></div>
       <button class="send off" id="send">सब पर भेजिए</button>
+      <p class="note hide" id="decoLine" style="color:#F7B93E"></p>
       <p class="note">इस video पर आपका ≈ <b id="save">—</b> data बचेगा · 7 दिन बाद यहाँ से अपने-आप मिटेगा</p>
     </section>
     <!-- सजाइए -->
@@ -151,6 +152,8 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
         <button class="tool" data-t="Captions"><b>Captions</b><small>हिंदी में अपने-आप, छूकर सुधारिए</small></button>
         <button class="tool" data-t="Thumbnail"><b>Thumbnail</b><small>6 अच्छे frame + एक लाइन</small></button>
       </div>
+      <button class="send" id="editDone" style="margin-top:14px">✓ हो गया — अब भेजिए</button>
+      <p class="note" id="editNote">औज़ार छूकर लगाइए, फिर "हो गया" दबाइए।</p>
       <button class="ghost" id="onecap" style="width:100%;margin-top:10px;border-radius:14px;border-style:dashed">एक caption → सबमें (AI · जल्द)</button>
     </section>
     <!-- Status -->
@@ -243,7 +246,19 @@ $('t-new').onclick=function(){ show('new'); }; $('t-wed').onclick=function(){ sh
 $('last').onclick=function(){ S.on=S.last||{YouTube:true,Instagram:true,Facebook:false,Telegram:true}; plats(); say('पिछली बार जैसा: '+Object.keys(S.on).filter(function(k){return S.on[k];}).join(', ')+' चुन लिए।'); };
 $('fun').onclick=function(){ S.fun=!S.fun; ph.classList.toggle('fun',S.fun); this.textContent='मज़ा: '+(S.fun?'चालू':'बंद'); };
 $('voice').onclick=function(){ S.voice=!S.voice; this.classList.toggle('on',S.voice); say(S.voice?'आवाज़ चालू। अब हर बात बोलकर भी बताऊँगी।':'आवाज़ बंद।'); };
-[].forEach.call(document.querySelectorAll('.tool'),function(b){ b.onclick=function(){ say(b.getAttribute('data-t')+': असली app में यहाँ उसका औज़ार खुलेगा।'); }; });
+var deco={};
+function decoText(){ var k=Object.keys(deco); $('editNote').textContent=k.length?('लगाया: '+k.join(', ')+' · अब "हो गया" दबाइए'):'औज़ार छूकर लगाइए, फिर "हो गया" दबाइए।'; }
+[].forEach.call(document.querySelectorAll('.tool'),function(b){ b.onclick=function(){ var t=b.getAttribute('data-t');
+  if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए, फिर सजाइए।'); return; }
+  if(deco[t]){ delete deco[t]; b.classList.remove('used'); say(t+' हटाया।'); } else { deco[t]=1; b.classList.add('used'); sound('ding'); buzz(20); say(t+' लगा दिया ✓ (असली app में यहाँ उसका औज़ार खुलेगा)'); }
+  decoText(); }; });
+$('editDone').onclick=function(){
+  if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए।'); show('new'); return; }
+  var k=Object.keys(deco); show('new');
+  if(k.length){ $('decoLine').textContent='सजावट हो गई: '+k.join(', ')+' ✓'; $('decoLine').classList.remove('hide'); }
+  var sb=$('send'); try{ sb.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){ sb.scrollIntoView(); }
+  sb.classList.remove('spark'); void sb.offsetWidth; sb.classList.add('spark'); setTimeout(function(){ sb.classList.remove('spark'); },2000);
+  sound('tick'); say(k.length?'सजावट हो गई! अब नीचे "सब पर भेजिए" दबाइए।':'ठीक है, बिना सजाए। अब "सब पर भेजिए" दबाइए।'); };
 $('onecap').onclick=function(){ say('एक caption लिखिए, हर platform के हिसाब से अपने-आप बनेगा — यह AI वाला काम जल्द आएगा।'); };
 function stars(){ if(!S.fun) return; var r=ph.getBoundingClientRect(); for(var i=0;i<26;i++){ var s=document.createElement('div'); s.className='star fall';
   s.style.left=(r.width/2)+'px'; s.style.top=(r.height*0.45)+'px'; s.style.setProperty('--dx',(Math.random()*320-160)+'px'); s.style.setProperty('--dy',(Math.random()*-360+60)+'px');
