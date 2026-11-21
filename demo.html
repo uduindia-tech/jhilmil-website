@@ -145,6 +145,32 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 .wedbox .w3 button:first-child{border-color:#F7B93E}
 .edp,.plp{display:none}
 .glow{animation:spark .9s ease-out 3}
+.outonly{display:none!important}.anon .outonly{display:block!important}.anon .inonly{display:none!important}
+.anon nav{grid-template-columns:1fr 1fr!important}
+.ccard{border-radius:16px;background:#1D1270;border:1px solid #3B2FA0;padding:12px 14px;margin-top:10px;text-align:left}
+.ccard b{font-size:16px}.ccard p{margin:4px 0 0;font-size:13.5px;color:#C9C2F5}
+.vxi{display:inline-flex;gap:6px;vertical-align:middle;margin-left:8px}
+.vx{min-height:32px;padding:0 9px;border-radius:10px;border:1px solid #F7B93E;background:linear-gradient(135deg,#3B2FA0,#5A2FA0);color:#F7B93E;font-size:12px;font-weight:800;cursor:pointer;font-family:'Hind',sans-serif;letter-spacing:.2px}
+.wsteps{display:flex;gap:4px;overflow-x:auto;margin:4px 0 10px;padding-bottom:2px}
+.wsteps button{flex:1 0 auto;min-height:40px;padding:0 10px;border-radius:12px;border:1px solid #4B3FA8;background:transparent;color:#C9C2F5;font-size:13px;cursor:pointer;white-space:nowrap}
+.wsteps button.on{background:#3B2FA0;color:#fff;border-color:#F7B93E}.wsteps button.dn{color:#3DDC97;border-color:#3DDC97}
+.wp h2{font-size:18px;margin:4px 0 10px}
+.fl{display:block;font-size:14px;font-weight:600;margin-top:12px}
+.fl input{display:block;margin-top:6px;width:100%;min-height:46px;border-radius:12px;border:1px solid #4B3FA8;background:#150C5E;color:#F3F0FF;padding:0 12px;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.chips button{min-height:40px;padding:0 12px;border-radius:20px;border:1px solid #4B3FA8;background:#1D1270;color:#F3F0FF;font-size:14px;cursor:pointer}.chips button.on{background:#F7B93E;color:#150C5E;border-color:#F7B93E;font-weight:700}
+.stepper{display:inline-flex;align-items:center;gap:14px;margin-top:6px}.stepper button{width:44px;height:44px;border-radius:12px;border:1px solid #F7B93E;background:transparent;color:#F7B93E;font-size:22px;cursor:pointer}.stepper b{font-size:20px;min-width:20px;text-align:center}
+.bar{height:10px;border-radius:5px;background:#2A1F86;margin-top:4px;overflow:hidden}.bar div{height:10px;width:0;background:#F7B93E;transition:width .4s}
+.wf{display:flex;align-items:center;gap:8px;padding:10px;border-radius:12px;background:#1D1270;border:1px solid #3B2FA0;margin-bottom:6px;font-size:14px}
+.wf .n{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.wf small{color:#C9C2F5;font-size:12px}
+.wf .cam{min-height:36px;padding:0 8px;border-radius:10px;border:1px solid #8FB3FF;background:transparent;color:#8FB3FF;font-size:12.5px;cursor:pointer}
+.wave{display:flex;align-items:center;gap:10px;margin-bottom:10px}.wave span{width:64px;font-size:13px;color:#C9C2F5;flex:none}
+.wave .w{flex:1;height:44px;border-radius:10px;background:#0E0848;overflow:hidden;position:relative}
+.wave .ws{position:absolute;left:0;top:0;height:44px;display:flex;align-items:center;gap:2px;transition:transform .9s ease}
+.wave .ws i{display:block;width:4px;border-radius:2px;background:#8FB3FF}
+.wave.ok .ws i{background:#3DDC97}.wave.bad .ws i{background:#FF8A8A}
+.wave .nud{display:none;gap:4px}.wave.bad .nud{display:flex}.wave .nud button{width:36px;height:36px;border-radius:10px;border:1px solid #FF8A8A;background:transparent;color:#FF8A8A;cursor:pointer}
+.struct{display:flex;gap:4px;margin-top:6px}.struct div{flex:1;padding:8px;border-radius:10px;background:#22177A;font-size:12.5px;line-height:1.35}.struct div b{display:block;color:#F7B93E;font-size:12px}
+.kind{min-height:62px;border-radius:14px;border:1px solid #4B3FA8;background:#1D1270;color:#F3F0FF;cursor:pointer;padding:6px}.kind b{display:block;font-size:15px}.kind small{font-size:11.5px;color:#C9C2F5}.kind.on{border-color:#F7B93E;background:#3B2FA0}
 /* laptop: पूरी स्क्रीन वाला रूप */
 .rail-h{display:none}
 @media(min-width:900px){
@@ -172,7 +198,8 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
  .flash{animation:spark .9s ease-out 2}
  .dock nav{display:none!important}
  .edp{display:block;flex:1;min-height:0;overflow-y:auto;margin-bottom:10px}
- .edp h2{font-family:'Baloo 2',sans-serif;font-size:22px;margin:0}.edp .s{font-size:13px;color:#C9C2F5;margin-bottom:10px}
+ .edp h2{font-family:'Baloo 2',sans-serif;font-size:22px;margin:0;display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+ .edp .vxi{margin-left:6px;gap:4px}.edp .vx{padding:0 6px;font-size:11px;min-height:30px}.edp .s{font-size:13px;color:#C9C2F5;margin-bottom:10px}
  .edi{width:100%;text-align:left;margin-bottom:8px;padding:10px 12px;border-radius:14px;border:1px solid #4B3FA8;background:#1D1270;color:#F3F0FF;cursor:pointer;display:block}
  .edi b{font-size:15px}.edi small{display:block;font-size:12px;color:#C9C2F5;margin-top:2px}
  .edi i{float:right;font-style:normal;font-size:11px;font-weight:700;background:#F7B93E;color:#150C5E;border-radius:8px;padding:1px 7px}
@@ -199,7 +226,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 <div class="phone fun" id="ph">
   <div class="top">
     <div class="logo" id="logo" style="cursor:pointer" title="Home">Jhil<span>मिल</span></div>
-    <div style="display:flex;gap:6px"><button class="chip" id="accBtn">☰ मेनू</button><button class="chip" id="fun">मज़ा: चालू</button></div>
+    <div style="display:flex;gap:6px"><button class="chip outonly" id="tLogin">Log in</button><button class="chip outonly" id="tSign" style="background:#F7B93E;color:#150C5E;border-color:#F7B93E;font-weight:700">Sign up</button><button class="chip inonly" id="accBtn">☰ मेनू</button><button class="chip inonly" id="fun">मज़ा: चालू</button></div>
   </div>
   <div class="navrow" role="navigation" aria-label="Home, पीछे, आगे"><button id="hb">⌂ Home</button><button id="bb">‹ पीछे</button><button id="fb">आगे ›</button></div>
   <div class="tabs" role="tablist" aria-label="screen">
@@ -249,16 +276,17 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
         <b id="dropT">Video यहाँ डालिए</b><small id="dropS">छूकर अपने फ़ोन से video चुनिए · data बचाने वाला upload</small>
       </button>
       <input type="file" id="file" accept="video/*" class="hide">
-      <div class="row"><h2>कहाँ भेजना है</h2><button class="ghost" id="last">पिछली बार जैसा</button></div>
-      <div class="grid" id="plats"></div>
-      <button class="send off" id="send">सब पर भेजिए</button>
+      <div class="outonly"><div class="ccard"><b>एक बार upload</b><p>अपना video एक बार चढ़ाइए। बाक़ी काम Jhilmil करेगा।</p></div><div class="ccard"><b>सब platforms एक touch में</b><p>जोड़े हुए accounts पर एक साथ post, बार-बार login की झंझट नहीं।</p></div><div class="ccard"><b>एक screen पर editing</b><p>काटना, सही size, और अपनी भाषा में captions, सब एक ही जगह।</p></div></div>
+      <div class="row inonly"><h2>कहाँ भेजना है</h2><button class="ghost" id="last">पिछली बार जैसा</button></div>
+      <div class="grid inonly" id="plats"></div>
+      <button class="send off inonly" id="send">सब पर भेजिए</button>
       <p class="note hide" id="decoLine" style="color:#F7B93E"></p>
-      <p class="note">इस video पर आपका ≈ <b id="save">—</b> data बचेगा · 7 दिन बाद यहाँ से अपने-आप मिटेगा</p>
+      <p class="note inonly">इस video पर आपका ≈ <b id="save">—</b> data बचेगा · 7 दिन बाद यहाँ से अपने-आप मिटेगा</p>
       <div class="wedbox"><b>💍 शादी / समारोह</b><span class="s">शादी और function की editing के लिए</span><span class="pro">सिर्फ़ professionals के लिए<br>Paid Professional packs में आता है</span><div class="w3"><button id="wV">🎥 वीडियो</button><button class="wS">📷 फ़ोटो</button><button class="wS">📖 एल्बम</button></div></div>
     </section>
     <!-- सजाइए -->
     <section id="s-edit" class="hide">
-      <h1>सजाइए</h1>
+      <h1>सजाइए<span class="vxi"><button class="vx" data-vfx="1" title="VFX Level 1">✦ VFX 1</button><button class="vx" data-vfx="2" title="VFX Level 2">✦✦ VFX 2</button></span></h1>
       <div class="prev" id="prev">[video का preview]</div>
       <div class="grid" style="margin-top:12px">
         <button class="tool" data-t="काटिए"><b>काटिए</b><small>शुरू-अंत, बीच का टुकड़ा</small></button>
@@ -280,41 +308,89 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
     </section>
     <!-- शादी -->
     <section id="s-wed" class="hide">
-      <h1>शादी / समारोह <small style="font-size:12px;background:#F7B93E;color:#150C5E;border-radius:8px;padding:2px 8px;vertical-align:middle">Professional</small></h1>
-      <div style="font-size:14px;color:#C9C2F5">राहुल–प्रिया · फेरे · 3 कैमरे</div>
-      <div style="display:flex;justify-content:space-between;font-size:13px;color:#C9C2F5;margin-top:10px"><span>Trial की जगह</span><span>3.2 GB / 5 GB</span></div>
-      <div style="height:8px;border-radius:4px;background:#2A1F86;margin-top:4px"><div style="width:64%;height:8px;border-radius:4px;background:#F7B93E"></div></div>
-      <div class="prev" style="margin-top:12px" id="wprev">[footage का preview]<span id="stuTag" style="position:absolute;right:10px;bottom:8px;font-size:12px;font-weight:700;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:6px"></span></div>
-      <h2 style="margin:14px 0 6px">Timeline · कट के सुझाव</h2>
-      <div id="tl" style="height:46px;border-radius:10px;background:#2A1F86;position:relative;overflow:hidden"></div>
-      <div style="display:flex;gap:12px;font-size:12px;color:#C9C2F5;margin-top:6px;flex-wrap:wrap"><span>▮ <span style="color:#8FB3FF">दृश्य बदला</span></span><span>▮ <span style="color:#F7B93E">धुँधला/अँधेरा</span></span><span>▮ <span style="color:#FF9A4D">ढोल-ताली वाले पल</span></span></div>
-      <div id="sugs" style="margin-top:12px"></div>
-      <button class="ghost" id="dropBad" style="width:100%;border-radius:14px">सारे बेकार (पीले) हिस्से हटाइए</button>
-      <div style="margin-top:14px;padding:12px;border-radius:14px;background:#1D1270;border:1px solid #3B2FA0">
-        <label for="stu" style="font-size:15px;font-weight:600">अपने स्टूडियो का नाम video पर</label>
-        <input id="stu" value="शर्मा स्टूडियो, पटना" style="margin-top:8px;width:100%;min-height:44px;border-radius:10px;border:1px solid #4B3FA8;background:#150C5E;color:#F3F0FF;padding:0 12px;font-size:15px">
-        <div style="font-size:12.5px;color:#C9C2F5;margin-top:6px">ग्राहक को भेजे video के कोने में आपका नाम, हमारा नहीं।</div>
+      <h1>💍 शादी / समारोह <small style="font-size:12px;background:#F7B93E;color:#150C5E;border-radius:8px;padding:2px 8px;vertical-align:middle;font-family:'Hind',sans-serif">Professional · trial</small></h1>
+      <div class="wsteps" id="wsteps"></div>
+      <div id="wproj" class="note" style="text-align:left;margin:0 0 8px"></div>
+      <!-- W-01 -->
+      <div class="wp" id="wp1">
+        <h2>1 · नया project</h2>
+        <label class="fl">Project का नाम<input id="wName" placeholder="जैसे: राहुल–प्रिया, 12 Dec" maxlength="40"></label>
+        <div class="fl">कौन-सा function<div class="chips" id="wFn"></div></div>
+        <div class="fl">कितने कैमरे<div class="stepper"><button id="camM" aria-label="कम">−</button><b id="camN">3</b><button id="camP" aria-label="ज़्यादा">+</button></div></div>
+        <label class="ck" id="wck"><input type="checkbox" id="wCons"><span>ग्राहक (दूल्हा-दुल्हन/परिवार) की <b>सहमति ली है</b> कि उनका video यहाँ edit होगा <b style="color:#F7B93E">(ज़रूरी)</b></span></label>
+        <p class="note" style="text-align:left">Trial: एक project में 5 GB तक · ग्राहक का footage 30 दिन बाद (या project ख़त्म होते ही) अपने-आप मिटेगा · किसी और को नहीं दिखेगा, सीखने में इस्तेमाल नहीं।</p>
+        <button class="send off" id="wMake">project बनाइए</button>
       </div>
-      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:14px">
-        <button class="send mk" style="margin:0;font-size:16px;min-height:52px">Highlight</button>
-        <button class="ghost mk" style="border-radius:14px">Teaser</button>
-        <button class="ghost mk" style="border-radius:14px">Reels</button>
+      <!-- W-02 -->
+      <div class="wp hide" id="wp2">
+        <h2>2 · Footage डालिए</h2>
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:#C9C2F5"><span>Trial की जगह</span><span id="wGB">0 / 5 GB</span></div>
+        <div class="bar"><div id="wBar"></div></div>
+        <input type="file" id="wFiles" accept="video/*" multiple class="hide">
+        <div style="display:flex;gap:8px;margin-top:12px"><button class="ghost" id="wPick" style="flex:1;border-radius:14px">📂 अपनी files चुनिए</button><button class="ghost" id="wSample" style="flex:1;border-radius:14px">नमूना files डालिए</button></div>
+        <div id="wFileList" style="margin-top:10px"></div>
+        <p class="note hide" id="wFull" style="color:#FFB4B4;text-align:left">इस project की 5 GB की जगह भर गई (trial)। कुछ files हटाइए या अगले function का नया project बनाइए।</p>
+        <button class="send off" id="w2Next">आगे: कैमरे मिलाइए ›</button>
+      </div>
+      <!-- W-04 sync -->
+      <div class="wp hide" id="wp3">
+        <h2>3 · कैमरे मिलाइए (आवाज़ से)</h2>
+        <p class="note" style="text-align:left">हर कैमरे की आवाज़ की लहर मिलाकर सबको एक समय पर लाते हैं — ढोल, मंत्र, ताली सब एक साथ।</p>
+        <div id="wWaves"></div>
+        <button class="send" id="wSync">अपने-आप मिलाइए</button>
+        <p class="note hide" id="wSyncMsg" style="text-align:left"></p>
+        <button class="send off" id="w3Next" style="margin-top:8px">आगे: कट के सुझाव ›</button>
+      </div>
+      <!-- W-03 cuts -->
+      <div class="wp hide" id="wp4">
+        <h2>4 · कट के सुझाव</h2>
+        <div class="prev" id="wprev">[footage का preview]</div>
+        <div id="tl" style="height:46px;border-radius:10px;background:#2A1F86;position:relative;overflow:hidden;margin-top:12px"></div>
+        <div style="display:flex;gap:12px;font-size:12px;color:#C9C2F5;margin-top:6px;flex-wrap:wrap"><span>▮ <span style="color:#8FB3FF">दृश्य बदला</span></span><span>▮ <span style="color:#F7B93E">धुँधला/अँधेरा</span></span><span>▮ <span style="color:#FF9A4D">ढोल-ताली वाले पल</span></span></div>
+        <div id="sugs" style="margin-top:12px"></div>
+        <button class="ghost" id="dropBad" style="width:100%;border-radius:14px">सारे बेकार (पीले) हिस्से हटाइए</button>
+        <button class="send" id="w4Next">आगे: Highlight बनाइए ›</button>
+      </div>
+      <!-- W-05 -->
+      <div class="wp hide" id="wp5">
+        <h2>5 · Highlight / Teaser / Reels</h2>
+        <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))" id="wKinds"></div>
+        <div class="fl" style="margin-top:12px">ढाँचे का सुझाव<div class="struct" id="wStruct"></div></div>
+        <input type="file" id="wSong" accept="audio/*" class="hide">
+        <button class="ghost" id="wSongB" style="width:100%;border-radius:14px;margin-top:10px">🎵 अपना गाना डालिए</button>
+        <p class="note" id="wSongN" style="text-align:left">गाना आप ख़ुद जोड़ेंगी/जोड़ेंगे — हमारी कोई music library नहीं (copyright)।</p>
+        <button class="send" id="wBuild">बनाइए</button>
+        <div id="wBuilt" class="done hide"></div>
+        <button class="send off" id="w5Next" style="margin-top:8px">आगे: ग्राहक को दीजिए ›</button>
+      </div>
+      <!-- W-06 -->
+      <div class="wp hide" id="wp6">
+        <h2>6 · Delivery</h2>
+        <div class="prev" id="wprev2">[तैयार highlight]<span id="stuTag" style="position:absolute;right:10px;bottom:8px;font-size:12px;font-weight:700;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:6px"></span></div>
+        <div style="margin-top:12px;padding:12px;border-radius:14px;background:#1D1270;border:1px solid #3B2FA0">
+          <label for="stu" style="font-size:15px;font-weight:600">अपने स्टूडियो का नाम video पर</label>
+          <input id="stu" value="शर्मा स्टूडियो, पटना" maxlength="40" style="margin-top:8px;width:100%;min-height:44px;border-radius:10px;border:1px solid #4B3FA8;background:#150C5E;color:#F3F0FF;padding:0 12px;font-size:15px">
+          <div style="font-size:12.5px;color:#C9C2F5;margin-top:6px">ग्राहक को भेजे video के कोने में आपका नाम, हमारा नहीं।</div>
+        </div>
+        <div class="grid" style="margin-top:12px"><button class="ghost" id="wDl" style="border-radius:14px">⬇ WhatsApp-साइज़ file</button><button class="ghost" id="wLink" style="border-radius:14px">🔗 ग्राहक के लिए link</button></div>
+        <label class="ck" id="wck2"><input type="checkbox" id="wCopy"><span>मैं समझती/समझता हूँ: <b>गाने पर YouTube/Instagram copyright दावा लगा सकते हैं</b>; अधिकार मेरे पास हों तभी publish करूँगी/करूँगा। <b style="color:#F7B93E">(publish के लिए ज़रूरी)</b></span></label>
+        <button class="send off" id="wPub">📤 सब platforms पर publish</button>
       </div>
     </section>
     <p class="foot">यह <b>नमूना (demo)</b> है: असली upload या post नहीं होता, आपका video फ़ोन से बाहर नहीं जाता।</p>
   </div>
 
   <div class="dock">
-    <div class="edp"><h2>✂️ Editing</h2><div class="s">हर बटन में कई काम</div><button class="edi live" data-ed="काटिए" data-soon="0"><b>काटिए और जोड़िए</b><small>trim, टुकड़े, जोड़ना, speed, उलटा</small></button><button class="edi live" data-ed="सही आकार" data-soon="0"><b>सही आकार</b><small>9:16 / 16:9 / 1:1, चेहरा पकड़कर अपने-आप</small></button><button class="edi live" data-ed="Captions" data-soon="0"><b>Captions</b><small>अपनी भाषा में अपने-आप, style और सुधार</small></button><button class="edi live" data-ed="Thumbnail" data-soon="0"><b>Thumbnail</b><small>सबसे अच्छा frame + लिखाई, हर platform का अलग</small></button><button class="edi" data-ed="एक touch में सुधार" data-soon="1"><b>एक touch में सुधार</b><i>जल्द</i><small>आवाज़ साफ़, चुप्पी हटाना, रंग, हिलना कम</small></button><button class="edi" data-ed="संगीत और आवाज़" data-soon="1"><b>संगीत और आवाज़</b><i>जल्द</i><small>music, voiceover, तेज़ आवाज़ पर music धीमा</small></button><button class="edi" data-ed="Look और लिखाई" data-soon="1"><b>Look और लिखाई</b><i>जल्द</i><small>filters, text, stickers, अपना logo</small></button><button class="edi" data-ed="लंबे video से Shorts" data-soon="1"><b>लंबे video से Shorts</b><i>जल्द</i><small>अपने-आप छोटे clips निकालना</small></button><button class="edi" data-ed="VFX Level 1" data-soon="1"><b>VFX Level 1</b><i>जल्द</i><small>filters, glitch, transitions, चलती लिखाई</small></button><button class="edi" data-ed="VFX Level 2" data-soon="1"><b>VFX Level 2</b><i>जल्द</i><small>AI background, green screen, slow-mo</small></button><button class="edi" data-ed="Cinema VFX" data-soon="1"><b>Cinema VFX</b><i>जल्द</i><small>3D, tracking, particles</small></button></div>
+    <div class="edp"><h2>✂️ Editing<span class="vxi"><button class="vx" data-vfx="1" title="VFX Level 1">✦ VFX 1</button><button class="vx" data-vfx="2" title="VFX Level 2">✦✦ VFX 2</button></span></h2><div class="s">हर बटन में कई काम</div><button class="edi live" data-ed="काटिए" data-soon="0"><b>काटिए और जोड़िए</b><small>trim, टुकड़े, जोड़ना, speed, उलटा</small></button><button class="edi live" data-ed="सही आकार" data-soon="0"><b>सही आकार</b><small>9:16 / 16:9 / 1:1, चेहरा पकड़कर अपने-आप</small></button><button class="edi live" data-ed="Captions" data-soon="0"><b>Captions</b><small>अपनी भाषा में अपने-आप, style और सुधार</small></button><button class="edi live" data-ed="Thumbnail" data-soon="0"><b>Thumbnail</b><small>सबसे अच्छा frame + लिखाई, हर platform का अलग</small></button><button class="edi" data-ed="एक touch में सुधार" data-soon="1"><b>एक touch में सुधार</b><i>जल्द</i><small>आवाज़ साफ़, चुप्पी हटाना, रंग, हिलना कम</small></button><button class="edi" data-ed="Look और लिखाई" data-soon="1"><b>Look और लिखाई</b><i>जल्द</i><small>filters, text, stickers, अपना logo</small></button><button class="edi" data-ed="लंबे video से Shorts" data-soon="1"><b>लंबे video से Shorts</b><i>जल्द</i><small>अपने-आप छोटे clips निकालना</small></button><button class="edi" data-ed="संगीत और आवाज़" data-soon="1"><b>संगीत और आवाज़</b><i>जल्द</i><small>music, voiceover, तेज़ आवाज़ पर music धीमा</small></button><button class="edi" data-ed="Cinema VFX" data-soon="1"><b>Cinema VFX</b><i>जल्द</i><small>3D, tracking, particles · आने वाला</small></button></div>
     <div class="talk"><span id="talk">नमस्ते! बीच का सुनहरा बटन छूइए और अपने फ़ोन से कोई भी video चुनिए।</span>
       <button class="ic" id="voice" aria-label="आवाज़ में सुनिए"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div>
     <nav aria-label="मुख्य">
-      <button class="nb" id="n-edit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/></svg>सजाइए</button>
-      <div><button class="big" id="n-new" aria-label="नया video">
+      <button class="nb outonly" id="n-plat" style="display:none">🔗<br>Platforms</button><button class="nb" id="n-edit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/></svg>सजाइए</button>
+      <div class="inonly"><button class="big" id="n-new" aria-label="नया video">
         <svg class="ring" width="78" height="78" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="5"/><circle id="ring" cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="219.9" stroke-dashoffset="219.9"/></svg>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
       </button><div class="rail-h">नया video</div></div>
-      <button class="nb" id="n-status"><span class="dots" aria-hidden="true"><i id="dG"></i><i id="dY"></i><i id="dR"></i></span>Status</button>
+      <button class="nb inonly" id="n-status"><span class="dots" aria-hidden="true"><i id="dG"></i><i id="dY"></i><i id="dR"></i></span>Status</button>
       <button class="nb deskonly" id="d-lib">📚 Library</button><button class="nb deskonly" id="d-acc">🔗 Accounts</button><button class="nb deskonly" id="d-set">⚙️ Settings</button>
     </nav>
   </div>
@@ -341,14 +417,16 @@ function say(t){ $('talk').textContent=t; if(S.voice){ try{ var u=new SpeechSynt
 function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
 document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
 function desk(){ return window.matchMedia('(min-width:900px)').matches; }
-function paint(sc){ if(!S.logged&&sc!=='login') sc='login'; if(S.logged&&sc==='login') sc='new';
+function paint(sc){ if(!S.logged&&sc!=='login'&&sc!=='new'){ sc='login'; $('loginMsg').textContent='पहले Log in कीजिए — फिर यह काम खुलेगा। (ऊपर Privacy टिक, फिर Google)'; $('loginMsg').style.color='#F7B93E'; } if(S.logged&&sc==='login') sc='new';
+  ph.classList.toggle('anon',!S.logged);
   if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); try{ $('stList').scrollIntoView({behavior:'smooth',block:'nearest'}); }catch(e){} sc=(S.screen==='status'||S.screen==='prev'||S.screen==='login')?'new':S.screen; }
   ph.classList.toggle('out',sc==='login'); if(sc==='lib') renderLib(); if(sc==='set') renderSet(); if(sc==='acc') renderAcc();
   S.screen=sc; ['new','edit','status','wed','login','acc','prev','lib','set'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
   $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
   $('t-new').classList.toggle('on',['new','edit','status','prev'].indexOf(sc)>=0); ['lib','acc','set'].forEach(function(k){ var d=$('d-'+k); if(d) d.classList.toggle('cur',sc===k); }); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; return sc; }
 var H=[],HI=-1;
-function homeSc(){ return S.logged?'new':'login'; }
+function homeSc(){ return 'new'; }
+function needLogin(){ show('login'); say('पहले Log in कीजिए।'); }
 function navUI(){ $('bb').disabled=HI<=0; $('fb').disabled=HI>=H.length-1; $('hb').disabled=false; }
 function show(sc,how){ var f=paint(sc);
   if(how!=='nav'&&H[HI]!==f){ H=H.slice(0,HI+1); H.push(f); HI++; try{ if(HI===0) history.replaceState({jm:HI},'','#'+f); else history.pushState({jm:HI},'','#'+f); }catch(e){} }
@@ -372,12 +450,13 @@ function startUpload(f){
       $('n-edit').classList.add('spark'); setTimeout(function(){$('n-edit').classList.remove('spark');},2000); sound('ding'); buzz(30);
       say('Video तैयार! अब सजाइए, या सीधे "सब पर भेजिए"।'); } },80);
 }
-$('drop').onclick=function(){ if(S.up) return; $('file').click(); };
+$('drop').onclick=function(){ if(!S.logged){ needLogin(); return; } if(S.up) return; $('file').click(); };
 $('file').onchange=function(){ var f=this.files&&this.files[0]; if(f) startUpload(f); this.value=''; };
 $('n-new').onclick=function(){ if(S.screen!=='new'){ show('new'); return; } if(!S.up) $('file').click(); };
 $('n-edit').onclick=function(){ show('edit'); };
+$('n-plat').onclick=function(){ needLogin(); }; $('tLogin').onclick=function(){ show('login'); }; $('tSign').onclick=function(){ show('login'); say('Sign up भी Google से — एक ही कदम।'); };
 $('n-status').onclick=function(){ show('status'); if(!Object.keys(S.st).length) say('अभी कुछ भेजा नहीं है।'); };
-$('t-new').onclick=function(){ show('new'); }; $('t-wed').onclick=function(){ show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
+$('t-new').onclick=function(){ show('new'); }; $('t-wed').onclick=function(){ wOpen(); return; show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
 $('last').onclick=function(){ var L=S.last||{}; Object.keys(S.on).forEach(function(k){ S.on[k]=!!L[k]; }); if(!S.last){ say('अभी पिछली बार जैसा कुछ नहीं — पहली बार भेजिए, फिर याद रहेगा।'); plats(); return; } plats(); say('पिछली बार जैसा: '+Object.keys(S.on).filter(function(k){return S.on[k];}).join(', ')+' चुन लिए।'); };
 $('fun').onclick=function(){ S.fun=!S.fun; ph.classList.toggle('fun',S.fun); this.textContent='मज़ा: '+(S.fun?'चालू':'बंद'); };
 $('voice').onclick=function(){ S.voice=!S.voice; this.classList.toggle('on',S.voice); say(S.voice?'आवाज़ चालू। अब हर बात बोलकर भी बताऊँगी।':'आवाज़ बंद।'); };
@@ -470,7 +549,6 @@ function wed(){ $('tl').innerHTML=marks.map(function(m){ var op=(m[3]&&ch[m[3]]=
   $('stuTag').textContent=$('stu').value; $('stuTag').style.display=$('stu').value?'':'none'; }
 $('dropBad').onclick=function(){ ch.b='drop'; ch.d='drop'; wed(); buzz(30); say('दोनों पीले (बेकार) हिस्से हटा दिए। पसंद न आए तो ✓ दबाकर वापस लाइए।'); };
 $('stu').oninput=wed;
-[].forEach.call(document.querySelectorAll('.mk'),function(b){ b.onclick=function(){ sound('whoosh'); say(b.textContent+' बन रहा है… (नमूना)। गाना आप अपना जोड़ेंगे; publish से पहले copyright वाली चेतावनी आएगी।'); }; });
 /* Preview · Library · Settings */
 var LIB=ld('jm_demo_lib',[]); S.firstFlight=ld('jm_demo_first',false); S.saver=ld('jm_demo_saver',true); S.lang='hi'; S.theme='dark';
 function saveLib(){ sv('jm_demo_lib',LIB.map(function(e){ return {id:e.id,name:e.name,t:e.t,save:e.save,when:e.when,pl:e.pl}; })); }
@@ -528,6 +606,80 @@ function menu(){ var b=sheet('मेनू','<button class="mi" data-go="acc">�
   [].forEach.call(b.querySelectorAll('[data-go]'),function(x){ x.onclick=function(){ var g=x.getAttribute('data-go'); b.remove(); if(g==='out') $('logout').onclick(); else openSc(g); }; }); }
 function openSc(g){ if(g==='lib') renderLib(); if(g==='set') renderSet(); if(g==='acc') renderAcc(); show(g); }
 $('d-lib').onclick=function(){ openSc('lib'); }; $('d-acc').onclick=function(){ openSc('acc'); }; $('d-set').onclick=function(){ openSc('set'); };
+
+/* VFX icons */
+var VFX={1:['✦ VFX Level 1',['Look effects — filters, glow, glitch','Transitions — clips के बीच सुंदर बदलाव','Speed ramp — एक ही clip में धीमा-तेज़','चलती लिखाई, keyframes']],2:['✦✦ VFX Level 2',['Background — AI से हटाना या बदलना','Green screen — हरा/नीला पर्दा हटाना','कम हिलता video','Smooth slow-motion']]};
+[].forEach.call(document.querySelectorAll('.vx'),function(b){ b.onclick=function(e){ e.stopPropagation(); var v=VFX[b.getAttribute('data-vfx')];
+  sheet(v[0]+' · Advanced','<p>'+v[1].map(function(x){return '• '+x;}).join('<br>')+'</p><p><small>Advanced काम — paid plan के अलग level में मिलेगा (योजना)। अभी <b>जल्द</b>। Cinema VFX (3D, tracking) बाद में आएगा।</small></p>','ठीक है',function(){},'बंद'); }; });
+/* 💍 शादी मोड W-01…W-06 */
+var W=ld('jm_demo_wp',null), FN=['हल्दी','मेहंदी','बारात','फेरे','Reception'], WL=['Project','Footage','Sync','कट','Highlight','Delivery'], wTmp={fn:'फेरे',cams:3};
+function wSave(){ sv('jm_demo_wp',W); }
+function wSteps(cur){ $('wsteps').innerHTML=WL.map(function(l,i){ var n=i+1,dn=W&&W.done&&W.done[n]; return '<button data-ws="'+n+'" class="'+(n===cur?'on':dn?'dn':'')+'">'+(dn?'✓ ':n+' · ')+l+'</button>'; }).join('');
+  [].forEach.call($('wsteps').querySelectorAll('[data-ws]'),function(b){ b.onclick=function(){ var n=+b.getAttribute('data-ws'); if(n>1&&!(W&&W.done&&W.done[n-1])){ say('पहले पिछला कदम पूरा कीजिए।'); return; } wStep(n); }; }); }
+function wStep(n){ for(var i=1;i<=6;i++) $('wp'+i).classList.toggle('hide',i!==n); if(W){ W.step=n; wSave(); } wSteps(n);
+  $('wproj').textContent=W?('📁 '+W.name+' · '+W.fn+' · '+W.cams+' कैमरे'):''; $('body').scrollTop=0;
+  if(n===2) wFilesR(); if(n===3) wWaves(); if(n===4) wed(); if(n===5) wKinds(); if(n===6) wed(); }
+function wOpen(){ show('wed'); wStep(W&&W.step?W.step:1); say(W?'आपका project: '+W.name:'शादी मोड: पहले project बनाइए।'); }
+function wDone(n){ W.done=W.done||{}; W.done[n]=true; wSave(); sound('ding'); buzz(25); }
+// W-01
+$('wFn').innerHTML=FN.map(function(f){ return '<button data-fn="'+f+'">'+f+'</button>'; }).join('');
+function w1(){ [].forEach.call($('wFn').querySelectorAll('button'),function(b){ b.classList.toggle('on',b.getAttribute('data-fn')===wTmp.fn); }); $('camN').textContent=wTmp.cams; $('wMake').classList.toggle('off',!($('wName').value.trim()&&$('wCons').checked)); }
+[].forEach.call($('wFn').querySelectorAll('button'),function(b){ b.onclick=function(){ wTmp.fn=b.getAttribute('data-fn'); w1(); }; });
+$('camM').onclick=function(){ wTmp.cams=Math.max(1,wTmp.cams-1); w1(); }; $('camP').onclick=function(){ wTmp.cams=Math.min(4,wTmp.cams+1); w1(); };
+$('wName').oninput=w1; $('wCons').onchange=w1;
+$('wMake').onclick=function(){ if(!$('wName').value.trim()){ say('Project का नाम लिखिए।'); $('wName').focus(); return; }
+  if(!$('wCons').checked){ var k=$('wck'); k.classList.remove('need'); void k.offsetWidth; k.classList.add('need'); say('ग्राहक की सहमति वाला टिक ज़रूरी है।'); return; }
+  W={name:$('wName').value.trim(),fn:wTmp.fn,cams:wTmp.cams,files:[],done:{},kind:'Highlight',t:Date.now()}; wDone(1); wStep(2); say('Project बन गया! अब footage डालिए।'); };
+// W-02
+function wGB(){ return (W.files||[]).reduce(function(a,f){return a+f.gb;},0); }
+function wFilesR(){ var g=wGB(); $('wGB').textContent=g.toFixed(1)+' / 5 GB'; $('wBar').style.width=Math.min(100,g/5*100)+'%';
+  $('wFileList').innerHTML=W.files.map(function(f,i){ return '<div class="wf"><span class="n">🎞 '+f.n+'<br><small>'+f.gb.toFixed(2)+' GB · '+(f.p<100?'चढ़ रहा है '+f.p+'%':'✓ चढ़ गया')+'</small></span><button class="cam" data-cam="'+i+'">कैमरा '+f.cam+'</button><button class="ic" data-rm="'+i+'" aria-label="हटाइए" style="border-color:#FF8A8A;min-width:40px;min-height:40px">✕</button></div>'; }).join('');
+  [].forEach.call($('wFileList').querySelectorAll('[data-cam]'),function(b){ b.onclick=function(){ var f=W.files[+b.getAttribute('data-cam')]; f.cam=f.cam%W.cams+1; wSave(); wFilesR(); }; });
+  [].forEach.call($('wFileList').querySelectorAll('[data-rm]'),function(b){ b.onclick=function(){ W.files.splice(+b.getAttribute('data-rm'),1); $('wFull').classList.add('hide'); wSave(); wFilesR(); }; });
+  var ok=W.files.length&&W.files.every(function(f){return f.p>=100;}); $('w2Next').classList.toggle('off',!ok); }
+function wAdd(list){ var full=false; list.forEach(function(x){ if(wGB()+x.gb>5){ full=true; return; } W.files.push({n:x.n,gb:x.gb,cam:(W.files.length%W.cams)+1,p:0}); });
+  $('wFull').classList.toggle('hide',!full); if(full){ buzz([30,60,30]); say('5 GB की जगह भर गई — कुछ files नहीं जुड़ीं।'); }
+  wSave(); wFilesR(); var iv=setInterval(function(){ var left=false; W.files.forEach(function(f){ if(f.p<100){ f.p=Math.min(100,f.p+10); left=true; } }); wFilesR(); if(!left){ clearInterval(iv); wSave(); sound('ding'); say('सारी files चढ़ गईं ✓'); } },180); }
+$('wPick').onclick=function(){ $('wFiles').click(); };
+$('wFiles').onchange=function(){ var a=[].map.call(this.files,function(f){ return {n:f.name,gb:Math.max(0.01,f.size/1073741824)}; }); this.value=''; if(a.length) wAdd(a); };
+$('wSample').onclick=function(){ wAdd([{n:'कैमरा1_'+W.fn+'.mp4',gb:1.2},{n:'कैमरा2_'+W.fn+'.mp4',gb:0.9},{n:'कैमरा3_'+W.fn+'.mp4',gb:1.1}].slice(0,Math.max(2,W.cams))); };
+$('w2Next').onclick=function(){ if(this.classList.contains('off')){ say('पहले files डालिए और चढ़ने दीजिए।'); return; } wDone(2); wStep(3); };
+// W-04 sync
+var wOff={};
+function wWaves(){ var h=''; for(var c=1;c<=W.cams;c++){ if(!(c in wOff)) wOff[c]=W.synced?0:Math.round((Math.random()*2-1)*45); var bars=''; for(var j=0;j<70;j++){ var v=8+Math.abs(Math.sin(j*0.7+1.3)*26+Math.sin(j*2.1)*8); bars+='<i style="height:'+Math.round(v)+'px"></i>'; }
+    h+='<div class="wave'+(W.synced?' ok':'')+'" id="wv'+c+'"><span>कैमरा '+c+'</span><div class="w"><div class="ws" style="transform:translateX('+wOff[c]+'px)">'+bars+'</div></div><div class="nud"><button data-nu="'+c+'" data-d="-1">◀</button><button data-nu="'+c+'" data-d="1">▶</button></div></div>'; }
+  $('wWaves').innerHTML=h; $('w3Next').classList.toggle('off',!W.synced);
+  [].forEach.call($('wWaves').querySelectorAll('[data-nu]'),function(b){ b.onclick=function(){ var c=+b.getAttribute('data-nu'); wOff[c]+=6*(+b.getAttribute('data-d')); if(Math.abs(wOff[c])<6) wOff[c]=0;
+    var el=$('wv'+c); el.querySelector('.ws').style.transform='translateX('+wOff[c]+'px)'; if(wOff[c]===0){ el.classList.remove('bad'); el.classList.add('ok'); sound('ding'); say('कैमरा '+c+' मिल गया ✓'); wCheckSync(); } }; }); }
+function wCheckSync(){ for(var c=1;c<=W.cams;c++) if(wOff[c]!==0) return; W.synced=true; wSave(); $('wSyncMsg').textContent='सारे कैमरे एक समय पर ✓'; $('wSyncMsg').style.color='#3DDC97'; $('w3Next').classList.remove('off'); }
+$('wSync').onclick=function(){ sound('whoosh'); say('आवाज़ की लहरें मिला रहे हैं…'); $('wSyncMsg').classList.remove('hide'); $('wSyncMsg').style.color=''; $('wSyncMsg').textContent='मिला रहे हैं…';
+  setTimeout(function(){ var bad=0; for(var c=1;c<=W.cams;c++){ var el=$('wv'+c); if(c===3){ wOff[c]=wOff[c]>=0?18:-18; el.classList.add('bad'); bad=c; } else { wOff[c]=0; el.classList.add('ok'); } el.querySelector('.ws').style.transform='translateX('+wOff[c]+'px)'; }
+    if(bad){ buzz([30,60,30]); $('wSyncMsg').textContent='कैमरा '+bad+' की आवाज़ मेल नहीं खाई (शायद mic दूर था)। ◀ ▶ से हाथ से खिसकाइए।'; $('wSyncMsg').style.color='#FFB4B4'; say('कैमरा '+bad+' हाथ से खिसकाइए।'); }
+    else { sound('ding'); wCheckSync(); say('सारे कैमरे मिल गए ✓ (≈95% भरोसा)'); } },950); };
+$('w3Next').onclick=function(){ if(this.classList.contains('off')){ say('पहले कैमरे मिलाइए।'); return; } wDone(3); wStep(4); };
+$('w4Next').onclick=function(){ wDone(4); wStep(5); };
+// W-05
+var KINDS=[['Highlight','3–5 मिनट'],['Teaser','30–60 सेकंड'],['Reels','9:16 · 30 सेकंड']];
+function wKinds(){ $('wKinds').innerHTML=KINDS.map(function(k){ return '<button class="kind'+(W.kind===k[0]?' on':'')+'" data-kd="'+k[0]+'"><b>'+k[0]+'</b><small>'+k[1]+'</small></button>'; }).join('');
+  [].forEach.call($('wKinds').querySelectorAll('[data-kd]'),function(b){ b.onclick=function(){ W.kind=b.getAttribute('data-kd'); W.built=false; wSave(); wKinds(); }; });
+  var kept=items.filter(function(it){ return ch[it.id]!=='drop'&&it.k!=='bad'; }).map(function(it){ return it.t.split(': ')[1]||it.t; });
+  $('wStruct').innerHTML='<div><b>शुरू</b>'+(kept[0]||'मंडप में प्रवेश')+'</div><div><b>बीच</b>'+(kept.slice(1,-1).join(', ')||'वरमाला')+'</div><div><b>अंत</b>'+(kept[kept.length-1]||'सिंदूर')+'</div>';
+  $('wSongN').textContent=W.song?('🎵 '+W.song+' — आपका अपना गाना'):'गाना आप ख़ुद जोड़ेंगी/जोड़ेंगे — हमारी कोई music library नहीं (copyright)।';
+  $('wBuilt').classList.toggle('hide',!W.built); if(W.built) $('wBuilt').innerHTML=W.kind+' तैयार ✓ · '+({Highlight:'4:12',Teaser:'0:48',Reels:'0:30'})[W.kind]+' · WhatsApp-साइज़ ≈ '+({Highlight:48,Teaser:9,Reels:6})[W.kind]+' MB';
+  $('w5Next').classList.toggle('off',!W.built); }
+$('wSongB').onclick=function(){ $('wSong').click(); };
+$('wSong').onchange=function(){ var f=this.files&&this.files[0]; if(f){ W.song=f.name; wSave(); wKinds(); say('गाना जुड़ गया।'); } this.value=''; };
+$('wBuild').onclick=function(){ var b=this; b.classList.add('off'); var p=0; sound('whoosh'); var iv=setInterval(function(){ p+=10; b.textContent='बन रहा है… '+p+'%'; if(p>=100){ clearInterval(iv); b.textContent='फिर से बनाइए'; b.classList.remove('off'); W.built=true; wSave(); wKinds(); stars(); sound('ding'); buzz([40,30,60]); say(W.kind+' तैयार! ग्राहक को देने चलिए।'); } },200); };
+$('w5Next').onclick=function(){ if(this.classList.contains('off')){ say('पहले बनाइए।'); return; } wDone(5); wStep(6); };
+// W-06
+$('wCopy').onchange=function(){ $('wPub').classList.toggle('off',!this.checked); };
+$('wDl').onclick=function(){ say('(नमूना) '+W.name+' '+W.kind+' की छोटी file फ़ोन में save होगी — WhatsApp पर भेजने लायक।'); sound('ding'); };
+$('wLink').onclick=function(){ var l='jhilmil.uduindia.com/w/'+encodeURIComponent(W.name.replace(/\s+/g,'-'))+' (नमूना)'; try{ navigator.clipboard.writeText(l); }catch(e){} say('ग्राहक का link copy हो गया — 30 दिन चलेगा।'); };
+$('wPub').onclick=function(){ if(!$('wCopy').checked){ var k=$('wck2'); k.classList.remove('need'); void k.offsetWidth; k.classList.add('need'); say('Publish से पहले गाने वाली बात पढ़कर टिक कीजिए।'); return; }
+  wDone(6); S.vname=W.name+' · '+W.kind+'.mp4'; S.sizeMB=({Highlight:48,Teaser:9,Reels:6})[W.kind]*4; S.ready=true; S.vurl=null; $('dropT').textContent=S.vname.slice(0,30)+' · तैयार ✓'; $('send').classList.remove('off');
+  var save=Math.max(10,Math.round(S.sizeMB*0.55)); $('save').textContent=save+' MB'; show('new'); setTimeout(function(){ try{ $('send').scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} $('send').classList.add('spark'); },200);
+  say(W.kind+' तैयार है — platforms चुनिए और "सब पर भेजिए"।'); };
+w1();
 /* Log in · Accounts */
 function sheet(title,body,ok,onOk,cancel){ var b=document.createElement('div'); b.className='shb'; b.innerHTML='<div class="sh" role="dialog" aria-label="'+title+'"><h3>'+title+'</h3>'+body+'<div class="row2"><button class="cb">'+(cancel||'रद्द')+'</button><button class="okb">'+ok+'</button></div></div>'; ph.appendChild(b);
   b.querySelector('.cb').onclick=function(){ b.remove(); }; b.querySelector('.okb').onclick=function(){ var r=onOk(b); if(r!==false) b.remove(); }; b.onclick=function(e){ if(e.target===b) b.remove(); }; return b; }
@@ -536,14 +688,14 @@ $('flyT').onclick=function(){ setNoFly(!S.noFly); say(S.noFly?'उड़ान �
 $('c1').onchange=function(){ $('gLogin').disabled=!this.checked; $('loginMsg').style.color=''; $('loginMsg').textContent=this.checked?'बढ़िया! अब Google से जारी रखिए। YouTube या किसी platform की अनुमति यहाँ नहीं माँगते, वह अगले कदम में अलग-अलग।':'पहले ऊपर Privacy Policy वाला टिक लगाइए — तभी यह बटन चालू होगा।'; if(this.checked) sound('ding'); };
 $('gLogin').onclick=function(){ if(!$('c1').checked){ var k=$('ck1'); k.classList.remove('need'); void k.offsetWidth; k.classList.add('need'); $('loginMsg').textContent='Privacy Policy वाला टिक ज़रूरी है। हम इसे पहले से नहीं लगाते — आप पढ़कर ख़ुद लगाइए।'; $('loginMsg').style.color='#FFB4B4'; say('पहले Privacy Policy वाला टिक लगाइए।'); return; }
   sheet('Google से जारी रखिए','<p>Google आपसे पूछेगा: <b>Jhilmil आपका नाम और email देख सके?</b></p><p><small>बस इतना। आपके YouTube channel की अनुमति यहाँ नहीं — वह Accounts में अलग से, आपकी मर्ज़ी से। (यह नमूना है, असली Google नहीं खुलता।)</small></p>','जारी रखिए',function(){
-    S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); renderAcc();
+    S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); $('loginMsg').style.color=''; renderAcc();
     var miss=[]; if(!$('c2').checked) miss.push(['c2b','मेरे बोलने का ढंग पढ़ने की अनुमति','इससे captions और title आपकी अपनी बोली-लहजे में बनेंगे, कम सुधारना पड़ेगा।']); if(!$('c3').checked) miss.push(['c3b','app को बेहतर बनाने में मेरा गुमनाम उपयोग','आपका नाम या video किसी को नहीं दिखता; बस कौन-सा बटन कितना काम आया, यह गिनती।']);
     function go(){ goHome(true); if(!Object.keys(S.linked).length){ hintAdd(); say('स्वागत है! पहले वो जगहें जोड़िए जहाँ video भेजना है — '+(desk()?'दाएँ Platforms में + दबाइए।':'"+ जगह जोड़िए" दबाइए।')); } else say('फिर से स्वागत है!'); }
     if(!miss.length || S.askedTwice){ setTimeout(go,10); return; }
     S.askedTwice=true; sv('jm_demo_asked2',true);
     setTimeout(function(){ sheet('आपकी बेहतरी के लिए — एक बार और','<p>ये दोनों पूरी तरह <b>आपकी मर्ज़ी</b> हैं। ना कहने पर भी app पूरा चलेगा। हम यह सिर्फ़ <b>एक बार</b> और पूछ रहे हैं, फिर कभी नहीं (Settings से कभी भी बदल सकती/सकते हैं)।</p>'+miss.map(function(m){ return '<label style="margin-top:8px;align-items:flex-start"><input type="checkbox" id="'+m[0]+'"><span><b>'+m[1]+'</b><br><small>'+m[2]+'</small></span></label>'; }).join(''),
       'चुने हुए के लिए हाँ',function(b){ var c2=b.querySelector('#c2b'),c3=b.querySelector('#c3b'); if(c2&&c2.checked) $('c2').checked=true; if(c3&&c3.checked) $('c3').checked=true; say('धन्यवाद!'); setTimeout(go,10); },'नहीं, धन्यवाद').querySelector('.cb').onclick=function(){ this.closest('.shb').remove(); say('कोई बात नहीं — app पूरा चलेगा।'); go(); }; },60); }); };
-function linkSheet(n){ var fb=n==='Facebook', test=/test/.test((PL.filter(function(p){return p[0]===n;})[0]||[])[2]||'');
+function linkSheet(n){ if(!S.logged){ needLogin(); return; } var fb=n==='Facebook', test=/test/.test((PL.filter(function(p){return p[0]===n;})[0]||[])[2]||'');
   var body='<p>अब <b>'+n+'</b> का अपना पन्ना खुलेगा और पूछेगा: <b>Jhilmil को आपके खाते पर video डालने दें?</b></p><p><small>आपका password '+n+' पर ही डलता है, हमें कभी नहीं मिलता।'+(test?' Beta में आप tester के रूप में जुड़ेंगी/जुड़ेंगे; YouTube पर video पहले private जा सकता है (उनकी शर्त, audit तक)।':'')+' (नमूना: असली पन्ना नहीं खुलता।)</small></p>';
   if(fb) body+='<label><input type="checkbox" id="fbPage">मेरे Page पर डालने की अनुमति: <b>शर्मा स्टूडियो</b></label><p style="margin-top:8px"><small>यह टिक न लगाएँ तो Facebook जुड़ेगा, पर Page पर video नहीं जाएगा (रुका दिखेगा)।</small></p>';
   sheet(n+' जोड़िए',body,'अनुमति दीजिए',function(b){ S.linked[n]=true; S.on[n]=true; if(fb){ S.fbBad=!b.querySelector('#fbPage').checked; sv('jm_demo_fbbad',S.fbBad); }
@@ -552,7 +704,7 @@ function linkSheet(n){ var fb=n==='Facebook', test=/test/.test((PL.filter(functi
 function unlinkSheet(n){ sheet(n+' हटाएँ?','<p>इसकी चाबी (token) हमारे यहाँ से <b>तुरंत मिट जाएगी</b>। आपके पुराने video '+n+' पर वैसे ही रहेंगे।</p>','हाँ, हटाइए',function(){ delete S.linked[n]; delete S.on[n]; if(n==='Facebook'){ S.fbBad=false; sv('jm_demo_fbbad',false); } sv('jm_demo_linked',S.linked); renderAcc(); plats(); say(n+' हटा दिया।'); }); }
 function hintAdd(){ setTimeout(function(){ var el=desk()?$('plp'):$('addPl'); if(el){ el.classList.remove('glow'); void el.offsetWidth; el.classList.add('glow'); } },200); }
 function goHome(reset){ if(reset){ H=['new']; HI=0; paint('new'); try{ history.replaceState({jm:0},'','#new'); }catch(e){} navUI(); } else show('new'); }
-function renderSide(){ $('plpList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
+function renderSide(){ $('plpList').innerHTML=(S.logged?'':'<p class="note" style="text-align:left;color:#F7B93E;margin:0 0 8px">पहले Log in कीजिए, फिर + चालू होगा</p>')+PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
   var st=soon?'जल्द':(warn?'⚠ Page की अनुमति बाक़ी':(on?'✓ जुड़ा':p[2]));
   var btn=soon?'':(warn?'<button class="pm add" data-l="'+n+'">ठीक</button>':(on?'<button class="pm" data-u="'+n+'" aria-label="'+n+' हटाइए">−</button>':'<button class="pm add" data-l="'+n+'" aria-label="'+n+' जोड़िए">+</button>'));
   return '<div class="plr'+(soon?' soon':warn?' warn':on?' ok':'')+'"><span class="ai" style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#22177A;font-weight:800;flex:none">'+p[1]+'</span><span class="an">'+n+'<small>'+st+'</small></span>'+btn+'</div>'; }).join('');
@@ -562,7 +714,7 @@ $('plpAll').onclick=function(){ openSc('acc'); };
 [].forEach.call(document.querySelectorAll('.edi'),function(b){ b.onclick=function(){ var t=b.getAttribute('data-ed');
   if(b.getAttribute('data-soon')==='1'){ say(t+': यह काम जल्द आ रहा है।'); return; }
   show('edit'); var tb=document.querySelector('.tool[data-t="'+t+'"]'); if(tb){ if(S.ready) tb.click(); else say('पहले बीच का सुनहरा बटन छूकर video चुनिए, फिर '+t+'।'); tb.classList.remove('spark'); void tb.offsetWidth; tb.classList.add('spark'); } }; });
-$('wV').onclick=function(){ show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
+$('wV').onclick=function(){ if(!S.logged){ needLogin(); return; } wOpen(); return; show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
 [].forEach.call(document.querySelectorAll('.wS'),function(b){ b.onclick=function(){ say(b.textContent.trim()+': जल्द आ रहा है।'); }; });
 function renderAcc(){ try{ renderSide(); }catch(e){} $('accList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
   var st=soon?'जल्द':(warn?'⚠ Page की अनुमति बाक़ी':(on?'✓ जुड़ा':p[2]));
@@ -572,11 +724,11 @@ function renderAcc(){ try{ renderSide(); }catch(e){} $('accList').innerHTML=PL.m
   [].forEach.call(document.querySelectorAll('[data-u]'),function(b){ b.onclick=function(){ unlinkSheet(b.getAttribute('data-u')); }; }); }
 $('accBtn').onclick=menu;
 $('accDone').onclick=function(){ if(!Object.keys(S.linked).length){ say('कम से कम एक जगह जोड़िए।'); return; } show('new'); say('बढ़िया! अब बीच का सुनहरा बटन छूकर video चुनिए।'); };
-$('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; $('gLogin').disabled=true; show('login'); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
-$('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last','jm_demo_asked2'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
+$('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; $('gLogin').disabled=true; goHome(true); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
+$('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last','jm_demo_asked2','jm_demo_wp','jm_demo_lib','jm_demo_first','jm_demo_saver'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
 setNoFly(S.noFly); renderAcc();
 plats(); renderStatus(); wed(); ring();
-if(!S.logged){ show('login'); say('नमस्ते! Google से अंदर आइए — Privacy वाला टिक आप ख़ुद लगाइए।'); } else { show('new'); if(!Object.keys(S.linked).length) hintAdd(); }
+show('new'); if(!S.logged){ say('नमस्ते! यह Jhilmil है — एक upload, हर जगह उड़ान। शुरू करने के लिए ऊपर Log in / Sign up।'); } else if(!Object.keys(S.linked).length) hintAdd();
 if(!H.length) show('new');
 })();
 </script>
