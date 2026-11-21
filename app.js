@@ -63,7 +63,7 @@ document.querySelectorAll('.pl').forEach(function(r){var n=r.dataset.pl;
  r.querySelector('.pa').addEventListener('click',function(){conn[n]=1;saveC();renderAll();toast(n+': '+T('t_conn'))});
  r.querySelector('.pr').addEventListener('click',function(){delete conn[n];saveC();renderAll();toast(n+': '+T('t_disc'))})});
 /* editing buttons: tiny (i) icon; hover / focus / touch / long-press shows a small note with the uses */
-var SOON={e4:1,e5:1,e6:1,e8:1,e9:1,e10:1,e11:1},tip=$('tip'),tipFor=null,tipT=0;
+var SOON={e4:1,e5:1,e6:1,e8:1,e9:1,e10:1,e11:1,w1:1,w2:1,w3:1},tip=$('tip'),tipFor=null,tipT=0;
 function showTip(id,anchor){var inf=document.querySelector('[data-inf='+id+']')||{dataset:{}},f=(T(id+'f')||inf.dataset.f||'').split(';').filter(Boolean);
  tip.innerHTML='<b>'+esc(T(id+'t')||inf.dataset.t||'')+'</b>'+(SOON[id]?'<div class="sn">'+esc(T('sh_soon')||'This one is coming soon.')+'</div>':'')+f.map(function(x){var p=x.split('|');return '<div><em>'+esc(p[0])+'</em>'+(p[1]?' – '+esc(p[1]):'')+'</div>'}).join('');
  var box=anchor.closest?(anchor.closest('[data-ed]')||anchor):anchor,r=box.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;
@@ -106,7 +106,7 @@ $('bo').addEventListener('click',function(){user=null;try{localStorage.removeIte
 function closeAll(){for(var k in shs){shs[k].classList.remove('open');bs[k].setAttribute('aria-expanded','false')}hideTip()}
 function tog(k){var was=shs[k].classList.contains('open');closeAll();if(!was){shs[k].classList.add('open');bs[k].setAttribute('aria-expanded','true');shs[k].scrollTop=0}}
 bs.ed.addEventListener('click',function(e){e.stopPropagation();tog('ed')});bs.pl.addEventListener('click',function(e){e.stopPropagation();tog('pl')});
-document.addEventListener('click',function(e){if(!mq2.matches)return;if(e.target.closest&&(e.target.closest('.panel')||e.target.closest('#bbar')||e.target.closest('dialog')||e.target.closest('#tip')))return;closeAll()});
+document.addEventListener('click',function(e){if(!mq2.matches)return;if(e.target.closest&&(e.target.closest('.panel')||e.target.closest('.sheet')||e.target.closest('#bbar')||e.target.closest('dialog')||e.target.closest('#tip')))return;closeAll()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
 if(mq2.addEventListener)mq2.addEventListener('change',function(){if(!mq2.matches)closeAll()});
 shs.ed.addEventListener('scroll',hideTip,{passive:true});shs.pl.addEventListener('scroll',hideTip,{passive:true})})();
