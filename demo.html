@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="hi">
+<html lang="hi" translate="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="google" content="notranslate">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#150C5E">
 <title>Jhilmil · demo (नमूना)</title>
@@ -68,6 +69,51 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 @keyframes fall{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(200deg)}}
 @media (prefers-reduced-motion: reduce){.fun .fly,.fun .spark,.fun .pulse,.fun .fall,.fun .pop{animation:none}}
 .hide{display:none!important}
+
+/* उड़ान का पूरा रास्ता */
+.ovl{position:absolute;inset:0;z-index:20;background:rgba(9,5,40,.95);overflow:hidden}
+.ovt{position:absolute;left:0;right:0;top:22px;text-align:center;font-family:'Baloo 2',sans-serif;font-size:26px;font-weight:800;color:#F7B93E}
+.ovt small{display:block;font-family:'Hind',sans-serif;font-size:14px;font-weight:400;color:#C9C2F5}
+.tgt{position:absolute;width:84px;margin-left:-42px;text-align:center;font-size:13px;font-weight:600;color:#F3F0FF}
+.tgt i{display:flex;width:60px;height:60px;margin:0 auto 6px;border-radius:50%;background:#22177A;border:2px dashed #6C5FD6;align-items:center;justify-content:center;font-style:normal;font-size:22px;font-weight:800;transition:all .3s}
+.tgt b{display:block;font-size:11.5px;font-weight:400;color:#C9C2F5;min-height:16px}
+.tgt.go i{border:2px solid #F7B93E;box-shadow:0 0 0 7px rgba(247,185,62,.22)}
+.tgt.ok i{border:2px solid #3DDC97;background:#1E5A47}.tgt.ok b{color:#3DDC97}
+.tgt.fail i{border:2px solid #FF8A8A;background:#6B2330;animation:shake .45s}.tgt.fail b{color:#FF8A8A}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.src{position:absolute;left:50%;width:100px;margin-left:-50px;text-align:center;font-size:13px;color:#C9C2F5}
+.src i{display:flex;width:84px;height:84px;margin:0 auto 6px;border-radius:24px;background:#F7B93E;color:#150C5E;align-items:center;justify-content:center;font-style:normal;font-size:34px;box-shadow:0 0 0 8px rgba(247,185,62,.18)}
+.ovs{position:absolute;left:16px;right:16px;text-align:center;font-size:15px;color:#F3F0FF;min-height:44px}
+.skip{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;min-height:48px;padding:0 20px;border-radius:24px;border:1px solid #F7B93E;background:transparent;color:#F7B93E;font-size:15px;cursor:pointer;white-space:nowrap}
+.fcard{position:absolute;width:60px;height:42px;margin:-21px 0 0 -30px;border-radius:9px;background:#F7B93E;color:#150C5E;font-size:20px;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 0 20px rgba(247,185,62,.75);z-index:2}
+.trail{position:absolute;width:7px;height:7px;margin:-3px 0 0 -3px;border-radius:50%;background:#F7B93E;pointer-events:none;animation:tr .8s forwards}
+@keyframes tr{to{opacity:0;transform:scale(.2)}}
+/* laptop: पूरी स्क्रीन वाला रूप */
+.rail-h{display:none}
+@media(min-width:900px){
+ body{display:block}
+ .phone{max-width:1320px;height:100vh;height:100dvh;border-radius:0;box-shadow:none;display:grid;grid-template-columns:240px minmax(0,1fr) 380px;grid-template-rows:auto auto minmax(0,1fr) auto}
+ .top{grid-column:1/-1;grid-row:1;padding:14px 24px;border-bottom:1px solid #3B2FA0}
+ .tabs{grid-column:2;grid-row:2;padding:14px 28px 4px;max-width:520px}
+ .body{display:contents}
+ #s-new,#s-edit,#s-wed{grid-column:2;grid-row:3;overflow-y:auto;padding:8px 28px 28px;min-height:0}
+ #s-status{grid-column:3;grid-row:2/4;display:block!important;overflow-y:auto;min-height:0;padding:16px 20px;border-left:1px solid #3B2FA0;background:#120A52}
+ #s-status h1:after{content:" · हर जगह का हाल";font-size:14px;color:#C9C2F5;font-family:'Hind',sans-serif;font-weight:400}
+ .foot{grid-column:2/4;grid-row:4;margin:0;padding:8px;border-top:1px solid #3B2FA0}
+ .dock{position:static;grid-column:1;grid-row:2/5;display:flex;flex-direction:column;border-right:1px solid #3B2FA0;padding:16px 14px;min-height:0}
+ nav{height:auto;display:flex;flex-direction:column;align-items:stretch;gap:10px;border:0;background:none;padding:0}
+ nav>div{order:-1;text-align:center;margin-bottom:6px}
+ .big{margin:6px auto 0}
+ .rail-h{display:block;font-size:14px;font-weight:600;color:#F7B93E;margin-top:6px}
+ .nb{flex-direction:row;justify-content:flex-start;gap:12px;padding:0 16px;margin:0;font-size:16px;border:1px solid #3B2FA0}
+ .talk{order:2;margin:auto 0 0;align-items:flex-start}
+ #plats{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .drop{min-height:200px}
+ .prev{height:320px}
+ #s-edit .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .flash{animation:spark .9s ease-out 2}
+}
+
 </style>
 </head>
 <body>
@@ -148,7 +194,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
       <div><button class="big" id="n-new" aria-label="नया video">
         <svg class="ring" width="78" height="78" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="5"/><circle id="ring" cx="39" cy="39" r="35" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="219.9" stroke-dashoffset="219.9"/></svg>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
-      </button></div>
+      </button><div class="rail-h">नया video</div></div>
       <button class="nb" id="n-status"><span class="dots" aria-hidden="true"><i id="dG"></i><i id="dY"></i><i id="dR"></i></span>Status</button>
     </nav>
   </div>
@@ -169,7 +215,9 @@ function buzz(ms){ if(S.fun){ try{navigator.vibrate&&navigator.vibrate(ms);}catc
 function say(t){ $('talk').textContent=t; if(S.voice){ try{ var u=new SpeechSynthesisUtterance(t); u.lang='hi-IN'; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} } }
 function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
 document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
-function show(sc){ S.screen=sc; ['new','edit','status','wed'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
+function desk(){ return window.matchMedia('(min-width:900px)').matches; }
+function show(sc){ if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); sc=(S.screen==='status')?'new':S.screen; }
+  S.screen=sc; ['new','edit','status','wed'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
   $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
   $('t-new').classList.toggle('on',sc!=='wed'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; }
 function plats(){ var h=''; Object.keys(S.on).forEach(function(n){ var on=S.on[n]; h+='<button class="plat'+(on?' on':'')+'" data-p="'+n+'" aria-pressed="'+on+'"><span>'+n+'</span><small>'+(on?'चुना':'छूकर चुनिए')+'</small></button>'; }); $('plats').innerHTML=h;
@@ -212,16 +260,44 @@ function check(){ var k=Object.keys(S.st); if(k.length&&k.every(function(n){retu
   if(!S.firstFlight){ S.firstFlight=true; $('badge').classList.remove('hide'); }
   $('n-status').classList.add('spark'); setTimeout(function(){$('n-status').classList.remove('spark');},2000);
   stars(); buzz([60,40,90]); sound('ding'); say('सब जगह पहुँच गया! आपका '+$('save').textContent+' data बचा। ✨'); } }
+var ICON={YouTube:'▶',Instagram:'◎',Facebook:'f',Telegram:'➤'},SHAPE={YouTube:'16:9 में ढाल रहे हैं',Instagram:'9:16 Reel बना रहे हैं',Facebook:'1:1 में ढाल रहे हैं',Telegram:'जैसा है वैसा'};
+function result(n){ return n==='Facebook'?'fail':'ok'; }
+function finish(){ renderStatus(); show('status'); check(); }
+function flight(names){
+  var ov=document.createElement('div'); ov.className='ovl'; var W=ph.clientWidth,H=ph.clientHeight,T=[],cur=null,done=false;
+  var ty=Math.max(110,H*0.16), sy=H-Math.max(250,H*0.32);
+  var h='<div class="ovt">उड़ान शुरू ✦<small>एक upload, हर जगह उड़ान</small></div>';
+  names.forEach(function(n,i){ var x=W*(i+1)/(names.length+1), y=ty+Math.abs(i-(names.length-1)/2)*26;
+    h+='<div class="tgt" id="tg'+i+'" style="left:'+x+'px;top:'+y+'px"><i>'+ICON[n]+'</i>'+n+'<b>इंतज़ार</b></div>'; });
+  h+='<div class="src" style="top:'+sy+'px"><i>🎬</i>आपका video</div><div class="ovs" id="ovs" style="top:'+(sy+128)+'px">तैयार हो रहे हैं…</div><button class="skip" id="skip">छोड़िए, सीधे नतीजा देखिए »</button>';
+  ov.innerHTML=h; ph.appendChild(ov);
+  function at(ms,f){ T.push(setTimeout(f,ms)); }
+  function close(){ if(done) return; done=true; T.forEach(clearTimeout); if(cur) clearInterval(cur); ov.remove(); names.forEach(function(n){ S.st[n]=result(n); }); finish(); if(S.st.Facebook==='fail') say('Facebook रुका: Page की अनुमति ख़त्म। "फिर कोशिश" दबाइए।'); }
+  ov.querySelector('#skip').onclick=close;
+  var step=2600;
+  names.forEach(function(n,i){ var t0=700+i*step, tg=ov.querySelector('#tg'+i);
+    at(t0,function(){ tg.classList.add('go'); tg.querySelector('b').textContent=SHAPE[n]+'…'; $('ovs').textContent=n+' के लिए '+SHAPE[n]+'…'; say(n+' के लिए '+SHAPE[n]); sound('tick'); });
+    at(t0+900,function(){ var r=tg.querySelector('i').getBoundingClientRect(),o=ov.getBoundingClientRect();
+      var x0=W/2,y0=sy+42,x1=r.left-o.left+r.width/2,y1=r.top-o.top+r.height/2;
+      var c=document.createElement('div'); c.className='fcard'; c.textContent='🎬'; ov.appendChild(c);
+      $('ovs').textContent=n+' की ओर उड़ रहा है…'; sound('whoosh'); buzz(25);
+      var mx=(x0+x1)/2+(x1<x0?40:-40), my=Math.min(y0,y1)-60;
+      c.animate([{left:x0+'px',top:y0+'px',transform:'scale(1) rotate(0)'},{left:mx+'px',top:my+'px',transform:'scale(.85) rotate(-12deg)',offset:.55},{left:x1+'px',top:y1+'px',transform:'scale(.35) rotate(0)'}],{duration:1300,easing:'ease-in-out',fill:'forwards'});
+      cur=setInterval(function(){ var b=c.getBoundingClientRect(); var d=document.createElement('div'); d.className='trail'; d.style.left=(b.left-o.left+b.width/2)+'px'; d.style.top=(b.top-o.top+b.height/2)+'px'; ov.appendChild(d); setTimeout(function(){d.remove();},800); },70);
+      at(1300,function(){ clearInterval(cur); cur=null; c.remove(); var v=result(n); S.st[n]=v; renderStatus(); tg.classList.remove('go'); tg.classList.add(v);
+        if(v==='ok'){ tg.querySelector('b').textContent='पहुँच गया ✓'; sound('ding'); buzz(30); say(n+' पर पहुँच गया।'); $('ovs').textContent=n+' पर पहुँच गया ✓'; }
+        else { tg.querySelector('b').textContent='रुका ✕'; buzz([30,60,30]); say('Facebook रुका: Page की अनुमति ख़त्म।'); $('ovs').textContent='Facebook रुका — बाद में "फिर कोशिश" से भेज सकते हैं'; } }); });
+  });
+  at(700+names.length*step+600,function(){ $('ovs').textContent='उड़ान पूरी! नतीजा देख रहे हैं…'; ov.querySelector('#skip').textContent='नतीजा देखिए »'; });
+  at(700+names.length*step+2200,close);
+}
 $('send').onclick=function(){
   if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए।'); return; }
   var names=Object.keys(S.on).filter(function(k){return S.on[k];}); if(!names.length){ say('कम से कम एक जगह चुनिए।'); return; }
   try{ localStorage.setItem('jm_demo_last',JSON.stringify(S.on)); }catch(e){} S.last=JSON.parse(JSON.stringify(S.on));
-  if(S.fun){ var c=document.createElement('div'); c.className='card fly'; c.textContent='video'; $('drop').appendChild(c); setTimeout(function(){c.remove();},950); }
-  sound('whoosh'); buzz(40); say('उड़ान शुरू! '+names.length+' जगह भेज रहे हैं…');
   S.st={}; names.forEach(function(n){S.st[n]='wait';}); $('doneBox').classList.add('hide'); renderStatus();
-  setTimeout(function(){ show('status'); },950);
-  names.forEach(function(n,i){ setTimeout(function(){ S.st[n]=(n==='Facebook')?'fail':'ok'; renderStatus();
-    if(n==='Facebook'){ buzz([30,60,30]); say('Facebook रुका: Page की अनुमति ख़त्म। "फिर कोशिश" दबाइए।'); } else { sound('tick'); buzz(20); say(n+' पर पहुँच गया।'); } check(); },1400+i*900); });
+  if(S.fun){ flight(names); return; }
+  names.forEach(function(n){ S.st[n]=result(n); }); finish();
 };
 $('copy').onclick=function(){ var t=Object.keys(S.st).filter(function(n){return S.st[n]==='ok';}).map(function(n){return n+': [link]';}).join('\n');
   if(!t){ say('अभी कोई link नहीं है।'); return; } try{ navigator.clipboard.writeText(t); }catch(e){} say('सबकी link copy हो गई — WhatsApp में चिपकाइए।'); };
