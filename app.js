@@ -101,4 +101,13 @@ $('bl').addEventListener('click',function(){openD('login')});$('bs').addEventLis
 $('dc').addEventListener('click',function(){dg.close?dg.close():dg.removeAttribute('open')});
 $('dgo').addEventListener('click',function(){user='demo';set('jm_user',user);dg.close?dg.close():dg.removeAttribute('open');renderAll()});
 $('bo').addEventListener('click',function(){user=null;try{localStorage.removeItem('jm_user')}catch(e){}renderAll()});
+/* mobile bottom bar: tap = sheet moves up, tap again or outside = closes */
+(function(){var bb=$('bbar');if(!bb)return;var shs={ed:$('sh_ed'),pl:$('sh_pl')},bs={ed:$('bed'),pl:$('bpl')},mq2=window.matchMedia('(max-width:599px)');
+function closeAll(){for(var k in shs){shs[k].classList.remove('open');bs[k].setAttribute('aria-expanded','false')}hideTip()}
+function tog(k){var was=shs[k].classList.contains('open');closeAll();if(!was){shs[k].classList.add('open');bs[k].setAttribute('aria-expanded','true');shs[k].scrollTop=0}}
+bs.ed.addEventListener('click',function(e){e.stopPropagation();tog('ed')});bs.pl.addEventListener('click',function(e){e.stopPropagation();tog('pl')});
+document.addEventListener('click',function(e){if(!mq2.matches)return;if(e.target.closest&&(e.target.closest('.panel')||e.target.closest('#bbar')||e.target.closest('dialog')||e.target.closest('#tip')))return;closeAll()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+if(mq2.addEventListener)mq2.addEventListener('change',function(){if(!mq2.matches)closeAll()});
+shs.ed.addEventListener('scroll',hideTip,{passive:true});shs.pl.addEventListener('scroll',hideTip,{passive:true})})();
 applyLang()})();
