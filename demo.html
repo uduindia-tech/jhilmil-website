@@ -91,6 +91,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 /* Log in, Accounts, sheet */
 .hero{text-align:center;margin:30px 0 22px}.hero .logo{font-size:44px}.hero p{margin:4px 0 0;color:#C9C2F5;font-size:15px}
 .gbtn{width:100%;min-height:54px;border-radius:14px;border:0;background:#fff;color:#1F1F1F;font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer}
+.gbtn:disabled{background:#5A5290;color:#C9C2F5;cursor:not-allowed}.gbtn:disabled .g{filter:grayscale(1);opacity:.6}
 .gbtn .g{width:26px;height:26px;border-radius:50%;background:conic-gradient(#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
 .ck{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:10px 12px;border-radius:12px;background:#1D1270;border:1px solid #3B2FA0;font-size:14px;line-height:1.45;cursor:pointer}
 .ck input{width:22px;height:22px;flex:none;margin:0;accent-color:#F7B93E}
@@ -113,6 +114,9 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 .nofly{position:absolute;left:0;right:0;bottom:80px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:14px;color:#C9C2F5}
 .nofly input{width:20px;height:20px;accent-color:#F7B93E}
 .out .tabs,.out .dock,.out #accBtn{display:none!important}
+.navrow{display:flex;gap:6px;padding:0 16px 8px}
+.navrow button{flex:1;min-height:42px;border-radius:12px;border:1px solid #6C5FD6;background:#1D1270;color:#F3F0FF;font-size:14.5px;font-weight:600;cursor:pointer}
+.navrow button:disabled{opacity:.38;cursor:default}
 /* laptop: पूरी स्क्रीन वाला रूप */
 .rail-h{display:none}
 @media(min-width:900px){
@@ -136,6 +140,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
  .drop{min-height:200px}
  .prev{height:320px}
  #s-edit .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .navrow{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:380px;padding:0;z-index:6}
  .flash{animation:spark .9s ease-out 2}
  .out #s-status{display:none!important}
  .out #s-login{grid-column:2/4;max-width:520px;width:100%;justify-self:center}
@@ -148,9 +153,10 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 <body>
 <div class="phone fun" id="ph">
   <div class="top">
-    <div class="logo">Jhil<span>मिल</span></div>
+    <div class="logo" id="logo" style="cursor:pointer" title="Home">Jhil<span>मिल</span></div>
     <div style="display:flex;gap:6px"><button class="chip" id="accBtn">🔗 Accounts</button><button class="chip" id="fun">मज़ा: चालू</button></div>
   </div>
+  <div class="navrow" role="navigation" aria-label="Home, पीछे, आगे"><button id="hb">⌂ Home</button><button id="bb">‹ पीछे</button><button id="fb">आगे ›</button></div>
   <div class="tabs" role="tablist" aria-label="screen">
     <button id="t-new" class="on">नया video</button>
     <button id="t-wed">💍 शादी</button>
@@ -160,11 +166,11 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
     <!-- नया -->
     <section id="s-login" class="hide">
       <div class="hero"><div class="logo">Jhil<span>मिल</span></div><p>Single upload, हर जगह उड़ान</p></div>
-      <button class="gbtn" id="gLogin"><span class="g">G</span>Google से जारी रखिए</button>
-      <label class="ck" id="ck1"><input type="checkbox" id="c1"><span>मैंने <u>Privacy Policy</u> पढ़ी और मानता/मानती हूँ <b style="color:#F7B93E">(ज़रूरी)</b></span></label>
+            <label class="ck" id="ck1"><input type="checkbox" id="c1"><span>मैंने <u>Privacy Policy</u> पढ़ी और मानता/मानती हूँ <b style="color:#F7B93E">(ज़रूरी)</b></span></label>
       <label class="ck"><input type="checkbox" id="c2"><span><b>(आपकी मर्ज़ी)</b> मेरे video बेहतर बनाने के लिए मेरे बोलने का ढंग पढ़ने की अनुमति</span></label>
       <label class="ck"><input type="checkbox" id="c3"><span><b>(आपकी मर्ज़ी)</b> app को बेहतर बनाने में मेरा गुमनाम उपयोग</span></label>
-      <p class="note" id="loginMsg">कोई टिक पहले से लगा नहीं है। YouTube या किसी platform की अनुमति यहाँ नहीं माँगते, वह अगले कदम में अलग-अलग।</p>
+      <button class="gbtn" id="gLogin" disabled style="margin-top:16px"><span class="g">G</span>Google से जारी रखिए</button>
+      <p class="note" id="loginMsg">पहले ऊपर Privacy Policy वाला टिक लगाइए — तभी यह बटन चालू होगा। कोई टिक पहले से लगा नहीं है। YouTube या किसी platform की अनुमति यहाँ नहीं माँगते, वह अगले कदम में अलग-अलग।</p>
     </section>
     <section id="s-acc" class="hide">
       <h1>Accounts <small style="font-size:14px;font-weight:400;color:#C9C2F5;font-family:'Hind',sans-serif">· जहाँ भेजना है, उन्हें जोड़िए</small></h1>
@@ -255,7 +261,7 @@ var S={screen:'new',pct:0,up:false,ready:false,fun:true,voice:false,on:{},st:{},
 try{var l=JSON.parse(localStorage.getItem('jm_demo_last')||'null');if(l)S.last=l;}catch(e){}
 function ld(k,d){ try{ var v=localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
 function sv(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
-S.logged=ld('jm_demo_user',false); S.linked=ld('jm_demo_linked',{}); S.fbBad=ld('jm_demo_fbbad',false); S.noFly=ld('jm_demo_nofly',false);
+S.logged=ld('jm_demo_user',false); S.linked=ld('jm_demo_linked',{}); S.fbBad=ld('jm_demo_fbbad',false); S.noFly=ld('jm_demo_nofly',false); S.askedTwice=ld('jm_demo_asked2',false);
 Object.keys(S.linked).forEach(function(k){ S.on[k]=true; });
 var PL=[['YouTube','▶','test mode (beta)'],['Instagram','◎','test mode (beta)'],['Facebook','f','test mode (beta)'],['Telegram','➤','बिना मंज़ूरी, तुरंत'],['Bluesky','☁','बिना मंज़ूरी, तुरंत'],['X (Twitter)','𝕏','जल्द'],['Snapchat Spotlight','👻','जल्द'],['LinkedIn','in','जल्द']];
 var ph=$('ph'),ctx=null;
@@ -270,11 +276,23 @@ function say(t){ $('talk').textContent=t; if(S.voice){ try{ var u=new SpeechSynt
 function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
 document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
 function desk(){ return window.matchMedia('(min-width:900px)').matches; }
-function show(sc){ if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); sc=(S.screen==='status')?'new':S.screen; }
+function paint(sc){ if(!S.logged&&sc!=='login') sc='login'; if(S.logged&&sc==='login') sc='new';
+  if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); sc=(S.screen==='status')?'new':S.screen; }
   ph.classList.toggle('out',sc==='login');
   S.screen=sc; ['new','edit','status','wed','login','acc'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
   $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
-  $('t-new').classList.toggle('on',sc!=='wed'&&sc!=='acc'); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; }
+  $('t-new').classList.toggle('on',sc!=='wed'&&sc!=='acc'); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; return sc; }
+var H=[],HI=-1;
+function homeSc(){ return S.logged?'new':'login'; }
+function navUI(){ $('bb').disabled=HI<=0; $('fb').disabled=HI>=H.length-1; $('hb').disabled=(H[HI]===homeSc()); }
+function show(sc,how){ var f=paint(sc);
+  if(how!=='nav'&&H[HI]!==f){ H=H.slice(0,HI+1); H.push(f); HI++; try{ if(HI===0) history.replaceState({jm:HI},'','#'+f); else history.pushState({jm:HI},'','#'+f); }catch(e){} }
+  navUI(); }
+window.addEventListener('popstate',function(e){ var i=(e.state&&typeof e.state.jm==='number')?e.state.jm:0; if(!H.length) return; HI=Math.max(0,Math.min(i,H.length-1)); var f=paint(H[HI]); if(f!==H[HI]) H[HI]=f; navUI(); });
+$('hb').onclick=function(){ show(homeSc()); say('Home — नया video।'); };
+$('bb').onclick=function(){ if(HI>0){ try{ history.back(); }catch(e){ HI--; paint(H[HI]); navUI(); } } };
+$('fb').onclick=function(){ if(HI<H.length-1){ try{ history.forward(); }catch(e){ HI++; paint(H[HI]); navUI(); } } };
+$('logo')&&($('logo').onclick=function(){ show(homeSc()); });
 function plats(){ var h=''; Object.keys(S.linked).forEach(function(n){ if(!(n in S.on)) S.on[n]=true; }); Object.keys(S.on).forEach(function(n){ if(!S.linked[n]) delete S.on[n]; }); Object.keys(S.on).forEach(function(n){ var on=S.on[n]; h+='<button class="plat'+(on?' on':'')+'" data-p="'+n+'" aria-pressed="'+on+'"><span>'+n+'</span><small>'+(on?'चुना':'छूकर चुनिए')+'</small></button>'; }); h+='<button class="plat add" id="addPl">+ जगह जोड़िए</button>'; $('plats').innerHTML=h; $('addPl').onclick=function(){ show('acc'); };
   [].forEach.call(document.querySelectorAll('.plat[data-p]'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-p'); S.on[n]=!S.on[n]; plats(); }; }); }
 function ring(){ $('ring').setAttribute('stroke-dashoffset',(219.9*(1-S.pct/100)).toFixed(1)); }
@@ -388,9 +406,16 @@ function sheet(title,body,ok,onOk,cancel){ var b=document.createElement('div'); 
   b.querySelector('.cb').onclick=function(){ b.remove(); }; b.querySelector('.okb').onclick=function(){ var r=onOk(b); if(r!==false) b.remove(); }; b.onclick=function(e){ if(e.target===b) b.remove(); }; return b; }
 function setNoFly(v){ S.noFly=v; sv('jm_demo_nofly',v); $('flyT').textContent=v?'बंद':'चालू'; }
 $('flyT').onclick=function(){ setNoFly(!S.noFly); say(S.noFly?'उड़ान बंद — भेजते ही सीधा नतीजा।':'उड़ान चालू।'); };
+$('c1').onchange=function(){ $('gLogin').disabled=!this.checked; $('loginMsg').style.color=''; $('loginMsg').textContent=this.checked?'बढ़िया! अब Google से जारी रखिए। YouTube या किसी platform की अनुमति यहाँ नहीं माँगते, वह अगले कदम में अलग-अलग।':'पहले ऊपर Privacy Policy वाला टिक लगाइए — तभी यह बटन चालू होगा।'; if(this.checked) sound('ding'); };
 $('gLogin').onclick=function(){ if(!$('c1').checked){ var k=$('ck1'); k.classList.remove('need'); void k.offsetWidth; k.classList.add('need'); $('loginMsg').textContent='Privacy Policy वाला टिक ज़रूरी है। हम इसे पहले से नहीं लगाते — आप पढ़कर ख़ुद लगाइए।'; $('loginMsg').style.color='#FFB4B4'; say('पहले Privacy Policy वाला टिक लगाइए।'); return; }
   sheet('Google से जारी रखिए','<p>Google आपसे पूछेगा: <b>Jhilmil आपका नाम और email देख सके?</b></p><p><small>बस इतना। आपके YouTube channel की अनुमति यहाँ नहीं — वह Accounts में अलग से, आपकी मर्ज़ी से। (यह नमूना है, असली Google नहीं खुलता।)</small></p>','जारी रखिए',function(){
-    S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); renderAcc(); if(!Object.keys(S.linked).length){ $('accHint').classList.remove('hide'); show('acc'); say('स्वागत है! अब वो जगहें जोड़िए जहाँ video भेजना है।'); } else { show('new'); say('फिर से स्वागत है!'); } }); };
+    S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); renderAcc();
+    var miss=[]; if(!$('c2').checked) miss.push(['c2b','मेरे बोलने का ढंग पढ़ने की अनुमति','इससे captions और title आपकी अपनी बोली-लहजे में बनेंगे, कम सुधारना पड़ेगा।']); if(!$('c3').checked) miss.push(['c3b','app को बेहतर बनाने में मेरा गुमनाम उपयोग','आपका नाम या video किसी को नहीं दिखता; बस कौन-सा बटन कितना काम आया, यह गिनती।']);
+    function go(){ if(!Object.keys(S.linked).length){ $('accHint').classList.remove('hide'); show('acc'); say('स्वागत है! अब वो जगहें जोड़िए जहाँ video भेजना है।'); } else { show('new'); say('फिर से स्वागत है!'); } }
+    if(!miss.length || S.askedTwice){ setTimeout(go,10); return; }
+    S.askedTwice=true; sv('jm_demo_asked2',true);
+    setTimeout(function(){ sheet('आपकी बेहतरी के लिए — एक बार और','<p>ये दोनों पूरी तरह <b>आपकी मर्ज़ी</b> हैं। ना कहने पर भी app पूरा चलेगा। हम यह सिर्फ़ <b>एक बार</b> और पूछ रहे हैं, फिर कभी नहीं (Settings से कभी भी बदल सकती/सकते हैं)।</p>'+miss.map(function(m){ return '<label style="margin-top:8px;align-items:flex-start"><input type="checkbox" id="'+m[0]+'"><span><b>'+m[1]+'</b><br><small>'+m[2]+'</small></span></label>'; }).join(''),
+      'चुने हुए के लिए हाँ',function(b){ var c2=b.querySelector('#c2b'),c3=b.querySelector('#c3b'); if(c2&&c2.checked) $('c2').checked=true; if(c3&&c3.checked) $('c3').checked=true; say('धन्यवाद!'); setTimeout(go,10); },'नहीं, धन्यवाद').querySelector('.cb').onclick=function(){ this.closest('.shb').remove(); say('कोई बात नहीं — app पूरा चलेगा।'); go(); }; },60); }); };
 function linkSheet(n){ var fb=n==='Facebook', test=/test/.test((PL.filter(function(p){return p[0]===n;})[0]||[])[2]||'');
   var body='<p>अब <b>'+n+'</b> का अपना पन्ना खुलेगा और पूछेगा: <b>Jhilmil को आपके खाते पर video डालने दें?</b></p><p><small>आपका password '+n+' पर ही डलता है, हमें कभी नहीं मिलता।'+(test?' Beta में आप tester के रूप में जुड़ेंगी/जुड़ेंगे; YouTube पर video पहले private जा सकता है (उनकी शर्त, audit तक)।':'')+' (नमूना: असली पन्ना नहीं खुलता।)</small></p>';
   if(fb) body+='<label><input type="checkbox" id="fbPage">मेरे Page पर डालने की अनुमति: <b>शर्मा स्टूडियो</b></label><p style="margin-top:8px"><small>यह टिक न लगाएँ तो Facebook जुड़ेगा, पर Page पर video नहीं जाएगा (रुका दिखेगा)।</small></p>';
@@ -406,11 +431,12 @@ function renderAcc(){ $('accList').innerHTML=PL.map(function(p){ var n=p[0],soon
   [].forEach.call(document.querySelectorAll('[data-u]'),function(b){ b.onclick=function(){ unlinkSheet(b.getAttribute('data-u')); }; }); }
 $('accBtn').onclick=function(){ show('acc'); };
 $('accDone').onclick=function(){ if(!Object.keys(S.linked).length){ say('कम से कम एक जगह जोड़िए।'); return; } show('new'); say('बढ़िया! अब बीच का सुनहरा बटन छूकर video चुनिए।'); };
-$('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; show('login'); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
-$('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
+$('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; $('gLogin').disabled=true; show('login'); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
+$('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last','jm_demo_asked2'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
 setNoFly(S.noFly); renderAcc();
 plats(); renderStatus(); wed(); ring();
 if(!S.logged){ show('login'); say('नमस्ते! Google से अंदर आइए — Privacy वाला टिक आप ख़ुद लगाइए।'); } else if(!Object.keys(S.linked).length){ show('acc'); }
+if(!H.length) show('new');
 })();
 </script>
 </body>
