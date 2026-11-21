@@ -117,15 +117,43 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 .navrow{display:flex;gap:6px;padding:0 16px 8px}
 .navrow button{flex:1;min-height:42px;border-radius:12px;border:1px solid #6C5FD6;background:#1D1270;color:#F3F0FF;font-size:14.5px;font-weight:600;cursor:pointer}
 .navrow button:disabled{opacity:.38;cursor:default}
+.pv{border-radius:14px;background:#1D1270;border:1px solid #4B3FA8;padding:10px}
+.pv h3{margin:0 0 8px;font-size:15px;display:flex;justify-content:space-between}.pv h3 small{font-size:11.5px;color:#F7B93E;font-weight:600}
+.pvf{background:#0E0848;border-radius:10px;overflow:hidden;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#9E95E0;font-size:12px;position:relative}
+.pvf video{width:100%;height:100%;object-fit:cover}
+.pvc{font-size:12.5px;color:#E6E1FF;margin-top:6px;line-height:1.4;word-break:break-word}.pvn{font-size:11.5px;color:#F7B93E;margin-top:4px}
+.tgl{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;border-radius:14px;background:#1D1270;border:1px solid #3B2FA0;margin-bottom:8px;font-size:15px}
+.tgl small{display:block;font-size:12px;color:#C9C2F5}
+.seg{display:flex;gap:4px;flex:none}.seg button{min-height:40px;padding:0 10px;border-radius:10px;border:1px solid #4B3FA8;background:transparent;color:#C9C2F5;font-size:13.5px;cursor:pointer}.seg button.on{background:#3B2FA0;color:#fff;border-color:#F7B93E}
+.sec{margin:16px 0 8px;font-size:13px;color:#F7B93E;font-weight:700;letter-spacing:.3px}
+.lib{border-radius:14px;background:#1D1270;border:1px solid #4B3FA8;padding:12px;margin-bottom:8px}
+.lib .t{font-size:15px;font-weight:600;word-break:break-word}.lib .m{font-size:12.5px;color:#C9C2F5;margin-top:2px}
+.pc{display:inline-block;margin:6px 4px 0 0;padding:2px 8px;border-radius:8px;font-size:12px;background:#22177A}
+.danger{border-color:#FF8A8A!important;color:#FF8A8A!important}
+.deskonly{display:none!important}
+.mi{width:100%;min-height:52px;margin-top:8px;border-radius:14px;border:1px solid #D7D3F0;background:#fff;color:#1C1640;font-size:16px;font-weight:600;text-align:left;padding:0 16px;cursor:pointer}
+.tabs{display:none!important}
+.hero2{text-align:center;margin:4px 0 14px}.hero2 .logo{font-size:40px;line-height:1.1}
+.hero2 .tg{font-family:'Baloo 2',sans-serif;font-size:19px;font-weight:700;color:#F3F0FF;margin-top:2px}
+.hero2 .l{font-size:13.5px;color:#C9C2F5;margin-top:2px}
+.gold{width:76px;height:76px;border-radius:50%;background:#F7B93E;color:#150C5E;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(247,185,62,.18);margin-bottom:6px}
+.wedbox{margin-top:18px;padding:14px;border-radius:18px;background:#1D1270;border:1px solid #6C5FD6;text-align:center}
+.wedbox b{display:block;font-family:'Baloo 2',sans-serif;font-size:19px}.wedbox .s{font-size:13.5px;color:#C9C2F5}
+.wedbox .pro{display:block;font-size:11.5px;color:#F7B93E;margin:4px 0 10px;line-height:1.4}
+.wedbox .w3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wedbox .w3 button{min-height:46px;border-radius:12px;border:1px solid #4B3FA8;background:#22177A;color:#F3F0FF;font-size:14.5px;font-weight:600;cursor:pointer}
+.wedbox .w3 button:first-child{border-color:#F7B93E}
+.edp,.plp{display:none}
+.glow{animation:spark .9s ease-out 3}
 /* laptop: पूरी स्क्रीन वाला रूप */
 .rail-h{display:none}
 @media(min-width:900px){
  body{display:block}
- .phone{max-width:1320px;height:100vh;height:100dvh;border-radius:0;box-shadow:none;display:grid;grid-template-columns:240px minmax(0,1fr) 380px;grid-template-rows:auto auto minmax(0,1fr) auto}
+ .phone{max-width:1400px;height:100vh;height:100dvh;border-radius:0;box-shadow:none;display:grid;grid-template-columns:290px minmax(0,1fr) 360px;grid-template-rows:auto auto minmax(0,1fr) auto}
  .top{grid-column:1/-1;grid-row:1;padding:14px 24px;border-bottom:1px solid #3B2FA0}
  .tabs{grid-column:2;grid-row:2;padding:14px 28px 4px;max-width:520px}
  .body{display:contents}
- #s-new,#s-edit,#s-wed,#s-login,#s-acc{grid-column:2;grid-row:3;overflow-y:auto;padding:8px 28px 28px;min-height:0}
+ #s-new,#s-edit,#s-wed,#s-login,#s-acc,#s-prev,#s-lib,#s-set{grid-column:2;grid-row:3;overflow-y:auto;padding:8px 28px 28px;min-height:0}
  #s-status{grid-column:3;grid-row:2/4;display:block!important;overflow-y:auto;min-height:0;padding:16px 20px;border-left:1px solid #3B2FA0;background:#120A52}
  #s-status h1:after{content:" · हर जगह का हाल";font-size:14px;color:#C9C2F5;font-family:'Hind',sans-serif;font-weight:400}
  .foot{grid-column:2/4;grid-row:4;margin:0;padding:8px;border-top:1px solid #3B2FA0}
@@ -142,6 +170,23 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
  #s-edit .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
  .navrow{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:380px;padding:0;z-index:6}
  .flash{animation:spark .9s ease-out 2}
+ .dock nav{display:none!important}
+ .edp{display:block;flex:1;min-height:0;overflow-y:auto;margin-bottom:10px}
+ .edp h2{font-family:'Baloo 2',sans-serif;font-size:22px;margin:0}.edp .s{font-size:13px;color:#C9C2F5;margin-bottom:10px}
+ .edi{width:100%;text-align:left;margin-bottom:8px;padding:10px 12px;border-radius:14px;border:1px solid #4B3FA8;background:#1D1270;color:#F3F0FF;cursor:pointer;display:block}
+ .edi b{font-size:15px}.edi small{display:block;font-size:12px;color:#C9C2F5;margin-top:2px}
+ .edi i{float:right;font-style:normal;font-size:11px;font-weight:700;background:#F7B93E;color:#150C5E;border-radius:8px;padding:1px 7px}
+ .edi.live{border-color:#8C7FE8}
+ .plp{display:block;margin-bottom:16px}
+ .plp h2{font-family:'Baloo 2',sans-serif;font-size:22px;margin:0}.plp .s{font-size:13px;color:#C9C2F5;margin-bottom:10px}
+ .plr{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;background:#1D1270;border:1px solid #3B2FA0;margin-bottom:6px}
+ .plr .an{flex:1;min-width:0;font-size:14.5px;font-weight:600}.plr .an small{display:block;font-size:11.5px;font-weight:400;color:#C9C2F5}
+ .plr.ok{border-color:#3DDC97}.plr.warn{border-color:#F7B93E}.plr.soon{opacity:.5}
+ .plr .pm{min-height:38px;min-width:40px;font-size:14px}
+ #s-status h1{font-size:20px}
+ .hero2 .logo{font-size:56px}.hero2 .tg{font-size:24px}
+ .deskonly{display:flex!important}
+ #pvList{grid-template-columns:repeat(3,minmax(0,1fr))}
  .out #s-status{display:none!important}
  .out #s-login{grid-column:2/4;max-width:520px;width:100%;justify-self:center}
  .out .phone,.out{grid-template-columns:0 minmax(0,1fr) 0}
@@ -154,7 +199,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 <div class="phone fun" id="ph">
   <div class="top">
     <div class="logo" id="logo" style="cursor:pointer" title="Home">Jhil<span>मिल</span></div>
-    <div style="display:flex;gap:6px"><button class="chip" id="accBtn">🔗 Accounts</button><button class="chip" id="fun">मज़ा: चालू</button></div>
+    <div style="display:flex;gap:6px"><button class="chip" id="accBtn">☰ मेनू</button><button class="chip" id="fun">मज़ा: चालू</button></div>
   </div>
   <div class="navrow" role="navigation" aria-label="Home, पीछे, आगे"><button id="hb">⌂ Home</button><button id="bb">‹ पीछे</button><button id="fb">आगे ›</button></div>
   <div class="tabs" role="tablist" aria-label="screen">
@@ -181,10 +226,26 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
       <button class="send" id="accDone">✓ हो गया — video डालिए</button>
       <div style="display:flex;gap:8px;margin-top:10px"><button class="ghost" id="logout" style="flex:1;border-radius:14px">Log out</button><button class="ghost" id="reset" style="flex:1;border-radius:14px">नमूना फिर से शुरू</button></div>
     </section>
+    <section id="s-prev" class="hide">
+      <h1>Preview <small style="font-size:14px;font-weight:400;color:#C9C2F5;font-family:'Hind',sans-serif">· हर जगह ऐसा दिखेगा</small></h1>
+      <div class="grid" id="pvList"></div>
+      <button class="send" id="pvOk">✓ ठीक है, भेजिए</button>
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="ghost" id="pvTime" style="flex:1;border-radius:14px">🕒 समय तय कीजिए</button><button class="ghost" id="pvEdit" style="flex:1;border-radius:14px">✨ वापस सजाइए</button></div>
+    </section>
+    <section id="s-lib" class="hide">
+      <h1>Library <small style="font-size:14px;font-weight:400;color:#C9C2F5;font-family:'Hind',sans-serif">· पिछले 7 दिन</small></h1>
+      <div class="done" id="libSum" style="margin:0 0 12px"></div>
+      <div id="libList"></div>
+      <p class="note">7 दिन बाद video यहाँ से अपने-आप मिट जाता है (आपके platforms पर वह सुरक्षित रहता है)। मिटने से 1 दिन पहले बताएँगे।</p>
+    </section>
+    <section id="s-set" class="hide">
+      <h1>Settings</h1>
+      <div id="setList"></div>
+    </section>
     <section id="s-new">
-      <h1>नया video</h1>
+      <div class="hero2"><div class="logo">Jhil<span>मिल</span></div><div class="tg">Single upload, हर जगह उड़ान</div><div class="l">एक login, एक touch, कई platforms · एक screen, सारी editing</div></div>
       <button class="drop" id="drop">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F7B93E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 20h16"/></svg>
+        <span class="gold"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg></span>
         <b id="dropT">Video यहाँ डालिए</b><small id="dropS">छूकर अपने फ़ोन से video चुनिए · data बचाने वाला upload</small>
       </button>
       <input type="file" id="file" accept="video/*" class="hide">
@@ -193,6 +254,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
       <button class="send off" id="send">सब पर भेजिए</button>
       <p class="note hide" id="decoLine" style="color:#F7B93E"></p>
       <p class="note">इस video पर आपका ≈ <b id="save">—</b> data बचेगा · 7 दिन बाद यहाँ से अपने-आप मिटेगा</p>
+      <div class="wedbox"><b>💍 शादी / समारोह</b><span class="s">शादी और function की editing के लिए</span><span class="pro">सिर्फ़ professionals के लिए<br>Paid Professional packs में आता है</span><div class="w3"><button id="wV">🎥 वीडियो</button><button class="wS">📷 फ़ोटो</button><button class="wS">📖 एल्बम</button></div></div>
     </section>
     <!-- सजाइए -->
     <section id="s-edit" class="hide">
@@ -210,6 +272,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
     </section>
     <!-- Status -->
     <section id="s-status" class="hide">
+      <div class="plp" id="plp"><h2>🔗 Platforms</h2><div class="s">जुड़ने के बाद पहले पन्ने पर ही दिख जाएगा</div><div id="plpList"></div><button class="ghost" id="plpAll" style="width:100%;border-radius:12px;margin-top:4px">सारे देखिए · सूची में नहीं है?</button></div>
       <h1>Status</h1>
       <div id="stList"><p class="note">अभी कुछ भेजा नहीं है।</p></div>
       <button class="ghost" id="copy" style="width:100%;margin-top:4px;border-radius:14px">सबकी link एक साथ copy</button>
@@ -242,6 +305,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
   </div>
 
   <div class="dock">
+    <div class="edp"><h2>✂️ Editing</h2><div class="s">हर बटन में कई काम</div><button class="edi live" data-ed="काटिए" data-soon="0"><b>काटिए और जोड़िए</b><small>trim, टुकड़े, जोड़ना, speed, उलटा</small></button><button class="edi live" data-ed="सही आकार" data-soon="0"><b>सही आकार</b><small>9:16 / 16:9 / 1:1, चेहरा पकड़कर अपने-आप</small></button><button class="edi live" data-ed="Captions" data-soon="0"><b>Captions</b><small>अपनी भाषा में अपने-आप, style और सुधार</small></button><button class="edi live" data-ed="Thumbnail" data-soon="0"><b>Thumbnail</b><small>सबसे अच्छा frame + लिखाई, हर platform का अलग</small></button><button class="edi" data-ed="एक touch में सुधार" data-soon="1"><b>एक touch में सुधार</b><i>जल्द</i><small>आवाज़ साफ़, चुप्पी हटाना, रंग, हिलना कम</small></button><button class="edi" data-ed="संगीत और आवाज़" data-soon="1"><b>संगीत और आवाज़</b><i>जल्द</i><small>music, voiceover, तेज़ आवाज़ पर music धीमा</small></button><button class="edi" data-ed="Look और लिखाई" data-soon="1"><b>Look और लिखाई</b><i>जल्द</i><small>filters, text, stickers, अपना logo</small></button><button class="edi" data-ed="लंबे video से Shorts" data-soon="1"><b>लंबे video से Shorts</b><i>जल्द</i><small>अपने-आप छोटे clips निकालना</small></button><button class="edi" data-ed="VFX Level 1" data-soon="1"><b>VFX Level 1</b><i>जल्द</i><small>filters, glitch, transitions, चलती लिखाई</small></button><button class="edi" data-ed="VFX Level 2" data-soon="1"><b>VFX Level 2</b><i>जल्द</i><small>AI background, green screen, slow-mo</small></button><button class="edi" data-ed="Cinema VFX" data-soon="1"><b>Cinema VFX</b><i>जल्द</i><small>3D, tracking, particles</small></button></div>
     <div class="talk"><span id="talk">नमस्ते! बीच का सुनहरा बटन छूइए और अपने फ़ोन से कोई भी video चुनिए।</span>
       <button class="ic" id="voice" aria-label="आवाज़ में सुनिए"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div>
     <nav aria-label="मुख्य">
@@ -251,6 +315,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
       </button><div class="rail-h">नया video</div></div>
       <button class="nb" id="n-status"><span class="dots" aria-hidden="true"><i id="dG"></i><i id="dY"></i><i id="dR"></i></span>Status</button>
+      <button class="nb deskonly" id="d-lib">📚 Library</button><button class="nb deskonly" id="d-acc">🔗 Accounts</button><button class="nb deskonly" id="d-set">⚙️ Settings</button>
     </nav>
   </div>
 </div>
@@ -277,19 +342,19 @@ function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.of
 document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
 function desk(){ return window.matchMedia('(min-width:900px)').matches; }
 function paint(sc){ if(!S.logged&&sc!=='login') sc='login'; if(S.logged&&sc==='login') sc='new';
-  if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); sc=(S.screen==='status')?'new':S.screen; }
-  ph.classList.toggle('out',sc==='login');
-  S.screen=sc; ['new','edit','status','wed','login','acc'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
+  if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); try{ $('stList').scrollIntoView({behavior:'smooth',block:'nearest'}); }catch(e){} sc=(S.screen==='status'||S.screen==='prev'||S.screen==='login')?'new':S.screen; }
+  ph.classList.toggle('out',sc==='login'); if(sc==='lib') renderLib(); if(sc==='set') renderSet(); if(sc==='acc') renderAcc();
+  S.screen=sc; ['new','edit','status','wed','login','acc','prev','lib','set'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
   $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
-  $('t-new').classList.toggle('on',sc!=='wed'&&sc!=='acc'); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; return sc; }
+  $('t-new').classList.toggle('on',['new','edit','status','prev'].indexOf(sc)>=0); ['lib','acc','set'].forEach(function(k){ var d=$('d-'+k); if(d) d.classList.toggle('cur',sc===k); }); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; return sc; }
 var H=[],HI=-1;
 function homeSc(){ return S.logged?'new':'login'; }
-function navUI(){ $('bb').disabled=HI<=0; $('fb').disabled=HI>=H.length-1; $('hb').disabled=(H[HI]===homeSc()); }
+function navUI(){ $('bb').disabled=HI<=0; $('fb').disabled=HI>=H.length-1; $('hb').disabled=false; }
 function show(sc,how){ var f=paint(sc);
   if(how!=='nav'&&H[HI]!==f){ H=H.slice(0,HI+1); H.push(f); HI++; try{ if(HI===0) history.replaceState({jm:HI},'','#'+f); else history.pushState({jm:HI},'','#'+f); }catch(e){} }
   navUI(); }
 window.addEventListener('popstate',function(e){ var i=(e.state&&typeof e.state.jm==='number')?e.state.jm:0; if(!H.length) return; HI=Math.max(0,Math.min(i,H.length-1)); var f=paint(H[HI]); if(f!==H[HI]) H[HI]=f; navUI(); });
-$('hb').onclick=function(){ show(homeSc()); say('Home — नया video।'); };
+$('hb').onclick=function(){ show(homeSc()); say(S.logged?'Home।':'पहले Log in कीजिए।'); };
 $('bb').onclick=function(){ if(HI>0){ try{ history.back(); }catch(e){ HI--; paint(H[HI]); navUI(); } } };
 $('fb').onclick=function(){ if(HI<H.length-1){ try{ history.forward(); }catch(e){ HI++; paint(H[HI]); navUI(); } } };
 $('logo')&&($('logo').onclick=function(){ show(homeSc()); });
@@ -297,13 +362,13 @@ function plats(){ var h=''; Object.keys(S.linked).forEach(function(n){ if(!(n in
   [].forEach.call(document.querySelectorAll('.plat[data-p]'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-p'); S.on[n]=!S.on[n]; plats(); }; }); }
 function ring(){ $('ring').setAttribute('stroke-dashoffset',(219.9*(1-S.pct/100)).toFixed(1)); }
 function startUpload(f){
-  S.up=true; S.ready=false; S.pct=0; S.sizeMB=f?Math.round(f.size/1048576):620; show('new');
+  S.vname=f?f.name:'नमूना video'; S.vurl=null; try{ if(f) S.vurl=URL.createObjectURL(f); }catch(e){} S.up=true; S.ready=false; S.pct=0; S.sizeMB=f?Math.round(f.size/1048576):620; show('new');
   $('dropT').textContent=(f?f.name.slice(0,28):'नमूना video')+' · चढ़ रहा है 0%'; $('dropS').textContent='net टूटे तो वहीं से फिर शुरू होगा';
   if(f){ try{ var url=URL.createObjectURL(f); $('prev').innerHTML='<video src="'+url+'" muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:16px"></video>'; }catch(e){} }
   var iv=setInterval(function(){ S.pct=Math.min(100,S.pct+4); ring(); $('dropT').textContent=(f?f.name.slice(0,22):'नमूना video')+' · '+S.pct+'%';
     if(S.pct%20===0&&S.pct<100) say('Video चढ़ रहा है… '+S.pct+'%');
     if(S.pct>=100){ clearInterval(iv); S.up=false; S.ready=true; $('dropT').textContent='Video तैयार ✓'; $('dropS').textContent='छूकर दूसरा video चुन सकते हैं';
-      $('send').classList.remove('off'); var save=Math.max(40,Math.round(S.sizeMB*0.55)); $('save').textContent=save>=1024?(save/1024).toFixed(1)+' GB':save+' MB';
+      $('send').classList.remove('off'); var save=S.saver?Math.max(40,Math.round(S.sizeMB*0.55)):0; $('save').textContent=!S.saver?'0 MB (data-saver बंद)':save>=1024?(save/1024).toFixed(1)+' GB':save+' MB';
       $('n-edit').classList.add('spark'); setTimeout(function(){$('n-edit').classList.remove('spark');},2000); sound('ding'); buzz(30);
       say('Video तैयार! अब सजाइए, या सीधे "सब पर भेजिए"।'); } },80);
 }
@@ -333,17 +398,17 @@ $('onecap').onclick=function(){ say('एक caption लिखिए, हर plat
 function stars(){ if(!S.fun) return; var r=ph.getBoundingClientRect(); for(var i=0;i<26;i++){ var s=document.createElement('div'); s.className='star fall';
   s.style.left=(r.width/2)+'px'; s.style.top=(r.height*0.45)+'px'; s.style.setProperty('--dx',(Math.random()*320-160)+'px'); s.style.setProperty('--dy',(Math.random()*-360+60)+'px');
   s.style.background=i%3?'#F7B93E':'#FFFFFF'; ph.appendChild(s); setTimeout((function(x){return function(){x.remove();};})(s),1100); } }
-function renderStatus(){ var c={ok:'ok',wait:'wait',fail:'fail'},lb={ok:'पहुँच गया',wait:'कतार में…',fail:'रुका'},h='',g=0,y=0,r=0;
+function renderStatus(){ var c={ok:'ok',wait:'wait',fail:'fail',sched:'wait'},lb={ok:'पहुँच गया',wait:'कतार में…',fail:'रुका',sched:'तय: '+(S.when||'').replace('T',' ')},h='',g=0,y=0,r=0;
   Object.keys(S.st).forEach(function(n){ var v=S.st[n]; if(v==='ok')g++; else if(v==='wait')y++; else r++;
     h+='<div class="st"><div class="l"><span>'+n+'</span><span class="'+c[v]+'">'+lb[v]+'</span></div>'+(v==='fail'?'<div style="font-size:13px;color:#FFB4B4;margin-top:4px">वजह: Facebook Page पर डालने की अनुमति नहीं मिली</div><div style="display:flex;gap:8px"><button class="retry" data-r="'+n+'">फिर कोशिश</button><button class="retry fix" data-f="'+n+'" style="background:transparent;color:#F7B93E;border:1px solid #F7B93E">ठीक कीजिए</button></div>':'')+'</div>'; });
   $('stList').innerHTML=h||'<p class="note">अभी कुछ भेजा नहीं है।</p>';
   [].forEach.call(document.querySelectorAll('.retry[data-r]'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-r'); S.st[n]='wait'; renderStatus(); say(n+': फिर कोशिश हो रही है…'); setTimeout(function(){ var v=result(n); S.st[n]=v; renderStatus(); if(v==='ok'){ sound('ding'); buzz(25); say(n+' पर पहुँच गया।'); check(); } else { buzz([30,60,30]); say('फिर रुका — पहले "ठीक कीजिए" से Facebook Page की अनुमति दीजिए।'); } },1300); }; });
   [].forEach.call(document.querySelectorAll('.retry[data-f]'),function(b){ b.onclick=function(){ show('acc'); linkSheet('Facebook'); }; });
   $('dG').style.background=g?'#3DDC97':''; $('dY').style.background=y?'#F7B93E':''; $('dR').style.background=r?'#FF8A8A':'';
-  $('n-status').classList.toggle('pulse',r>0); }
+  $('n-status').classList.toggle('pulse',r>0); if(S.cur){ S.cur.pl=JSON.parse(JSON.stringify(S.st)); saveLib(); } }
 function check(){ var k=Object.keys(S.st); if(k.length&&k.every(function(n){return S.st[n]==='ok';})){
   $('save2').textContent=$('save').textContent; $('doneBox').classList.remove('hide');
-  if(!S.firstFlight){ S.firstFlight=true; $('badge').classList.remove('hide'); }
+  if(!S.firstFlight){ S.firstFlight=true; sv('jm_demo_first',true); $('badge').classList.remove('hide'); }
   $('n-status').classList.add('spark'); setTimeout(function(){$('n-status').classList.remove('spark');},2000);
   stars(); buzz([60,40,90]); sound('ding'); say('सब जगह पहुँच गया! आपका '+$('save').textContent+' data बचा। ✨'); } }
 var ICON={YouTube:'▶',Instagram:'◎',Facebook:'f',Telegram:'➤'},SHAPE={YouTube:'16:9 में ढाल रहे हैं',Instagram:'9:16 Reel बना रहे हैं',Facebook:'1:1 में ढाल रहे हैं',Telegram:'जैसा है वैसा'};
@@ -380,8 +445,13 @@ function flight(names){
 $('send').onclick=function(){
   if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए।'); return; }
   var names=Object.keys(S.on).filter(function(k){return S.on[k];}); if(!names.length){ if(!Object.keys(S.linked).length){ say('पहले Accounts में कोई जगह जोड़िए।'); show('acc'); } else say('कम से कम एक जगह चुनिए।'); return; }
+  S.pend=names; renderPrev(); show('prev'); say('एक नज़र देख लीजिए — हर जगह ऐसा दिखेगा। ठीक हो तो "ठीक है, भेजिए"।');
+};
+function launch(names,when){
   try{ localStorage.setItem('jm_demo_last',JSON.stringify(S.on)); }catch(e){} S.last=JSON.parse(JSON.stringify(S.on));
-  S.st={}; names.forEach(function(n){S.st[n]='wait';}); $('doneBox').classList.add('hide'); renderStatus();
+  S.st={}; names.forEach(function(n){S.st[n]=when?'sched':'wait';}); S.when=when||null; $('doneBox').classList.add('hide');
+  S.cur={id:Date.now(),name:S.vname||'नमूना video',t:Date.now(),save:S.saver?Math.max(40,Math.round((S.sizeMB||620)*0.55)):0,when:when||null,pl:{}}; LIB.unshift(S.cur); renderStatus();
+  if(when){ show('status'); say('तय हो गया: '+when.replace('T',' ')+' पर अपने-आप भेजेंगे। (नमूना)'); sound('ding'); return; }
   if(S.fun&&!S.noFly){ flight(names); return; }
   names.forEach(function(n){ S.st[n]=result(n); }); finish(); if(S.st.Facebook==='fail') say('Facebook रुका: Page की अनुमति नहीं मिली। "ठीक कीजिए" दबाइए।');
 };
@@ -401,6 +471,63 @@ function wed(){ $('tl').innerHTML=marks.map(function(m){ var op=(m[3]&&ch[m[3]]=
 $('dropBad').onclick=function(){ ch.b='drop'; ch.d='drop'; wed(); buzz(30); say('दोनों पीले (बेकार) हिस्से हटा दिए। पसंद न आए तो ✓ दबाकर वापस लाइए।'); };
 $('stu').oninput=wed;
 [].forEach.call(document.querySelectorAll('.mk'),function(b){ b.onclick=function(){ sound('whoosh'); say(b.textContent+' बन रहा है… (नमूना)। गाना आप अपना जोड़ेंगे; publish से पहले copyright वाली चेतावनी आएगी।'); }; });
+/* Preview · Library · Settings */
+var LIB=ld('jm_demo_lib',[]); S.firstFlight=ld('jm_demo_first',false); S.saver=ld('jm_demo_saver',true); S.lang='hi'; S.theme='dark';
+function saveLib(){ sv('jm_demo_lib',LIB.map(function(e){ return {id:e.id,name:e.name,t:e.t,save:e.save,when:e.when,pl:e.pl}; })); }
+var AR={YouTube:'16/9',Instagram:'9/16',Facebook:'1/1',Telegram:'16/9',Bluesky:'16/9'},ARL={YouTube:'16:9',Instagram:'9:16 Reel',Facebook:'1:1',Telegram:'जैसा है',Bluesky:'16:9'};
+function renderPrev(){ var d=Object.keys(deco||{}); $('pvList').innerHTML=S.pend.map(function(n){ var tall=n==='Instagram';
+  return '<div class="pv"><h3>'+n+'<small>'+ARL[n]+'</small></h3><div class="pvf" style="aspect-ratio:'+AR[n]+';'+(tall?'max-height:220px;':'')+'">'+(S.vurl?'<video src="'+S.vurl+'" muted playsinline></video>':'[आपका video]')+'</div>'+
+  '<div class="pvc"><b>'+(S.vname||'नमूना video').replace(/\.[a-z0-9]+$/i,'').slice(0,40)+'</b>'+(d.length?'<br>'+d.map(function(x){return x+' ✓';}).join(' · '):'')+'</div>'+
+  (n==='YouTube'?'<div class="pvn">⚠ अभी private जाएगा (YouTube की शर्त, हमारी app की जाँच तक)</div>':'')+(n==='Facebook'&&S.fbBad?'<div class="pvn" style="color:#FF8A8A">⚠ Page की अनुमति बाक़ी — यहाँ रुकेगा</div>':'')+'</div>'; }).join(''); }
+$('pvOk').onclick=function(){ launch(S.pend); };
+$('pvEdit').onclick=function(){ show('edit'); };
+$('pvTime').onclick=function(){ var t=new Date(Date.now()+3600e3); t.setMinutes(0); var v=new Date(t.getTime()-t.getTimezoneOffset()*6e4).toISOString().slice(0,16);
+  sheet('कब भेजें?','<p>सारे चुने platforms पर एक ही समय पर अपने-आप जाएगा।</p><label><input type="datetime-local" id="whenI" value="'+v+'" style="width:100%;height:44px;font-size:16px;border:1px solid #B9B3DD;border-radius:10px;padding:0 8px"></label>','यह समय तय कीजिए',function(b){ var w=b.querySelector('#whenI').value; if(!w) return false; launch(S.pend,w); }); };
+function ago(t){ var m=Math.round((Date.now()-t)/6e4); return m<1?'अभी':m<60?m+' मिनट पहले':Math.round(m/60)+' घंटे पहले'; }
+function renderLib(){ var tot=LIB.reduce(function(a,e){ return a+(e.save||0); },0);
+  $('libSum').innerHTML=LIB.length?('कुल '+LIB.length+' video · आपका ≈ <b>'+(tot>=1024?(tot/1024).toFixed(1)+' GB':tot+' MB')+'</b> data बचा'+(S.firstFlight?'<br><span class="badge">पहली उड़ान ✦</span>':'')):'अभी कुछ नहीं भेजा। पहला video भेजिए — यहाँ दिखेगा।';
+  $('libList').innerHTML=LIB.map(function(e,i){ var pl=Object.keys(e.pl||{}).map(function(n){ var v=e.pl[n]; return '<span class="pc '+(v==='ok'?'ok':v==='fail'?'fail':'wait')+'">'+n+' '+(v==='ok'?'✓':v==='fail'?'✕':'⏳')+'</span>'; }).join('');
+    var left=7-Math.floor((Date.now()-e.t)/864e5);
+    return '<div class="lib"><div class="t">🎬 '+e.name+'</div><div class="m">'+ago(e.t)+(e.when?' · तय: '+e.when.replace('T',' '):'')+' · '+left+' दिन बाद यहाँ से मिटेगा</div><div>'+pl+'</div>'+
+    '<div style="display:flex;gap:8px;margin-top:10px"><button class="ghost" data-again="'+i+'" style="flex:1;border-radius:12px">दोबारा भेजिए</button><button class="ghost danger" data-del="'+i+'" style="flex:1;border-radius:12px">मिटाइए</button></div></div>'; }).join('');
+  [].forEach.call(document.querySelectorAll('[data-again]'),function(b){ b.onclick=function(){ var e=LIB[+b.getAttribute('data-again')]; S.vname=e.name; S.ready=true; $('dropT').textContent=e.name.slice(0,26)+' · तैयार ✓'; $('send').classList.remove('off'); show('new'); say('वही video तैयार है — नई जगह चुनिए और भेजिए।'); }; });
+  [].forEach.call(document.querySelectorAll('[data-del]'),function(b){ b.onclick=function(){ var i=+b.getAttribute('data-del'); sheet('यह video मिटाएँ?','<p>यहाँ (Jhilmil) से <b>पक्का मिट जाएगा</b>, वापस नहीं आएगा। आपके platforms पर जो पहुँच चुका, वह वैसा ही रहेगा।</p>','हाँ, मिटाइए',function(){ if(LIB[i]===S.cur) S.cur=null; LIB.splice(i,1); saveLib(); renderLib(); say('मिटा दिया।'); }); }; }); }
+function seg(key,opts,cur,on){ return '<div class="seg" data-seg="'+key+'">'+opts.map(function(o){ return '<button data-v="'+o[0]+'" class="'+(o[0]===cur?'on':'')+'">'+o[1]+'</button>'; }).join('')+'</div>'; }
+function onoff(key,val){ return seg(key,[['1','चालू'],['0','बंद']],val?'1':'0'); }
+function renderSet(){ $('setList').innerHTML=
+  '<div class="sec">दिखावट</div>'+
+  '<div class="tgl"><span>भाषा<small>demo सिर्फ़ हिंदी में; असली app में 13 भाषाएँ</small></span>'+seg('lang',[['hi','हिन्दी'],['en','English'],['auto','Auto']],S.lang)+'</div>'+
+  '<div class="tgl"><span>Theme<small>demo में सिर्फ़ Dark</small></span>'+seg('theme',[['dark','Dark'],['light','Light'],['auto','Auto']],S.theme)+'</div>'+
+  '<div class="sec">काम</div>'+
+  '<div class="tgl"><span>Data-saver<small>upload से पहले हल्का करके भेजे; net का पैसा बचे</small></span>'+onoff('saver',S.saver)+'</div>'+
+  '<div class="sec">मज़ेदार चीज़ें</div>'+
+  '<div class="tgl"><span>मज़ा<small>उछाल, आवाज़ें, चमक, सितारे, कंपन</small></span>'+onoff('fun',S.fun)+'</div>'+
+  '<div class="tgl"><span>भेजते समय उड़ान<small>"छोड़िए" बटन हमेशा रहता है</small></span>'+onoff('fly',!S.noFly)+'</div>'+
+  '<div class="tgl"><span>बोलकर बताइए<small>हिंदी आवाज़ (पहले से बंद)</small></span>'+onoff('voice',S.voice)+'</div>'+
+  '<div class="sec">आपकी सहमतियाँ (कभी भी बदलिए)</div>'+
+  '<div class="tgl"><span>Privacy Policy<small>ज़रूरी — बिना इसके app नहीं चलता</small></span><span style="color:#3DDC97;font-size:14px">✓ मानी</span></div>'+
+  '<div class="tgl"><span>बोलने का ढंग पढ़ना<small>captions आपकी बोली में</small></span>'+onoff('c2',$('c2').checked)+'</div>'+
+  '<div class="tgl"><span>गुमनाम उपयोग<small>app बेहतर बनाने में</small></span>'+onoff('c3',$('c3').checked)+'</div>'+
+  '<div class="sec">आपका data</div>'+
+  '<button class="ghost danger" id="wipe" style="width:100%;border-radius:14px">मेरा सारा data मिटाइए</button>'+
+  '<button class="ghost danger" id="close" style="width:100%;border-radius:14px;margin-top:8px">खाता बंद कीजिए</button>'+
+  '<p class="note" style="text-align:left">संपर्क: uduindia@gmail.com · UDUINDIA / उड़ूइंडिया</p>';
+  [].forEach.call(document.querySelectorAll('[data-seg] button'),function(b){ b.onclick=function(){ var k=b.parentNode.getAttribute('data-seg'),v=b.getAttribute('data-v');
+    if(k==='lang'){ S.lang=v; if(v!=='hi') say('यह demo सिर्फ़ हिंदी में है; असली app में आपकी चुनी भाषा में सब दिखेगा।'); }
+    else if(k==='theme'){ S.theme=v; if(v!=='dark') say('Light theme असली app में; demo में अभी सिर्फ़ Dark।'); }
+    else if(k==='saver'){ S.saver=v==='1'; sv('jm_demo_saver',S.saver); say(S.saver?'Data-saver चालू।':'Data-saver बंद — पूरी quality में चढ़ेगा, data ज़्यादा लगेगा।'); }
+    else if(k==='fun'){ if((v==='1')!==S.fun) $('fun').onclick.call($('fun')); }
+    else if(k==='fly'){ setNoFly(v!=='1'); }
+    else if(k==='voice'){ if((v==='1')!==S.voice) $('voice').onclick(); }
+    else if(k==='c2'||k==='c3'){ $(k).checked=v==='1'; say(v==='1'?'धन्यवाद, सहमति दर्ज।':'सहमति वापस ले ली — कोई असर नहीं, app पूरा चलेगा।'); }
+    renderSet(); }; });
+  $('wipe').onclick=function(){ sheet('सारा data मिटाएँ?','<p>Library के सारे video, पिछली पसंद और सहमतियाँ <b>पक्का मिट जाएँगी</b>। आपका खाता और जुड़े accounts रहेंगे।</p>','हाँ, सब मिटाइए',function(){ LIB=[]; S.cur=null; saveLib(); try{ localStorage.removeItem('jm_demo_last'); localStorage.removeItem('jm_demo_first'); }catch(e){} S.last=null; S.firstFlight=false; $('c2').checked=false; $('c3').checked=false; renderSet(); say('सारा data मिटा दिया।'); }); };
+  $('close').onclick=function(){ sheet('खाता बंद करें?','<p>आपका खाता, जुड़े accounts की चाबियाँ (tokens) और सारा data <b>पक्का मिट जाएगा</b>। platforms पर पहुँचे video वैसे ही रहेंगे।</p>','हाँ, खाता बंद कीजिए',function(){ try{ Object.keys(localStorage).filter(function(k){return k.indexOf('jm_demo_')===0;}).forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.hash=''; location.reload(); }); }; }
+function menu(){ var b=sheet('मेनू','<button class="mi" data-go="acc">🔗 Accounts — platform जोड़िए/हटाइए</button><button class="mi" data-go="lib">📚 Library — पिछले 7 दिन</button><button class="mi" data-go="set">⚙️ Settings</button><button class="mi" data-go="out">⎋ Log out</button>','बंद कीजिए',function(){},'');
+  b.querySelector('.cb').style.display='none';
+  [].forEach.call(b.querySelectorAll('[data-go]'),function(x){ x.onclick=function(){ var g=x.getAttribute('data-go'); b.remove(); if(g==='out') $('logout').onclick(); else openSc(g); }; }); }
+function openSc(g){ if(g==='lib') renderLib(); if(g==='set') renderSet(); if(g==='acc') renderAcc(); show(g); }
+$('d-lib').onclick=function(){ openSc('lib'); }; $('d-acc').onclick=function(){ openSc('acc'); }; $('d-set').onclick=function(){ openSc('set'); };
 /* Log in · Accounts */
 function sheet(title,body,ok,onOk,cancel){ var b=document.createElement('div'); b.className='shb'; b.innerHTML='<div class="sh" role="dialog" aria-label="'+title+'"><h3>'+title+'</h3>'+body+'<div class="row2"><button class="cb">'+(cancel||'रद्द')+'</button><button class="okb">'+ok+'</button></div></div>'; ph.appendChild(b);
   b.querySelector('.cb').onclick=function(){ b.remove(); }; b.querySelector('.okb').onclick=function(){ var r=onOk(b); if(r!==false) b.remove(); }; b.onclick=function(e){ if(e.target===b) b.remove(); }; return b; }
@@ -411,7 +538,7 @@ $('gLogin').onclick=function(){ if(!$('c1').checked){ var k=$('ck1'); k.classLis
   sheet('Google से जारी रखिए','<p>Google आपसे पूछेगा: <b>Jhilmil आपका नाम और email देख सके?</b></p><p><small>बस इतना। आपके YouTube channel की अनुमति यहाँ नहीं — वह Accounts में अलग से, आपकी मर्ज़ी से। (यह नमूना है, असली Google नहीं खुलता।)</small></p>','जारी रखिए',function(){
     S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); renderAcc();
     var miss=[]; if(!$('c2').checked) miss.push(['c2b','मेरे बोलने का ढंग पढ़ने की अनुमति','इससे captions और title आपकी अपनी बोली-लहजे में बनेंगे, कम सुधारना पड़ेगा।']); if(!$('c3').checked) miss.push(['c3b','app को बेहतर बनाने में मेरा गुमनाम उपयोग','आपका नाम या video किसी को नहीं दिखता; बस कौन-सा बटन कितना काम आया, यह गिनती।']);
-    function go(){ if(!Object.keys(S.linked).length){ $('accHint').classList.remove('hide'); show('acc'); say('स्वागत है! अब वो जगहें जोड़िए जहाँ video भेजना है।'); } else { show('new'); say('फिर से स्वागत है!'); } }
+    function go(){ goHome(true); if(!Object.keys(S.linked).length){ hintAdd(); say('स्वागत है! पहले वो जगहें जोड़िए जहाँ video भेजना है — '+(desk()?'दाएँ Platforms में + दबाइए।':'"+ जगह जोड़िए" दबाइए।')); } else say('फिर से स्वागत है!'); }
     if(!miss.length || S.askedTwice){ setTimeout(go,10); return; }
     S.askedTwice=true; sv('jm_demo_asked2',true);
     setTimeout(function(){ sheet('आपकी बेहतरी के लिए — एक बार और','<p>ये दोनों पूरी तरह <b>आपकी मर्ज़ी</b> हैं। ना कहने पर भी app पूरा चलेगा। हम यह सिर्फ़ <b>एक बार</b> और पूछ रहे हैं, फिर कभी नहीं (Settings से कभी भी बदल सकती/सकते हैं)।</p>'+miss.map(function(m){ return '<label style="margin-top:8px;align-items:flex-start"><input type="checkbox" id="'+m[0]+'"><span><b>'+m[1]+'</b><br><small>'+m[2]+'</small></span></label>'; }).join(''),
@@ -423,19 +550,33 @@ function linkSheet(n){ var fb=n==='Facebook', test=/test/.test((PL.filter(functi
     sv('jm_demo_linked',S.linked); renderAcc(); plats(); sound('ding'); buzz(25); $('accHint').classList.add('hide');
     say(fb&&S.fbBad?'Facebook जुड़ा, पर Page की अनुमति बाक़ी — पीला निशान देखिए।':n+' जुड़ गया ✓'); }); }
 function unlinkSheet(n){ sheet(n+' हटाएँ?','<p>इसकी चाबी (token) हमारे यहाँ से <b>तुरंत मिट जाएगी</b>। आपके पुराने video '+n+' पर वैसे ही रहेंगे।</p>','हाँ, हटाइए',function(){ delete S.linked[n]; delete S.on[n]; if(n==='Facebook'){ S.fbBad=false; sv('jm_demo_fbbad',false); } sv('jm_demo_linked',S.linked); renderAcc(); plats(); say(n+' हटा दिया।'); }); }
-function renderAcc(){ $('accList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
+function hintAdd(){ setTimeout(function(){ var el=desk()?$('plp'):$('addPl'); if(el){ el.classList.remove('glow'); void el.offsetWidth; el.classList.add('glow'); } },200); }
+function goHome(reset){ if(reset){ H=['new']; HI=0; paint('new'); try{ history.replaceState({jm:0},'','#new'); }catch(e){} navUI(); } else show('new'); }
+function renderSide(){ $('plpList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
+  var st=soon?'जल्द':(warn?'⚠ Page की अनुमति बाक़ी':(on?'✓ जुड़ा':p[2]));
+  var btn=soon?'':(warn?'<button class="pm add" data-l="'+n+'">ठीक</button>':(on?'<button class="pm" data-u="'+n+'" aria-label="'+n+' हटाइए">−</button>':'<button class="pm add" data-l="'+n+'" aria-label="'+n+' जोड़िए">+</button>'));
+  return '<div class="plr'+(soon?' soon':warn?' warn':on?' ok':'')+'"><span class="ai" style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#22177A;font-weight:800;flex:none">'+p[1]+'</span><span class="an">'+n+'<small>'+st+'</small></span>'+btn+'</div>'; }).join('');
+  [].forEach.call($('plpList').querySelectorAll('[data-l]'),function(b){ b.onclick=function(){ linkSheet(b.getAttribute('data-l')); }; });
+  [].forEach.call($('plpList').querySelectorAll('[data-u]'),function(b){ b.onclick=function(){ unlinkSheet(b.getAttribute('data-u')); }; }); }
+$('plpAll').onclick=function(){ openSc('acc'); };
+[].forEach.call(document.querySelectorAll('.edi'),function(b){ b.onclick=function(){ var t=b.getAttribute('data-ed');
+  if(b.getAttribute('data-soon')==='1'){ say(t+': यह काम जल्द आ रहा है।'); return; }
+  show('edit'); var tb=document.querySelector('.tool[data-t="'+t+'"]'); if(tb){ if(S.ready) tb.click(); else say('पहले बीच का सुनहरा बटन छूकर video चुनिए, फिर '+t+'।'); tb.classList.remove('spark'); void tb.offsetWidth; tb.classList.add('spark'); } }; });
+$('wV').onclick=function(){ show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
+[].forEach.call(document.querySelectorAll('.wS'),function(b){ b.onclick=function(){ say(b.textContent.trim()+': जल्द आ रहा है।'); }; });
+function renderAcc(){ try{ renderSide(); }catch(e){} $('accList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
   var st=soon?'जल्द':(warn?'⚠ Page की अनुमति बाक़ी':(on?'✓ जुड़ा':p[2]));
   var btn=soon?'':(warn?'<button class="pm add" data-l="'+n+'">ठीक कीजिए</button>':(on?'<button class="pm" data-u="'+n+'" aria-label="'+n+' हटाइए">−</button>':'<button class="pm add" data-l="'+n+'" aria-label="'+n+' जोड़िए">+ जोड़िए</button>'));
   return '<div class="acc'+(soon?' soon':warn?' warn':on?' ok':'')+'"><span class="ai">'+p[1]+'</span><span class="an"><b>'+n+'</b><small'+(warn?' style="color:#F7B93E"':'')+'>'+st+'</small></span>'+btn+'</div>'; }).join('');
   [].forEach.call(document.querySelectorAll('[data-l]'),function(b){ b.onclick=function(){ linkSheet(b.getAttribute('data-l')); }; });
   [].forEach.call(document.querySelectorAll('[data-u]'),function(b){ b.onclick=function(){ unlinkSheet(b.getAttribute('data-u')); }; }); }
-$('accBtn').onclick=function(){ show('acc'); };
+$('accBtn').onclick=menu;
 $('accDone').onclick=function(){ if(!Object.keys(S.linked).length){ say('कम से कम एक जगह जोड़िए।'); return; } show('new'); say('बढ़िया! अब बीच का सुनहरा बटन छूकर video चुनिए।'); };
 $('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; $('gLogin').disabled=true; show('login'); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
 $('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last','jm_demo_asked2'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
 setNoFly(S.noFly); renderAcc();
 plats(); renderStatus(); wed(); ring();
-if(!S.logged){ show('login'); say('नमस्ते! Google से अंदर आइए — Privacy वाला टिक आप ख़ुद लगाइए।'); } else if(!Object.keys(S.linked).length){ show('acc'); }
+if(!S.logged){ show('login'); say('नमस्ते! Google से अंदर आइए — Privacy वाला टिक आप ख़ुद लगाइए।'); } else { show('new'); if(!Object.keys(S.linked).length) hintAdd(); }
 if(!H.length) show('new');
 })();
 </script>
