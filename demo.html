@@ -88,6 +88,31 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 .fcard{position:absolute;width:60px;height:42px;margin:-21px 0 0 -30px;border-radius:9px;background:#F7B93E;color:#150C5E;font-size:20px;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 0 20px rgba(247,185,62,.75);z-index:2}
 .trail{position:absolute;width:7px;height:7px;margin:-3px 0 0 -3px;border-radius:50%;background:#F7B93E;pointer-events:none;animation:tr .8s forwards}
 @keyframes tr{to{opacity:0;transform:scale(.2)}}
+/* Log in, Accounts, sheet */
+.hero{text-align:center;margin:30px 0 22px}.hero .logo{font-size:44px}.hero p{margin:4px 0 0;color:#C9C2F5;font-size:15px}
+.gbtn{width:100%;min-height:54px;border-radius:14px;border:0;background:#fff;color:#1F1F1F;font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer}
+.gbtn .g{width:26px;height:26px;border-radius:50%;background:conic-gradient(#EA4335 0 25%,#FBBC05 0 50%,#34A853 0 75%,#4285F4 0);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.ck{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:10px 12px;border-radius:12px;background:#1D1270;border:1px solid #3B2FA0;font-size:14px;line-height:1.45;cursor:pointer}
+.ck input{width:22px;height:22px;flex:none;margin:0;accent-color:#F7B93E}
+.ck.need{border-color:#FF8A8A;animation:shake .45s}
+.acc{display:flex;align-items:center;gap:10px;border-radius:14px;background:#1D1270;border:1px solid #4B3FA8;padding:10px 12px;margin-bottom:8px}
+.acc .ai{width:40px;height:40px;flex:none;border-radius:50%;background:#22177A;border:1px solid #6C5FD6;display:flex;align-items:center;justify-content:center;font-weight:800}
+.acc .an{flex:1;min-width:0}.acc .an b{display:block;font-size:15px}.acc .an small{font-size:12.5px;color:#C9C2F5}
+.acc.ok{border-color:#3DDC97}.acc.ok .ai{background:#1E5A47;border-color:#3DDC97}.acc.warn{border-color:#F7B93E}.acc.soon{opacity:.55}
+.pm{min-width:46px;min-height:44px;border-radius:12px;border:1px solid #F7B93E;background:transparent;color:#F7B93E;font-size:15px;font-weight:700;cursor:pointer;padding:0 10px}
+.pm.add{background:#F7B93E;color:#150C5E}
+.plat.add{border-style:dashed;justify-content:center;color:#F7B93E}
+.shb{position:absolute;inset:0;z-index:30;background:rgba(5,3,25,.7);display:flex;align-items:flex-end;justify-content:center}
+.sh{width:100%;max-width:460px;background:#F7F6FF;color:#1C1640;border-radius:22px 22px 0 0;padding:20px 18px 22px;animation:up .25s ease}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sh h3{margin:0 0 8px;font-size:19px}.sh p{margin:0 0 10px;font-size:15px;line-height:1.5}.sh small{color:#5A5380}
+.sh .row2{display:flex;gap:8px;margin-top:14px}.sh .row2 button{flex:1;min-height:50px;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer}
+.sh .okb{border:0;background:#150C5E;color:#fff}.sh .cb{border:1px solid #B9B3DD;background:#fff;color:#1C1640}
+.sh label{display:flex;gap:10px;align-items:center;padding:10px;border-radius:12px;background:#ECEAFB;font-size:15px}
+.sh label input{width:22px;height:22px;accent-color:#150C5E}
+.nofly{position:absolute;left:0;right:0;bottom:80px;display:flex;justify-content:center;align-items:center;gap:8px;font-size:14px;color:#C9C2F5}
+.nofly input{width:20px;height:20px;accent-color:#F7B93E}
+.out .tabs,.out .dock,.out #accBtn{display:none!important}
 /* laptop: पूरी स्क्रीन वाला रूप */
 .rail-h{display:none}
 @media(min-width:900px){
@@ -96,7 +121,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
  .top{grid-column:1/-1;grid-row:1;padding:14px 24px;border-bottom:1px solid #3B2FA0}
  .tabs{grid-column:2;grid-row:2;padding:14px 28px 4px;max-width:520px}
  .body{display:contents}
- #s-new,#s-edit,#s-wed{grid-column:2;grid-row:3;overflow-y:auto;padding:8px 28px 28px;min-height:0}
+ #s-new,#s-edit,#s-wed,#s-login,#s-acc{grid-column:2;grid-row:3;overflow-y:auto;padding:8px 28px 28px;min-height:0}
  #s-status{grid-column:3;grid-row:2/4;display:block!important;overflow-y:auto;min-height:0;padding:16px 20px;border-left:1px solid #3B2FA0;background:#120A52}
  #s-status h1:after{content:" · हर जगह का हाल";font-size:14px;color:#C9C2F5;font-family:'Hind',sans-serif;font-weight:400}
  .foot{grid-column:2/4;grid-row:4;margin:0;padding:8px;border-top:1px solid #3B2FA0}
@@ -112,6 +137,10 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
  .prev{height:320px}
  #s-edit .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
  .flash{animation:spark .9s ease-out 2}
+ .out #s-status{display:none!important}
+ .out #s-login{grid-column:2/4;max-width:520px;width:100%;justify-self:center}
+ .out .phone,.out{grid-template-columns:0 minmax(0,1fr) 0}
+ .shb{align-items:center}.sh{border-radius:22px}
 }
 
 </style>
@@ -120,7 +149,7 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 <div class="phone fun" id="ph">
   <div class="top">
     <div class="logo">Jhil<span>मिल</span></div>
-    <button class="chip" id="fun">मज़ा: चालू</button>
+    <div style="display:flex;gap:6px"><button class="chip" id="accBtn">🔗 Accounts</button><button class="chip" id="fun">मज़ा: चालू</button></div>
   </div>
   <div class="tabs" role="tablist" aria-label="screen">
     <button id="t-new" class="on">नया video</button>
@@ -129,6 +158,23 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 
   <div class="body" id="body">
     <!-- नया -->
+    <section id="s-login" class="hide">
+      <div class="hero"><div class="logo">Jhil<span>मिल</span></div><p>Single upload, हर जगह उड़ान</p></div>
+      <button class="gbtn" id="gLogin"><span class="g">G</span>Google से जारी रखिए</button>
+      <label class="ck" id="ck1"><input type="checkbox" id="c1"><span>मैंने <u>Privacy Policy</u> पढ़ी और मानता/मानती हूँ <b style="color:#F7B93E">(ज़रूरी)</b></span></label>
+      <label class="ck"><input type="checkbox" id="c2"><span><b>(आपकी मर्ज़ी)</b> मेरे video बेहतर बनाने के लिए मेरे बोलने का ढंग पढ़ने की अनुमति</span></label>
+      <label class="ck"><input type="checkbox" id="c3"><span><b>(आपकी मर्ज़ी)</b> app को बेहतर बनाने में मेरा गुमनाम उपयोग</span></label>
+      <p class="note" id="loginMsg">कोई टिक पहले से लगा नहीं है। YouTube या किसी platform की अनुमति यहाँ नहीं माँगते, वह अगले कदम में अलग-अलग।</p>
+    </section>
+    <section id="s-acc" class="hide">
+      <h1>Accounts <small style="font-size:14px;font-weight:400;color:#C9C2F5;font-family:'Hind',sans-serif">· जहाँ भेजना है, उन्हें जोड़िए</small></h1>
+      <p class="note hide" id="accHint" style="text-align:left;color:#F7B93E;font-size:14px;margin:-4px 0 10px">स्वागत है! कम से कम एक जगह जोड़िए, फिर पहला video भेजिए।</p>
+      <div id="accList"></div>
+      <p class="note" style="text-align:left">🔒 हमें आपका password कभी नहीं मिलता। जोड़ना उसी platform के अपने पन्ने पर होता है; हटाते ही उसकी चाबी (token) हमारे यहाँ से मिट जाती है।</p>
+      <div class="st" style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"><span>भेजते समय उड़ान दिखाइए</span><button class="chip" id="flyT">चालू</button></div>
+      <button class="send" id="accDone">✓ हो गया — video डालिए</button>
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="ghost" id="logout" style="flex:1;border-radius:14px">Log out</button><button class="ghost" id="reset" style="flex:1;border-radius:14px">नमूना फिर से शुरू</button></div>
+    </section>
     <section id="s-new">
       <h1>नया video</h1>
       <button class="drop" id="drop">
@@ -205,8 +251,13 @@ nav{height:78px;background:#0E0848;border-top:1px solid #3B2FA0;display:grid;gri
 <script>
 (function(){
 var $=function(i){return document.getElementById(i)};
-var S={screen:'new',pct:0,up:false,ready:false,fun:true,voice:false,on:{YouTube:true,Instagram:true,Facebook:true,Telegram:false},st:{},sizeMB:0,firstFlight:false};
+var S={screen:'new',pct:0,up:false,ready:false,fun:true,voice:false,on:{},st:{},sizeMB:0,firstFlight:false};
 try{var l=JSON.parse(localStorage.getItem('jm_demo_last')||'null');if(l)S.last=l;}catch(e){}
+function ld(k,d){ try{ var v=localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
+function sv(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+S.logged=ld('jm_demo_user',false); S.linked=ld('jm_demo_linked',{}); S.fbBad=ld('jm_demo_fbbad',false); S.noFly=ld('jm_demo_nofly',false);
+Object.keys(S.linked).forEach(function(k){ S.on[k]=true; });
+var PL=[['YouTube','▶','test mode (beta)'],['Instagram','◎','test mode (beta)'],['Facebook','f','test mode (beta)'],['Telegram','➤','बिना मंज़ूरी, तुरंत'],['Bluesky','☁','बिना मंज़ूरी, तुरंत'],['X (Twitter)','𝕏','जल्द'],['Snapchat Spotlight','👻','जल्द'],['LinkedIn','in','जल्द']];
 var ph=$('ph'),ctx=null;
 function sound(kind){ if(!S.fun) return; try{ ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
   var o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime; o.connect(g); g.connect(ctx.destination);
@@ -220,11 +271,12 @@ function pop(el){ if(!S.fun||!el) return; el.classList.remove('pop'); void el.of
 document.addEventListener('click',function(e){ var b=e.target.closest('button'); if(b){ pop(b); sound('tick'); } },true);
 function desk(){ return window.matchMedia('(min-width:900px)').matches; }
 function show(sc){ if(sc==='status'&&desk()){ var p=$('s-status'); p.classList.remove('flash'); void p.offsetWidth; p.classList.add('flash'); sc=(S.screen==='status')?'new':S.screen; }
-  S.screen=sc; ['new','edit','status','wed'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
+  ph.classList.toggle('out',sc==='login');
+  S.screen=sc; ['new','edit','status','wed','login','acc'].forEach(function(k){ $('s-'+k).classList.toggle('hide',k!==sc); });
   $('n-edit').classList.toggle('cur',sc==='edit'); $('n-status').classList.toggle('cur',sc==='status');
-  $('t-new').classList.toggle('on',sc!=='wed'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; }
-function plats(){ var h=''; Object.keys(S.on).forEach(function(n){ var on=S.on[n]; h+='<button class="plat'+(on?' on':'')+'" data-p="'+n+'" aria-pressed="'+on+'"><span>'+n+'</span><small>'+(on?'चुना':'छूकर चुनिए')+'</small></button>'; }); $('plats').innerHTML=h;
-  [].forEach.call(document.querySelectorAll('.plat'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-p'); S.on[n]=!S.on[n]; plats(); }; }); }
+  $('t-new').classList.toggle('on',sc!=='wed'&&sc!=='acc'); $('accBtn').classList.toggle('on',sc==='acc'); $('t-wed').classList.toggle('on',sc==='wed'); $('body').scrollTop=0; }
+function plats(){ var h=''; Object.keys(S.linked).forEach(function(n){ if(!(n in S.on)) S.on[n]=true; }); Object.keys(S.on).forEach(function(n){ if(!S.linked[n]) delete S.on[n]; }); Object.keys(S.on).forEach(function(n){ var on=S.on[n]; h+='<button class="plat'+(on?' on':'')+'" data-p="'+n+'" aria-pressed="'+on+'"><span>'+n+'</span><small>'+(on?'चुना':'छूकर चुनिए')+'</small></button>'; }); h+='<button class="plat add" id="addPl">+ जगह जोड़िए</button>'; $('plats').innerHTML=h; $('addPl').onclick=function(){ show('acc'); };
+  [].forEach.call(document.querySelectorAll('.plat[data-p]'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-p'); S.on[n]=!S.on[n]; plats(); }; }); }
 function ring(){ $('ring').setAttribute('stroke-dashoffset',(219.9*(1-S.pct/100)).toFixed(1)); }
 function startUpload(f){
   S.up=true; S.ready=false; S.pct=0; S.sizeMB=f?Math.round(f.size/1048576):620; show('new');
@@ -243,7 +295,7 @@ $('n-new').onclick=function(){ if(S.screen!=='new'){ show('new'); return; } if(!
 $('n-edit').onclick=function(){ show('edit'); };
 $('n-status').onclick=function(){ show('status'); if(!Object.keys(S.st).length) say('अभी कुछ भेजा नहीं है।'); };
 $('t-new').onclick=function(){ show('new'); }; $('t-wed').onclick=function(){ show('wed'); say('शादी मोड: हर सुझाव पर रखिए ✓ या हटाइए ✕ — कुछ भी अपने-आप नहीं कटेगा।'); };
-$('last').onclick=function(){ S.on=S.last||{YouTube:true,Instagram:true,Facebook:false,Telegram:true}; plats(); say('पिछली बार जैसा: '+Object.keys(S.on).filter(function(k){return S.on[k];}).join(', ')+' चुन लिए।'); };
+$('last').onclick=function(){ var L=S.last||{}; Object.keys(S.on).forEach(function(k){ S.on[k]=!!L[k]; }); if(!S.last){ say('अभी पिछली बार जैसा कुछ नहीं — पहली बार भेजिए, फिर याद रहेगा।'); plats(); return; } plats(); say('पिछली बार जैसा: '+Object.keys(S.on).filter(function(k){return S.on[k];}).join(', ')+' चुन लिए।'); };
 $('fun').onclick=function(){ S.fun=!S.fun; ph.classList.toggle('fun',S.fun); this.textContent='मज़ा: '+(S.fun?'चालू':'बंद'); };
 $('voice').onclick=function(){ S.voice=!S.voice; this.classList.toggle('on',S.voice); say(S.voice?'आवाज़ चालू। अब हर बात बोलकर भी बताऊँगी।':'आवाज़ बंद।'); };
 var deco={};
@@ -265,9 +317,10 @@ function stars(){ if(!S.fun) return; var r=ph.getBoundingClientRect(); for(var i
   s.style.background=i%3?'#F7B93E':'#FFFFFF'; ph.appendChild(s); setTimeout((function(x){return function(){x.remove();};})(s),1100); } }
 function renderStatus(){ var c={ok:'ok',wait:'wait',fail:'fail'},lb={ok:'पहुँच गया',wait:'कतार में…',fail:'रुका'},h='',g=0,y=0,r=0;
   Object.keys(S.st).forEach(function(n){ var v=S.st[n]; if(v==='ok')g++; else if(v==='wait')y++; else r++;
-    h+='<div class="st"><div class="l"><span>'+n+'</span><span class="'+c[v]+'">'+lb[v]+'</span></div>'+(v==='fail'?'<div style="font-size:13px;color:#FFB4B4;margin-top:4px">वजह: Page की अनुमति ख़त्म हो गई</div><button class="retry" data-r="'+n+'">फिर कोशिश</button>':'')+'</div>'; });
+    h+='<div class="st"><div class="l"><span>'+n+'</span><span class="'+c[v]+'">'+lb[v]+'</span></div>'+(v==='fail'?'<div style="font-size:13px;color:#FFB4B4;margin-top:4px">वजह: Facebook Page पर डालने की अनुमति नहीं मिली</div><div style="display:flex;gap:8px"><button class="retry" data-r="'+n+'">फिर कोशिश</button><button class="retry fix" data-f="'+n+'" style="background:transparent;color:#F7B93E;border:1px solid #F7B93E">ठीक कीजिए</button></div>':'')+'</div>'; });
   $('stList').innerHTML=h||'<p class="note">अभी कुछ भेजा नहीं है।</p>';
-  [].forEach.call(document.querySelectorAll('.retry'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-r'); S.st[n]='wait'; renderStatus(); say(n+': फिर कोशिश हो रही है…'); setTimeout(function(){ S.st[n]='ok'; renderStatus(); sound('ding'); buzz(25); say(n+' पर पहुँच गया।'); check(); },1300); }; });
+  [].forEach.call(document.querySelectorAll('.retry[data-r]'),function(b){ b.onclick=function(){ var n=b.getAttribute('data-r'); S.st[n]='wait'; renderStatus(); say(n+': फिर कोशिश हो रही है…'); setTimeout(function(){ var v=result(n); S.st[n]=v; renderStatus(); if(v==='ok'){ sound('ding'); buzz(25); say(n+' पर पहुँच गया।'); check(); } else { buzz([30,60,30]); say('फिर रुका — पहले "ठीक कीजिए" से Facebook Page की अनुमति दीजिए।'); } },1300); }; });
+  [].forEach.call(document.querySelectorAll('.retry[data-f]'),function(b){ b.onclick=function(){ show('acc'); linkSheet('Facebook'); }; });
   $('dG').style.background=g?'#3DDC97':''; $('dY').style.background=y?'#F7B93E':''; $('dR').style.background=r?'#FF8A8A':'';
   $('n-status').classList.toggle('pulse',r>0); }
 function check(){ var k=Object.keys(S.st); if(k.length&&k.every(function(n){return S.st[n]==='ok';})){
@@ -276,7 +329,7 @@ function check(){ var k=Object.keys(S.st); if(k.length&&k.every(function(n){retu
   $('n-status').classList.add('spark'); setTimeout(function(){$('n-status').classList.remove('spark');},2000);
   stars(); buzz([60,40,90]); sound('ding'); say('सब जगह पहुँच गया! आपका '+$('save').textContent+' data बचा। ✨'); } }
 var ICON={YouTube:'▶',Instagram:'◎',Facebook:'f',Telegram:'➤'},SHAPE={YouTube:'16:9 में ढाल रहे हैं',Instagram:'9:16 Reel बना रहे हैं',Facebook:'1:1 में ढाल रहे हैं',Telegram:'जैसा है वैसा'};
-function result(n){ return n==='Facebook'?'fail':'ok'; }
+function result(n){ return (n==='Facebook'&&S.fbBad)?'fail':'ok'; }
 function finish(){ renderStatus(); show('status'); check(); }
 function flight(names){
   var ov=document.createElement('div'); ov.className='ovl'; var W=ph.clientWidth,H=ph.clientHeight,T=[],cur=null,done=false;
@@ -284,11 +337,11 @@ function flight(names){
   var h='<div class="ovt">उड़ान शुरू ✦<small>एक upload, हर जगह उड़ान</small></div>';
   names.forEach(function(n,i){ var x=W*(i+1)/(names.length+1), y=ty+Math.abs(i-(names.length-1)/2)*26;
     h+='<div class="tgt" id="tg'+i+'" style="left:'+x+'px;top:'+y+'px"><i>'+ICON[n]+'</i>'+n+'<b>इंतज़ार</b></div>'; });
-  h+='<div class="src" style="top:'+sy+'px"><i>🎬</i>आपका video</div><div class="ovs" id="ovs" style="top:'+(sy+128)+'px">तैयार हो रहे हैं…</div><button class="skip" id="skip">छोड़िए, सीधे नतीजा देखिए »</button>';
+  h+='<div class="src" style="top:'+sy+'px"><i>🎬</i>आपका video</div><div class="ovs" id="ovs" style="top:'+(sy+128)+'px">तैयार हो रहे हैं…</div><label class="nofly"><input type="checkbox" id="nf">आगे से उड़ान मत दिखाइए</label><button class="skip" id="skip">छोड़िए, सीधे नतीजा देखिए »</button>';
   ov.innerHTML=h; ph.appendChild(ov);
   function at(ms,f){ T.push(setTimeout(f,ms)); }
   function close(){ if(done) return; done=true; T.forEach(clearTimeout); if(cur) clearInterval(cur); ov.remove(); names.forEach(function(n){ S.st[n]=result(n); }); finish(); if(S.st.Facebook==='fail') say('Facebook रुका: Page की अनुमति ख़त्म। "फिर कोशिश" दबाइए।'); }
-  ov.querySelector('#skip').onclick=close;
+  ov.querySelector('#skip').onclick=close; ov.querySelector('#nf').onchange=function(){ setNoFly(this.checked); };
   var step=2600;
   names.forEach(function(n,i){ var t0=700+i*step, tg=ov.querySelector('#tg'+i);
     at(t0,function(){ tg.classList.add('go'); tg.querySelector('b').textContent=SHAPE[n]+'…'; $('ovs').textContent=n+' के लिए '+SHAPE[n]+'…'; say(n+' के लिए '+SHAPE[n]); sound('tick'); });
@@ -308,11 +361,11 @@ function flight(names){
 }
 $('send').onclick=function(){
   if(!S.ready){ say('पहले बीच का सुनहरा बटन छूकर video चुनिए।'); return; }
-  var names=Object.keys(S.on).filter(function(k){return S.on[k];}); if(!names.length){ say('कम से कम एक जगह चुनिए।'); return; }
+  var names=Object.keys(S.on).filter(function(k){return S.on[k];}); if(!names.length){ if(!Object.keys(S.linked).length){ say('पहले Accounts में कोई जगह जोड़िए।'); show('acc'); } else say('कम से कम एक जगह चुनिए।'); return; }
   try{ localStorage.setItem('jm_demo_last',JSON.stringify(S.on)); }catch(e){} S.last=JSON.parse(JSON.stringify(S.on));
   S.st={}; names.forEach(function(n){S.st[n]='wait';}); $('doneBox').classList.add('hide'); renderStatus();
-  if(S.fun){ flight(names); return; }
-  names.forEach(function(n){ S.st[n]=result(n); }); finish();
+  if(S.fun&&!S.noFly){ flight(names); return; }
+  names.forEach(function(n){ S.st[n]=result(n); }); finish(); if(S.st.Facebook==='fail') say('Facebook रुका: Page की अनुमति नहीं मिली। "ठीक कीजिए" दबाइए।');
 };
 $('copy').onclick=function(){ var t=Object.keys(S.st).filter(function(n){return S.st[n]==='ok';}).map(function(n){return n+': [link]';}).join('\n');
   if(!t){ say('अभी कोई link नहीं है।'); return; } try{ navigator.clipboard.writeText(t); }catch(e){} say('सबकी link copy हो गई — WhatsApp में चिपकाइए।'); };
@@ -330,7 +383,34 @@ function wed(){ $('tl').innerHTML=marks.map(function(m){ var op=(m[3]&&ch[m[3]]=
 $('dropBad').onclick=function(){ ch.b='drop'; ch.d='drop'; wed(); buzz(30); say('दोनों पीले (बेकार) हिस्से हटा दिए। पसंद न आए तो ✓ दबाकर वापस लाइए।'); };
 $('stu').oninput=wed;
 [].forEach.call(document.querySelectorAll('.mk'),function(b){ b.onclick=function(){ sound('whoosh'); say(b.textContent+' बन रहा है… (नमूना)। गाना आप अपना जोड़ेंगे; publish से पहले copyright वाली चेतावनी आएगी।'); }; });
+/* Log in · Accounts */
+function sheet(title,body,ok,onOk,cancel){ var b=document.createElement('div'); b.className='shb'; b.innerHTML='<div class="sh" role="dialog" aria-label="'+title+'"><h3>'+title+'</h3>'+body+'<div class="row2"><button class="cb">'+(cancel||'रद्द')+'</button><button class="okb">'+ok+'</button></div></div>'; ph.appendChild(b);
+  b.querySelector('.cb').onclick=function(){ b.remove(); }; b.querySelector('.okb').onclick=function(){ var r=onOk(b); if(r!==false) b.remove(); }; b.onclick=function(e){ if(e.target===b) b.remove(); }; return b; }
+function setNoFly(v){ S.noFly=v; sv('jm_demo_nofly',v); $('flyT').textContent=v?'बंद':'चालू'; }
+$('flyT').onclick=function(){ setNoFly(!S.noFly); say(S.noFly?'उड़ान बंद — भेजते ही सीधा नतीजा।':'उड़ान चालू।'); };
+$('gLogin').onclick=function(){ if(!$('c1').checked){ var k=$('ck1'); k.classList.remove('need'); void k.offsetWidth; k.classList.add('need'); $('loginMsg').textContent='Privacy Policy वाला टिक ज़रूरी है। हम इसे पहले से नहीं लगाते — आप पढ़कर ख़ुद लगाइए।'; $('loginMsg').style.color='#FFB4B4'; say('पहले Privacy Policy वाला टिक लगाइए।'); return; }
+  sheet('Google से जारी रखिए','<p>Google आपसे पूछेगा: <b>Jhilmil आपका नाम और email देख सके?</b></p><p><small>बस इतना। आपके YouTube channel की अनुमति यहाँ नहीं — वह Accounts में अलग से, आपकी मर्ज़ी से। (यह नमूना है, असली Google नहीं खुलता।)</small></p>','जारी रखिए',function(){
+    S.logged=true; sv('jm_demo_user',true); sound('ding'); buzz(30); renderAcc(); if(!Object.keys(S.linked).length){ $('accHint').classList.remove('hide'); show('acc'); say('स्वागत है! अब वो जगहें जोड़िए जहाँ video भेजना है।'); } else { show('new'); say('फिर से स्वागत है!'); } }); };
+function linkSheet(n){ var fb=n==='Facebook', test=/test/.test((PL.filter(function(p){return p[0]===n;})[0]||[])[2]||'');
+  var body='<p>अब <b>'+n+'</b> का अपना पन्ना खुलेगा और पूछेगा: <b>Jhilmil को आपके खाते पर video डालने दें?</b></p><p><small>आपका password '+n+' पर ही डलता है, हमें कभी नहीं मिलता।'+(test?' Beta में आप tester के रूप में जुड़ेंगी/जुड़ेंगे; YouTube पर video पहले private जा सकता है (उनकी शर्त, audit तक)।':'')+' (नमूना: असली पन्ना नहीं खुलता।)</small></p>';
+  if(fb) body+='<label><input type="checkbox" id="fbPage">मेरे Page पर डालने की अनुमति: <b>शर्मा स्टूडियो</b></label><p style="margin-top:8px"><small>यह टिक न लगाएँ तो Facebook जुड़ेगा, पर Page पर video नहीं जाएगा (रुका दिखेगा)।</small></p>';
+  sheet(n+' जोड़िए',body,'अनुमति दीजिए',function(b){ S.linked[n]=true; S.on[n]=true; if(fb){ S.fbBad=!b.querySelector('#fbPage').checked; sv('jm_demo_fbbad',S.fbBad); }
+    sv('jm_demo_linked',S.linked); renderAcc(); plats(); sound('ding'); buzz(25); $('accHint').classList.add('hide');
+    say(fb&&S.fbBad?'Facebook जुड़ा, पर Page की अनुमति बाक़ी — पीला निशान देखिए।':n+' जुड़ गया ✓'); }); }
+function unlinkSheet(n){ sheet(n+' हटाएँ?','<p>इसकी चाबी (token) हमारे यहाँ से <b>तुरंत मिट जाएगी</b>। आपके पुराने video '+n+' पर वैसे ही रहेंगे।</p>','हाँ, हटाइए',function(){ delete S.linked[n]; delete S.on[n]; if(n==='Facebook'){ S.fbBad=false; sv('jm_demo_fbbad',false); } sv('jm_demo_linked',S.linked); renderAcc(); plats(); say(n+' हटा दिया।'); }); }
+function renderAcc(){ $('accList').innerHTML=PL.map(function(p){ var n=p[0],soon=p[2]==='जल्द',on=!!S.linked[n],warn=on&&n==='Facebook'&&S.fbBad;
+  var st=soon?'जल्द':(warn?'⚠ Page की अनुमति बाक़ी':(on?'✓ जुड़ा':p[2]));
+  var btn=soon?'':(warn?'<button class="pm add" data-l="'+n+'">ठीक कीजिए</button>':(on?'<button class="pm" data-u="'+n+'" aria-label="'+n+' हटाइए">−</button>':'<button class="pm add" data-l="'+n+'" aria-label="'+n+' जोड़िए">+ जोड़िए</button>'));
+  return '<div class="acc'+(soon?' soon':warn?' warn':on?' ok':'')+'"><span class="ai">'+p[1]+'</span><span class="an"><b>'+n+'</b><small'+(warn?' style="color:#F7B93E"':'')+'>'+st+'</small></span>'+btn+'</div>'; }).join('');
+  [].forEach.call(document.querySelectorAll('[data-l]'),function(b){ b.onclick=function(){ linkSheet(b.getAttribute('data-l')); }; });
+  [].forEach.call(document.querySelectorAll('[data-u]'),function(b){ b.onclick=function(){ unlinkSheet(b.getAttribute('data-u')); }; }); }
+$('accBtn').onclick=function(){ show('acc'); };
+$('accDone').onclick=function(){ if(!Object.keys(S.linked).length){ say('कम से कम एक जगह जोड़िए।'); return; } show('new'); say('बढ़िया! अब बीच का सुनहरा बटन छूकर video चुनिए।'); };
+$('logout').onclick=function(){ sheet('Log out करें?','<p>आपके जुड़े accounts वैसे ही रहेंगे; अगली बार Google से फिर अंदर आइए।</p>','Log out',function(){ S.logged=false; sv('jm_demo_user',false); $('c1').checked=false; show('login'); say('आप बाहर आ गईं/गए। फिर मिलेंगे!'); }); };
+$('reset').onclick=function(){ sheet('नमूना फिर से शुरू?','<p>इस फ़ोन में रखी नमूने की सारी बातें (login, जुड़े accounts, पिछली बार जैसा) मिट जाएँगी।</p>','हाँ, फिर से',function(){ try{ ['jm_demo_user','jm_demo_linked','jm_demo_fbbad','jm_demo_nofly','jm_demo_last'].forEach(function(k){ localStorage.removeItem(k); }); }catch(e){} location.reload(); }); };
+setNoFly(S.noFly); renderAcc();
 plats(); renderStatus(); wed(); ring();
+if(!S.logged){ show('login'); say('नमस्ते! Google से अंदर आइए — Privacy वाला टिक आप ख़ुद लगाइए।'); } else if(!Object.keys(S.linked).length){ show('acc'); }
 })();
 </script>
 </body>
